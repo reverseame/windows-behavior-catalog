@@ -8,6 +8,8 @@ The code is divided into several categories:
 - Registry
 - Process
 - Network
+- DLL 
+- Scheduler
 
 Within each category you will find all the associated behaviors and their corresponding source code file. Each source code file has (or pretends to) a self-explanatory name.
 
