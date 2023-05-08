@@ -1,6 +1,5 @@
 #include <iostream>
 #include <Windows.h>
-#include <ShlObj.h>
 
 int main() {
     // Get the path to the current executable

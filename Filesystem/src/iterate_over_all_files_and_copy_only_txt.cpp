@@ -1,4 +1,5 @@
 // adapted from http://stackoverflow.com/questions/2314542/listing-directory-contents-using-c-and-windows
+// cl /EHsc .\iterate_over_all_files_and_copy_only_txt.cpp
 
 #include <windows.h>
 #include <stdio.h>
