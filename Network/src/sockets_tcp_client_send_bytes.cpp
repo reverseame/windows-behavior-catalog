@@ -1,6 +1,9 @@
+// Compiled with: cl /EHsc .\sockets_tcp_client_send_bytes.cpp ws2_32.lib
+// Adapted from https://learn.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-recv
 #include <iostream>
 #include <winsock2.h>
-#pragma comment(lib, "ws2_32.lib") // Link to ws2_32.lib library
+
+#define DEFAULT_BUFLEN 512
 
 int main() {
     // Initialize Winsock
@@ -22,7 +25,7 @@ int main() {
     // Define the server address
     SOCKADDR_IN serverAddr;
     serverAddr.sin_family = AF_INET;
-    serverAddr.sin_addr.s_addr = inet_addr("216.58.194.174"); // Replace with the IP address of the server you want to connect to
+    serverAddr.sin_addr.s_addr = inet_addr("142.250.184.174"); // Replace with the IP address of the server you want to connect to
     serverAddr.sin_port = htons(80); // Replace with the port number of the server
 
     // Connect to the server
@@ -42,7 +45,32 @@ int main() {
         closesocket(ConnectSocket);
         WSACleanup();
         return 1;
+    } else {
+        std::cout << "Successfully sent " << iResult << " bytes." << std::endl;
     }
+
+    iResult = shutdown(ConnectSocket, SD_SEND);
+    if (iResult == SOCKET_ERROR) {
+        printf("shutdown failed: %d\n", WSAGetLastError());
+        closesocket(ConnectSocket);
+        WSACleanup();
+        return 1;
+    }
+
+    char recvbuf[DEFAULT_BUFLEN];
+    int recvbuflen = DEFAULT_BUFLEN;
+
+    // Receive until the peer closes the connection
+    do {
+
+        iResult = recv(ConnectSocket, recvbuf, recvbuflen, 0);
+        if ( iResult > 0 )
+            printf("Bytes received: %d\n", iResult);
+        else if ( iResult == 0 )
+            printf("Connection closed\n");
+        else
+            printf("recv failed: %d\n", WSAGetLastError());
+    } while( iResult > 0 );
 
     // Close the socket and cleanup Winsock
     closesocket(ConnectSocket);
