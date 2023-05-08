@@ -1,6 +1,7 @@
+// Compiled with: cl /EHsc .\copy_itself_to_startup_folder.cpp Shell32.lib Shlwapi.lib
+
 #include <iostream>
 #include <Windows.h>
-#include <ShlObj.h>
 
 int main() {
     // Get the path to the current executable

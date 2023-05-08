@@ -1,3 +1,4 @@
+// Compiled with: cl /EHsc .\read_and_print_all_registry_entries_in_the_system.cpp Advapi32.lib
 #include <iostream>
 #include <Windows.h>
 
@@ -8,9 +9,10 @@ void readSubkeys(HKEY key)
     RegQueryInfoKey(key, NULL, NULL, NULL, &numSubkeys, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
     // Read each subkey
+    char subkeyName[256];
     for (DWORD i = 0; i < numSubkeys; i++)
     {
-        char subkeyName[256];
+        
         DWORD subkeyNameSize = 256;
         RegEnumKeyEx(key, i, subkeyName, &subkeyNameSize, NULL, NULL, NULL, NULL);
 

@@ -1,19 +1,18 @@
-// Note that the wininet.lib library must be linked in order to use the WinINet functions.
+// Compiled with: cl /EHsc .\check_net_connection_wininet.cpp Wininet.lib
 #include <windows.h>
 #include <wininet.h>
 #include <iostream>
-#pragma comment(lib, "wininet.lib")
 
 int main() {
     // Initialize WinINet
-    HINTERNET hInternet = InternetOpen(L"WinINet", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
+    HINTERNET hInternet = InternetOpen("WinINet", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
     if (!hInternet) {
         std::cout << "Error initializing WinINet: " << GetLastError() << std::endl;
         return 1;
     }
 
     // Check for internet connectivity by pinging Google
-    HINTERNET hUrl = InternetOpenUrl(hInternet, L"https://www.google.com", NULL, 0, INTERNET_FLAG_NO_CACHE_WRITE, 0);
+    HINTERNET hUrl = InternetOpenUrl(hInternet, "https://www.google.com", NULL, 0, INTERNET_FLAG_NO_CACHE_WRITE, 0);
     if (!hUrl) {
         std::cout << "Error connecting to Google: " << GetLastError() << std::endl;
         return 1;

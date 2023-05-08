@@ -1,3 +1,4 @@
+// Compiled with: cl /EHsc .\create_snapshot_all_processes_and_find_regex.cpp
 #include <Windows.h>
 #include <tlhelp32.h>
 #include <regex>

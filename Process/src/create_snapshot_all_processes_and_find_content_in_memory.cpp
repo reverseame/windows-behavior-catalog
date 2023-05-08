@@ -1,3 +1,4 @@
+// Compiled with: cl /EHsc .\create_snapshot_all_processes_and_find_content_in_memory.cpp
 #include <iostream>
 #include <windows.h>
 #include <tlhelp32.h>
@@ -39,7 +40,7 @@ int main() {
         SIZE_T dwPageSize = si.dwPageSize;
 
         // Loop through all memory pages in the address range of the process
-        for (LPVOID lpAddress = lpMinimumAddress; lpAddress < lpMaximumAddress; lpAddress += dwPageSize) {
+        for (LPVOID lpAddress = lpMinimumAddress; lpAddress < lpMaximumAddress;  lpAddress = (LPVOID)((DWORD_PTR)lpAddress + dwPageSize)) {
             MEMORY_BASIC_INFORMATION mbi;
             SIZE_T dwSize = VirtualQueryEx(hProcess, lpAddress, &mbi, sizeof(mbi));
             if (dwSize == 0) {
