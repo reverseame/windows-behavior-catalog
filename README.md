@@ -1,6 +1,8 @@
 # Windows behavior repository
 In this repository you will find a corpus of common Windows behaviors and their corresponding implementation. The source code is written in C++ and has been tested with `cl` (`Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31935 for x86`).
 
+The vast majority of the behaviors here defined are based on the [Malware Behavior Catalog (MBC)](https://github.com/MBCProject/mbc-markdown)'s micro-behaviors.
+
 # Contents
 The contents present in this repository have been developed in part by the authors of the repo and other have been copied or adapted from other sources. Whenever the latter, the corresponding authors are credited.
 
