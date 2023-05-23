@@ -1,4 +1,5 @@
-// Compiled with: cl /EHsc .\delete_key.cpp advapi32.lib
+// Compiled with: cl /EHsc .\delete_key_v1.cpp advapi32.lib
+// Delete registry key using RegDeleteKey
 #include <Windows.h>
 #include <iostream>
 

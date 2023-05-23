@@ -1,4 +1,5 @@
-// Compiled with: cl /EHsc .\add_value_data.cpp advapi32.lib
+// Compiled with: cl /EHsc .\delete_value_data_v1.cpp Advapi32.lib
+// Delete registry value with RegDeleteKeyValue
 #include <Windows.h>
 #include <string>
 #include <iostream>

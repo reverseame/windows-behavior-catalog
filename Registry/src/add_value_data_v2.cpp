@@ -1,5 +1,5 @@
-// TODO Compiled with: cl /EHsc .\ Advapi32.lib
-// Create or set registry value using RegSetValueEx
+// Compiled with: cl /EHsc .\add_value_data_v2.cpp Advapi32.lib
+// Create or set registry value using RegSetKeyValue
 #include <Windows.h>
 #include <string>
 #include <iostream>
@@ -19,6 +19,11 @@ int main() {
     }
 
     // Add the value to the Run key
+
+    // Creates the lpValueName (2nd parameter) subkey for the hKey registry key and sets the lpValueName value with lpValueData data
+    // lResult = RegSetKeyValue(hKey, lpValueName, lpValueName, REG_SZ, lpValueData, strlen(lpValueData) + 1);
+
+    // (2nd parameter NULL) Creates the lpValueName value with lpValueData data in the hkey Registry
     lResult = RegSetKeyValue(hKey, NULL, lpValueName, REG_SZ, lpValueData, strlen(lpValueData) + 1);
     if (lResult != ERROR_SUCCESS) {
         // Handle error
