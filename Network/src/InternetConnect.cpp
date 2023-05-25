@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\http_con_v1.cpp Wininet.lib
+// Compiled with: cl /EHsc .\InternetConnect.cpp Wininet.lib
 // Establish HTTP connection with InternetConnect, HttpOpenRequest, HttpSendRequest
 #include <Windows.h>
 #include <WinInet.h>

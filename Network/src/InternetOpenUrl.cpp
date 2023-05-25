@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\http_con_v2.cpp Wininet.lib
+// Compiled with: cl /EHsc .\InternetOpenUrl.cpp Wininet.lib
 // Establish HTTP connection with InternetOpenUrl
 #include <Windows.h>
 #include <WinInet.h>

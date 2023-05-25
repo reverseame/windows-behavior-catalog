@@ -1,5 +1,5 @@
-// Compiled with: cl /EHsc .\winhttp_v1.cpp winhttp.lib
-// Establish HTTP connection with InternetConnect, HttpOpenRequest, HttpSendRequest
+// Compiled with: cl /EHsc .\winhttp_send_recv.cpp winhttp.lib
+// Establish HTTP connection with Winhttp library https://learn.microsoft.com/en-us/windows/win32/api/winhttp/
 // Adapted from https://github.com/MicrosoftDocs/win32/blob/docs/desktop-src/WinHttp/winhttp-sessions-overview.md
 #include <windows.h>
 #include <winhttp.h>

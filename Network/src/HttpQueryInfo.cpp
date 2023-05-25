@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\check_net_con_v1.cpp Wininet.lib
+// Compiled with: cl /EHsc .\HttpQueryInfo.cpp Wininet.lib
 // Checking internet connection with WinINet -> InternetOpenUrl, HttpQueryInfo
 #include <windows.h>
 #include <wininet.h>
