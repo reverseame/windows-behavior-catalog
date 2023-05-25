@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\query_value_v2.cpp advapi32.lib
+// Compiled with: cl /EHsc .\RegQueryValue.cpp advapi32.lib
 // Query registry value using RegQueryValue  
 #include <iostream>
 #include <Windows.h>

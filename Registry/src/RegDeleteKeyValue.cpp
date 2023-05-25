@@ -1,5 +1,5 @@
-// Compiled with: cl /EHsc .\add_value_data_v1.cpp Advapi32.lib
-// Create or set registry value using RegSetValueEx
+// Compiled with: cl /EHsc .\RegDeleteKeyValue.cpp Advapi32.lib
+// Delete registry value with RegDeleteKeyValue
 #include <Windows.h>
 #include <string>
 #include <iostream>
@@ -17,16 +17,15 @@ int main() {
         std::cerr << "Error while opening the run subkey"<< std::endl;
         return 1;
     }
-
-    // Add the value to the Run key
-    lResult = RegSetValueEx(hKey, lpValueName, 0, REG_SZ, (BYTE*)lpValueData, strlen(lpValueData) + 1);
+    
+    lResult = RegDeleteKeyValue(hKey, NULL, lpValueName);
     if (lResult != ERROR_SUCCESS) {
         // Handle error
-        std::cerr << "Error while adding the value to the run subkey"<< std::endl;
+        std::cerr << "Error while deleting the subkey"<< std::endl;
         RegCloseKey(hKey);
         return 1;
     } else {
-        std::cout << "Registry entry created successfully" << std::endl;
+        std::cout << "Registry entry deleted successfully" << std::endl;
     }
 
     // Close the key

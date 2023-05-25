@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\query_key_v1.cpp advapi32.lib
+// Compiled with: cl /EHsc .\RegQueryInfoKey.cpp advapi32.lib
 // Query registry key using RegQueryInfoKey 
 #include <iostream>
 #include <Windows.h>

@@ -1,5 +1,5 @@
-// Compiled with: cl /EHsc .\create_key_v2.cpp advapi32.lib
-// Create registry key using RegCreateKey
+// Compiled with: cl /EHsc .\RegCreateKeyEx.cpp advapi32.lib
+// Create registry key using RegCreateKeyEx
 #include <Windows.h>
 #include <iostream>
 
@@ -9,7 +9,7 @@ int main() {
     DWORD disposition;
 
     // Create the registry key
-    LONG result = RegCreateKey(HKEY_CURRENT_USER, subKey, &hKey);
+    LONG result = RegCreateKeyEx(HKEY_CURRENT_USER, subKey, 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, &disposition);
     if (result == ERROR_SUCCESS) {
         std::cout << "Registry key created successfully." << std::endl;
         RegCloseKey(hKey);

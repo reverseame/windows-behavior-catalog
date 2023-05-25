@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\open_key_v1.cpp advapi32.lib
+// Compiled with: cl /EHsc .\RegOpenKeyEx.cpp advapi32.lib
 // Open registry key using RegOpenKeyEx
 #include <Windows.h>
 #include <iostream>

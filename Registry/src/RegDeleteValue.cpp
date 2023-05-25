@@ -1,5 +1,5 @@
-// Compiled with: cl /EHsc .\delete_value_data_v1.cpp Advapi32.lib
-// Delete registry value with RegDeleteKeyValue
+// Compiled with: cl /EHsc .\RegDeleteValue.cpp Advapi32.lib
+// Delete registry value with RegDeleteValue
 #include <Windows.h>
 #include <string>
 #include <iostream>
@@ -18,7 +18,7 @@ int main() {
         return 1;
     }
     
-    lResult = RegDeleteKeyValue(hKey, NULL, lpValueName);
+    lResult = RegDeleteValue(hKey, lpValueName);
     if (lResult != ERROR_SUCCESS) {
         // Handle error
         std::cerr << "Error while deleting the subkey"<< std::endl;

@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\add_value_data_v3.cpp Advapi32.lib
+// Compiled with: cl /EHsc .\RegSetValue.cpp Advapi32.lib
 // Create or set registry value using RegSetValue
 #include <Windows.h>
 #include <string>
