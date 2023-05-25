@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\create_thread_v1.cpp
+// Compiled with: cl /EHsc .\CreateThread.cpp
 // Create thread using CreateThread 
 #include <iostream>
 #include <windows.h>

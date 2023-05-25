@@ -1,11 +1,11 @@
-// Compiled with: cl /EHsc .\create_mutex_v1.cpp
-// Create mutex using CreateMutex
+// Compiled with: cl /EHsc .\CreateMutexEx.cpp
+// Create mutex using CreateMutexEx 
 #include <Windows.h>
 #include <iostream>
 
 int main() {
     // Create a global mutex
-    HANDLE hMutex = CreateMutex(NULL, FALSE, "Global\\MyGlobalMutexExample");
+    HANDLE hMutex = CreateMutexEx(NULL, "Global\\MyGlobalMutexExample", 0, MUTEX_ALL_ACCESS);
 
     if (hMutex == NULL) {
         std::cout << "Failed to create mutex. Error code: " << GetLastError() << std::endl;
@@ -20,7 +20,7 @@ int main() {
     std::cout << "Mutex created successfully." << std::endl;
 
     // Use the mutex...
-
+    
     // Release the mutex
     CloseHandle(hMutex);
 

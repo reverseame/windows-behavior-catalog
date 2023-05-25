@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\open_process_v1.cpp
+// Compiled with: cl /EHsc .\OpenProcess.cpp
 // Open process using CreateProcess
 #include <windows.h>
 #include <iostream>

@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\create_process_v1.cpp Wtsapi32.lib
+// Compiled with: cl /EHsc .\CreateProcess.cpp Wtsapi32.lib
 // Create process using CreateProcess
 #include <windows.h>
 #include <iostream>

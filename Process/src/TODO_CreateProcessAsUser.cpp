@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\create_process_v2.cpp Wtsapi32.lib Advapi32.lib
+// Compiled with: cl /EHsc .\CreateProcessAsUser.cpp Wtsapi32.lib Advapi32.lib
 // Create process using CreateProcessAsUser
 #include <windows.h>
 #include <iostream>

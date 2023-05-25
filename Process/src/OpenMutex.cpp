@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\check_mutex_v1.cpp
+// Compiled with: cl /EHsc .\OpenMutex.cpp
 // Check mutex using OpenMutex
 #include <Windows.h>
 #include <iostream>
