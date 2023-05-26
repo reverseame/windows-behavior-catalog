@@ -1,4 +1,5 @@
-// Compiled with: cl /EHsc .\create_write_read_delete_file.cpp
+// Compiled with: cl /EHsc .\WriteFile.cpp
+// Wirte to file with WriteFile
 
 #include <iostream>
 #include <windows.h>
@@ -21,31 +22,8 @@ int main() {
         return 1;
     }
     
-    // Move the file pointer to the beginning of the file
-    SetFilePointer(fileHandle, 0, NULL, FILE_BEGIN);
-    
-    // Read the text from the file
-    char buffer[1024];
-    DWORD bytesRead;
-    success = ReadFile(fileHandle, buffer, sizeof(buffer), &bytesRead, NULL);
-    if (!success) {
-        std::cout << "Failed to read from file." << std::endl;
-        CloseHandle(fileHandle);
-        return 1;
-    }
-    buffer[bytesRead] = '\0'; // Null-terminate the string
-    
-    std::cout << "File contents: " << buffer << std::endl;
-    
     // Close the file handle
     CloseHandle(fileHandle);
-    
-    // Delete the file
-    success = DeleteFile("example.txt");
-    if (!success) {
-        std::cout << "Failed to delete file." << std::endl;
-        return 1;
-    }
     
     return 0;
 }
