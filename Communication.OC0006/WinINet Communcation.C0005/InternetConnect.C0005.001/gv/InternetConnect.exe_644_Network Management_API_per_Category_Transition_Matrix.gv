@@ -1,0 +1,16 @@
+digraph "./API_PER_CATEGORY/InternetConnect.exe_644_Network Management_API_per_Category_Transition_Matrix" {
+	WinHttpOpen [label=WinHttpOpen fillcolor=coral style=filled]
+	WinHttpSetOption [label=WinHttpSetOption fillcolor=coral style=filled]
+	WinHttpOpen -> WinHttpSetOption [label=1.0]
+	Start [label="" fillcolor=black fontcolor=white shape=circle style=filled]
+	Start -> WinHttpOpen
+	WinHttpSetOption [label=WinHttpSetOption fillcolor=coral style=filled]
+	others [label=others fillcolor=red style=filled]
+	WinHttpSetOption -> others [label=1.0]
+	others [label=others fillcolor=red style=filled]
+	WinHttpSetOption [label=WinHttpSetOption fillcolor=coral style=filled]
+	others -> WinHttpSetOption [label=0.0011]
+	others [label=others fillcolor=red style=filled]
+	others [label=others fillcolor=red style=filled]
+	others -> others [label=0.9989]
+}
