@@ -427,21 +427,24 @@
             ]
         },
         "[C0052] Write File": {
-            "WriteFile.exe_3996_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
+            "WriteFileEx.exe_2296_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
                 [
-                    "NtCreateFile"
+                    "NtCreateFile",
+                    "NtWriteFile"
                 ],
                 [
                     "NtCreateFile",
+                    "NtWriteFile",
                     "NtQueryAttributesFile",
                     "NtOpenFile"
                 ],
                 [
                     "NtCreateFile",
+                    "NtWriteFile",
                     "NtOpenFile"
                 ]
             ],
-            "WriteFileEx.exe_1924_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
+            "WriteFile.exe_8004_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
                 [
                     "NtCreateFile",
                     "NtWriteFile"
