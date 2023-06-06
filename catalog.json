@@ -702,17 +702,11 @@
         "[C0042X] Create or Open Mutex": {
             "CreateMutexEx.exe_3968_Synchronization_API_per_Category_Transition_Matrix.gv": [
                 [
-                    "NtWaitForSingleObject"
-                ],
-                [
                     "NtWaitForSingleObject",
                     "NtCreateMutant"
                 ]
             ],
             "CreateMutex.exe_6364_Synchronization_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtWaitForSingleObject"
-                ],
                 [
                     "NtWaitForSingleObject",
                     "CreateMutexA"
@@ -983,9 +977,6 @@
         },
         "[C0043] Check Mutex": {
             "OpenMutex.exe_7232_Synchronization_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtWaitForSingleObject"
-                ],
                 [
                     "NtWaitForSingleObject",
                     "NtOpenMutant"
