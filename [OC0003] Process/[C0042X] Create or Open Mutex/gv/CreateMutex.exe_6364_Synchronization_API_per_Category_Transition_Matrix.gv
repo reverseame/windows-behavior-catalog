@@ -1,0 +1,16 @@
+digraph "./API_PER_CATEGORY/CreateMutex.exe_6364_Synchronization_API_per_Category_Transition_Matrix" {
+	NtWaitForSingleObject [label=NtWaitForSingleObject fillcolor=darkgray style=filled]
+	others [label=others fillcolor=red style=filled]
+	NtWaitForSingleObject -> others [label=1.0]
+	Start [label="" fillcolor=black fontcolor=white shape=circle style=filled]
+	Start -> NtWaitForSingleObject
+	others [label=others fillcolor=red style=filled]
+	others [label=others fillcolor=red style=filled]
+	others -> others [label=0.9918]
+	others [label=others fillcolor=red style=filled]
+	CreateMutexA [label=CreateMutexA fillcolor=darkgray style=filled]
+	others -> CreateMutexA [label=0.0082]
+	CreateMutexA [label=CreateMutexA fillcolor=darkgray style=filled]
+	others [label=others fillcolor=red style=filled]
+	CreateMutexA -> others [label=1.0]
+}
