@@ -266,14 +266,12 @@
 				['RegOpenKeyExA', 'RegCloseKey']
 				['RegOpenKeyExA', 'NtOpenKey', 'NtQueryValueKey']
 			RegOpenKey.exe_5848_Registry_API_per_Category_Transition_Matrix.gv
-				['NtOpenKey']
 				['NtOpenKey', 'NtQueryValueKey']
 				['NtOpenKey', 'NtOpenKeyEx']
 				['NtOpenKey', 'NtQueryValueKey', 'NtOpenKeyEx']
 				['NtOpenKey', 'RegCloseKey']
 				['NtOpenKey', 'NtQueryValueKey', 'RegCloseKey']
 			RegOpenCurrentUser.exe_4788_Registry_API_per_Category_Transition_Matrix.gv
-				['NtOpenKey']
 				['NtOpenKey', 'NtQueryValueKey']
 				['NtOpenKey', 'RegCloseKey']
 				['NtOpenKey', 'NtQueryValueKey', 'RegCloseKey']
@@ -283,7 +281,6 @@
 				['RegCreateKeyExA', 'RegCloseKey']
 				['RegCreateKeyExA', 'NtOpenKey', 'NtQueryValueKey']
 			RegCreateKey.exe_732_Registry_API_per_Category_Transition_Matrix.gv
-				['NtOpenKey']
 				['NtOpenKey', 'NtQueryValueKey']
 				['NtOpenKey', 'NtCreateKey']
 				['NtOpenKey', 'NtQueryValueKey', 'NtCreateKey']
@@ -316,5 +313,4 @@
 				['RegDeleteKeyA']
 				['RegDeleteKeyA', 'NtOpenKey', 'NtQueryValueKey']
 			RegDeleteKeyEx.exe_2564_Registry_API_per_Category_Transition_Matrix.gv
-				['NtOpenKey']
 				['NtOpenKey', 'NtQueryValueKey']

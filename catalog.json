@@ -1082,9 +1082,6 @@
                 ],
                 "RegOpenKey.exe_5848_Registry_API_per_Category_Transition_Matrix.gv": [
                     [
-                        "NtOpenKey"
-                    ],
-                    [
                         "NtOpenKey",
                         "NtQueryValueKey"
                     ],
@@ -1108,9 +1105,6 @@
                     ]
                 ],
                 "RegOpenCurrentUser.exe_4788_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "NtOpenKey"
-                    ],
                     [
                         "NtOpenKey",
                         "NtQueryValueKey"
@@ -1142,9 +1136,6 @@
                     ]
                 ],
                 "RegCreateKey.exe_732_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "NtOpenKey"
-                    ],
                     [
                         "NtOpenKey",
                         "NtQueryValueKey"
@@ -1276,9 +1267,6 @@
                     ]
                 ],
                 "RegDeleteKeyEx.exe_2564_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "NtOpenKey"
-                    ],
                     [
                         "NtOpenKey",
                         "NtQueryValueKey"
