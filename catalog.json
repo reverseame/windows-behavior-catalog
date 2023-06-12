@@ -538,14 +538,6 @@
                 "[C0038.001X-P2]": [
                     "NtQueryInformationThread",
                     "NtTerminateThread"
-                ],
-                "[C0038.001X-P3]": [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                "[C0038.001X-P4]": [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
                 ]
             }
         },
@@ -553,14 +545,6 @@
             "[C0065.001X] OpenProcess": {
                 "[C0065.001X-P1]": [
                     "NtOpenProcess"
-                ],
-                "[C0065.001X-P2]": [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                "[C0065.001X-P3]": [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
                 ]
             }
         },
@@ -569,14 +553,6 @@
                 "[C0070X.001X-P1]": [
                     "CreateToolhelp32Snapshot",
                     "Process32First"
-                ],
-                "[C0070X.001X-P2]": [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                "[C0070X.001X-P3]": [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
                 ]
             }
         },
@@ -613,149 +589,145 @@
                 ],
                 "[C0017.002X-P4]": [
                     "NtCreateSection",
-                    "NtMapViewOfSection"
+                    "NtMapViewOfSection",
+                    "NtOpenSection"
                 ],
                 "[C0017.002X-P5]": [
                     "NtCreateSection",
                     "NtMapViewOfSection",
-                    "NtOpenSection"
+                    "NtSetInformationProcess"
                 ],
                 "[C0017.002X-P6]": [
                     "NtCreateSection",
                     "NtMapViewOfSection",
-                    "NtSetInformationProcess"
+                    "NtSetInformationProcess",
+                    "NtUnmapViewOfSection"
                 ],
                 "[C0017.002X-P7]": [
-                    "NtCreateSection",
+                    "NtMapViewOfSection",
+                    "NtOpenSection"
+                ],
+                "[C0017.002X-P8]": [
+                    "NtMapViewOfSection",
+                    "NtSetInformationProcess"
+                ],
+                "[C0017.002X-P9]": [
                     "NtMapViewOfSection",
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
-                "[C0017.002X-P8]": [
-                    "NtMapViewOfSection",
-                    "NtOpenSection"
-                ],
-                "[C0017.002X-P9]": [
-                    "NtMapViewOfSection",
-                    "NtSetInformationProcess"
-                ],
                 "[C0017.002X-P10]": [
-                    "NtMapViewOfSection",
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
                 "[C0017.002X-P11]": [
-                    "NtSetInformationProcess",
-                    "NtUnmapViewOfSection"
+                    "NtUnmapViewOfSectionEx",
+                    "NtQueryInformationThread"
                 ],
                 "[C0017.002X-P12]": [
                     "NtUnmapViewOfSectionEx",
-                    "NtQueryInformationThread"
+                    "NtQueryInformationThread",
+                    "NtCreateSection"
                 ],
                 "[C0017.002X-P13]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
-                    "NtCreateSection"
+                    "NtCreateSection",
+                    "NtMapViewOfSection"
                 ],
                 "[C0017.002X-P14]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtCreateSection",
-                    "NtMapViewOfSection"
+                    "NtMapViewOfSection",
+                    "NtOpenSection"
                 ],
                 "[C0017.002X-P15]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
-                    "NtOpenSection"
+                    "NtSetInformationProcess"
                 ],
                 "[C0017.002X-P16]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
-                    "NtSetInformationProcess"
+                    "NtSetInformationProcess",
+                    "NtUnmapViewOfSection"
                 ],
                 "[C0017.002X-P17]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
-                    "NtCreateSection",
-                    "NtMapViewOfSection",
-                    "NtSetInformationProcess",
-                    "NtUnmapViewOfSection"
-                ],
-                "[C0017.002X-P18]": [
-                    "NtUnmapViewOfSectionEx",
-                    "NtQueryInformationThread",
                     "CreateThread"
                 ],
-                "[C0017.002X-P19]": [
+                "[C0017.002X-P18]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "CreateThread",
                     "NtResumeThread"
                 ],
-                "[C0017.002X-P20]": [
+                "[C0017.002X-P19]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtReadVirtualMemory"
                 ],
-                "[C0017.002X-P21]": [
+                "[C0017.002X-P20]": [
                     "NtQueryInformationThread",
                     "NtCreateSection"
                 ],
-                "[C0017.002X-P22]": [
+                "[C0017.002X-P21]": [
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection"
                 ],
-                "[C0017.002X-P23]": [
+                "[C0017.002X-P22]": [
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtOpenSection"
                 ],
-                "[C0017.002X-P24]": [
+                "[C0017.002X-P23]": [
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess"
                 ],
-                "[C0017.002X-P25]": [
+                "[C0017.002X-P24]": [
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
-                "[C0017.002X-P26]": [
+                "[C0017.002X-P25]": [
                     "NtQueryInformationThread",
                     "CreateThread"
+                ],
+                "[C0017.002X-P26]": [
+                    "NtQueryInformationThread",
+                    "CreateThread",
+                    "NtResumeThread"
                 ],
                 "[C0017.002X-P27]": [
                     "NtQueryInformationThread",
+                    "NtReadVirtualMemory"
+                ],
+                "[C0017.002X-P28]": [
+                    "CreateThread"
+                ],
+                "[C0017.002X-P29]": [
                     "CreateThread",
                     "NtResumeThread"
                 ],
-                "[C0017.002X-P28]": [
-                    "NtQueryInformationThread",
-                    "NtReadVirtualMemory"
-                ],
-                "[C0017.002X-P29]": [
-                    "CreateThread"
-                ],
                 "[C0017.002X-P30]": [
-                    "CreateThread",
                     "NtResumeThread"
                 ],
                 "[C0017.002X-P31]": [
-                    "NtResumeThread"
-                ],
-                "[C0017.002X-P32]": [
                     "NtOpenProcess"
                 ],
-                "[C0017.002X-P33]": [
+                "[C0017.002X-P32]": [
                     "NtUnmapViewOfSection",
                     "NtSetInformationProcess"
                 ]
@@ -769,36 +741,16 @@
                 "[C0017.001X-P2]": [
                     "NtOpenSection",
                     "NtMapViewOfSection"
-                ],
-                "[C0017.001X-P3]": [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
                 ]
             },
             "[C0017.003X] CreateProcess": {
                 "[C0017.003X-P1]": [
                     "NtResumeThread"
-                ],
-                "[C0017.003X-P2]": [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                "[C0017.003X-P3]": [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
                 ]
             },
             "[C0017.004X] WinExec": {
                 "[C0017.004X-P1]": [
                     "NtResumeThread"
-                ],
-                "[C0017.004X-P2]": [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                "[C0017.004X-P3]": [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
                 ]
             }
         },
