@@ -107,7 +107,6 @@
 				['NtCreateFile', 'NtWriteFile', 'NtQueryAttributesFile', 'NtOpenFile']
 				['NtCreateFile', 'NtWriteFile', 'NtOpenFile']
 [OC0006] Communication
-	[C0005] WinINet Communcation
 	[C0001] Socket Communication
 		[C0001.007] Send Data
 			socket_send.exe_3496_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix.gv
