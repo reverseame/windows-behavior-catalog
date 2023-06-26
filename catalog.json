@@ -788,7 +788,11 @@
                     "NtOpenKey",
                     "NtQueryValueKey"
                 ],
-                "[C0036.006-P5H]": "['RegOpenKeyExA', 'RegQueryValueExA', 'RegCloseKey']"
+                "[C0036.006-P5H]": [
+                    "RegOpenKeyExA",
+                    "RegQueryValueExA",
+                    "RegCloseKey"
+                ]
             },
             "[C0036.005] Query Registry Key": {
                 "[C0036.005-P1]": [
@@ -862,7 +866,11 @@
                     "NtOpenKey",
                     "NtQueryValueKey"
                 ],
-                "[C0036.001-P4H]": "['RegOpenKeyExA', 'RegSetValueExA', 'RegCloseKey']"
+                "[C0036.001-P4H]": [
+                    "RegOpenKeyExA",
+                    "RegSetValueExA",
+                    "RegCloseKey"
+                ]
             },
             "[C0036.007] Delete Registry Value": {
                 "[C0036.007-P1]": [
