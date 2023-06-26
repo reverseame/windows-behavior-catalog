@@ -102,18 +102,18 @@
 			[C0001.006-P1]:['WSAStartup', 'socket', 'connect']
 	[C0005] WinINet Communication
 		[C0005.003] InternetOpenURL
-			[C0005.003-P7]:['InternetOpenA', 'InternetOpenUrlA']
-			[C0005.003-P8]:['InternetOpenA', 'InternetCloseHandle']
+			[C0005.003-P1]:['InternetOpenA', 'InternetOpenUrlA']
+			[C0005.003-P2]:['InternetOpenA', 'InternetCloseHandle']
 		[C0005.001] InternetConnect
-			[C0005.001-P7]:['InternetOpenA', 'InternetConnectA']
-			[C0005.001-P8]:['InternetOpenA', 'HttpOpenRequestA']
-			[C0005.001-P9]:['InternetOpenA', 'HttpSendRequestA']
-			[C0005.001-P10]:['InternetOpenA', 'InternetCloseHandle']
+			[C0005.001-P1]:['InternetOpenA', 'InternetConnectA']
+			[C0005.001-P2]:['InternetOpenA', 'HttpOpenRequestA']
+			[C0005.001-P3]:['InternetOpenA', 'HttpSendRequestA']
+			[C0005.001-P4]:['InternetOpenA', 'InternetCloseHandle']
 	[C0002] HTTP Communication
 		[C0002.008] WinHTTP
-			[C0002.008-P3]:['socket', 'closesocket']
-			[C0002.008-P4]:['socket', 'closesocket', 'NSPStartup']
-			[C0002.008-P5]:['socket', 'closesocket', 'WSASocketW']
+			[C0002.008-P1]:['socket', 'closesocket']
+			[C0002.008-P2]:['socket', 'closesocket', 'NSPStartup']
+			[C0002.008-P3]:['socket', 'closesocket', 'WSASocketW']
 [OC0003] Process
 	[C0038] Create Thread
 		[C0038.001X] CreateThread
@@ -177,32 +177,34 @@
 [OC0008] Operating System
 	[C0036] Registry
 		[C0036.006] Query Registry Value
-			[C0036.006-P7]:['RegOpenKeyExA', 'RegEnumValueA']
-			[C0036.006-P8]:['RegOpenKeyExA', 'RegEnumValueA', 'RegCloseKey']
-			[C0036.006-P9]:['RegOpenKeyExA', 'RegEnumValueA', 'NtOpenKey', 'NtQueryValueKey']
-			[C0036.006-P10]:['RegOpenKeyExA', 'RegEnumValueA', 'RegCloseKey', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.006-P1]:['RegOpenKeyExA', 'RegEnumValueA']
+			[C0036.006-P2]:['RegOpenKeyExA', 'RegEnumValueA', 'RegCloseKey']
+			[C0036.006-P3]:['RegOpenKeyExA', 'RegEnumValueA', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.006-P4]:['RegOpenKeyExA', 'RegEnumValueA', 'RegCloseKey', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.006-P5H]:['RegOpenKeyExA', 'RegQueryValueExA', 'RegCloseKey']
 		[C0036.005] Query Registry Key
 			[C0036.005-P1]:['RegOpenKeyExA', 'RegQueryInfoKeyA']
 			[C0036.005-P2]:['RegOpenKeyExA', 'RegQueryInfoKeyA', 'RegCloseKey']
 			[C0036.005-P3]:['RegOpenKeyExA', 'RegQueryInfoKeyA', 'NtOpenKey', 'NtQueryValueKey']
 		[C0036.003] Open Registry Key
-			[C0036.003-P8]:['NtOpenKey', 'NtQueryValueKey']
-			[C0036.003-P9]:['NtOpenKey', 'RegCloseKey']
-			[C0036.003-P10]:['NtOpenKey', 'NtQueryValueKey', 'RegCloseKey']
+			[C0036.003-P1]:['NtOpenKey', 'NtQueryValueKey']
+			[C0036.003-P2]:['NtOpenKey', 'RegCloseKey']
+			[C0036.003-P3]:['NtOpenKey', 'NtQueryValueKey', 'RegCloseKey']
 		[C0036.004] Create Registry Key
-			[C0036.004-P3]:['NtOpenKey', 'NtQueryValueKey']
-			[C0036.004-P4]:['NtOpenKey', 'NtCreateKey']
-			[C0036.004-P5]:['NtOpenKey', 'NtQueryValueKey', 'NtCreateKey']
-			[C0036.004-P6]:['NtOpenKey', 'RegCloseKey']
-			[C0036.004-P7]:['NtOpenKey', 'NtQueryValueKey', 'RegCloseKey']
+			[C0036.004-P1]:['NtOpenKey', 'NtQueryValueKey']
+			[C0036.004-P2]:['NtOpenKey', 'NtCreateKey']
+			[C0036.004-P3]:['NtOpenKey', 'NtQueryValueKey', 'NtCreateKey']
+			[C0036.004-P4]:['NtOpenKey', 'RegCloseKey']
+			[C0036.004-P5]:['NtOpenKey', 'NtQueryValueKey', 'RegCloseKey']
 		[C0036.001] Create or Set Registry Value
-			[C0036.001-P7]:['RegOpenKeyExA', 'NtSetValueKey']
-			[C0036.001-P8]:['RegOpenKeyExA', 'NtSetValueKey', 'RegCloseKey']
-			[C0036.001-P9]:['RegOpenKeyExA', 'NtSetValueKey', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.001-P1]:['RegOpenKeyExA', 'NtSetValueKey']
+			[C0036.001-P2]:['RegOpenKeyExA', 'NtSetValueKey', 'RegCloseKey']
+			[C0036.001-P3]:['RegOpenKeyExA', 'NtSetValueKey', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.001-P4H]:['RegOpenKeyExA', 'RegSetValueExA', 'RegCloseKey']
 		[C0036.007] Delete Registry Value
-			[C0036.007-P4]:['RegOpenKeyExA', 'RegDeleteValueA']
-			[C0036.007-P5]:['RegOpenKeyExA', 'RegDeleteValueA', 'RegCloseKey']
-			[C0036.007-P6]:['RegOpenKeyExA', 'RegDeleteValueA', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.007-P1]:['RegOpenKeyExA', 'RegDeleteValueA']
+			[C0036.007-P2]:['RegOpenKeyExA', 'RegDeleteValueA', 'RegCloseKey']
+			[C0036.007-P3]:['RegOpenKeyExA', 'RegDeleteValueA', 'NtOpenKey', 'NtQueryValueKey']
 		[C0036.002] Delete Registry Key
-			[C0036.002-P2]:['RegDeleteKeyA']
-			[C0036.002-P3]:['RegDeleteKeyA', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.002-P1]:['RegDeleteKeyA']
+			[C0036.002-P2]:['RegDeleteKeyA', 'NtOpenKey', 'NtQueryValueKey']
