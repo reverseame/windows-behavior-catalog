@@ -5,6 +5,7 @@
 			[C0051.001X-P2]:['NtCreateFile', 'NtWriteFile']
 			[C0051.001X-P3]:['NtCreateFile', 'NtQueryAttributesFile', 'NtOpenFile']
 			[C0051.001X-P4]:['NtCreateFile', 'NtOpenFile']
+			[C0051.001X-P5H]:['NtReadFile']
 	[C0016X] Create or Open file
 		[C0016X.002X] CreateFile2
 			[C0016X.002X-P1]:['NtCreateFile', 'NtWriteFile']
@@ -90,10 +91,12 @@
 			[C0052.001X-P1]:['NtCreateFile', 'NtWriteFile']
 			[C0052.001X-P2]:['NtCreateFile', 'NtWriteFile', 'NtQueryAttributesFile', 'NtOpenFile']
 			[C0052.001X-P3]:['NtCreateFile', 'NtWriteFile', 'NtOpenFile']
+			[C0052.001X-P4H]:['NtWriteFile']
 		[C0052.002X] WriteFileEx
 			[C0052.002X-P1]:['NtCreateFile', 'NtWriteFile']
 			[C0052.002X-P2]:['NtCreateFile', 'NtWriteFile', 'NtQueryAttributesFile', 'NtOpenFile']
 			[C0052.002X-P3]:['NtCreateFile', 'NtWriteFile', 'NtOpenFile']
+			[C0052.002X-P4H]:['NtWriteFile']
 [OC0006] Communication
 	[C0001] Socket Communication
 		[C0001.007] Send Data

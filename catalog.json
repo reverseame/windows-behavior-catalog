@@ -17,6 +17,9 @@
                 "[C0051.001X-P4]": [
                     "NtCreateFile",
                     "NtOpenFile"
+                ],
+                "[C0051.001X-P5H]": [
+                    "NtReadFile"
                 ]
             }
         },
@@ -442,6 +445,9 @@
                     "NtCreateFile",
                     "NtWriteFile",
                     "NtOpenFile"
+                ],
+                "[C0052.001X-P4H]": [
+                    "NtWriteFile"
                 ]
             },
             "[C0052.002X] WriteFileEx": {
@@ -459,6 +465,9 @@
                     "NtCreateFile",
                     "NtWriteFile",
                     "NtOpenFile"
+                ],
+                "[C0052.002X-P4H]": [
+                    "NtWriteFile"
                 ]
             }
         }
