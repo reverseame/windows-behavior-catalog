@@ -561,11 +561,23 @@
                 "[C0042.001X-P1]": [
                     "NtWaitForSingleObject",
                     "CreateMutexA"
+                ],
+                "[C0042.001X-P2H]": [
+                    "CreateMutexA"
+                ],
+                "[C0042.001X-P3H]": [
+                    "NtCreateMutant"
                 ]
             },
             "[C0042.002X] CreateMutexEx": {
                 "[C0042.002X-P1]": [
                     "NtWaitForSingleObject",
+                    "NtCreateMutant"
+                ],
+                "[C0042.002X-P2H]": [
+                    "CreateMutexExA"
+                ],
+                "[C0042.002X-P3H]": [
                     "NtCreateMutant"
                 ]
             }
@@ -758,6 +770,9 @@
             "[C0043.001X] OpenMutex": {
                 "[C0043.001X-P1]": [
                     "NtWaitForSingleObject",
+                    "NtOpenMutant"
+                ],
+                "[C0043.001X-P2H]": [
                     "NtOpenMutant"
                 ]
             }
