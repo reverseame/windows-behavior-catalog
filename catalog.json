@@ -1,882 +1,676 @@
 {
     "[OC0001] Filesystem": {
         "[C0051] Read File": {
-            "ReadFile.exe_4932_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
+            "[C0051.001X] ReadFile": {
+                "[C0051.001X-P1]": [
                     "NtCreateFile"
                 ],
-                [
+                "[C0051.001X-P2]": [
                     "NtCreateFile",
                     "NtWriteFile"
                 ],
-                [
+                "[C0051.001X-P3]": [
                     "NtCreateFile",
                     "NtQueryAttributesFile",
                     "NtOpenFile"
                 ],
-                [
+                "[C0051.001X-P4]": [
                     "NtCreateFile",
                     "NtOpenFile"
-                ]
-            ]
-        },
-        "[C0016X] Create or Open file": {
-            "OpenFile.exe_1740_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtQueryAttributesFile",
-                    "NtCreateFile",
-                    "NtQueryInformationFile"
                 ],
-                [
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtQueryAttributesFile",
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtWriteFile"
-                ]
-            ],
-            "CreateFile2.exe_5684_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtCreateFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtWriteFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtWriteFile",
-                    "NtOpenFile"
-                ]
-            ],
-            "CreateFile.exe_392_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtCreateFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtOpenFile"
-                ]
-            ]
-        },
-        "[C0045] Copy File": {
-            "CopyFile.exe_1464_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "CopyFileA",
-                    "NtWriteFile"
-                ],
-                [
-                    "CopyFileA",
-                    "NtWriteFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "CopyFileA",
-                    "NtWriteFile",
-                    "NtOpenFile"
-                ]
-            ],
-            "CopyFileEx.exe_1588_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtSetInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtSetInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtSetInformationFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtSetInformationFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtWriteFile"
-                ]
-            ],
-            "CopyFile2.exe_4364_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtQueryInformationFile",
-                    "NtCreateFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtQueryInformationFile",
-                    "NtCreateFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtQueryInformationFile",
-                    "NtCreateFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile",
-                    "NtCreateFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile",
-                    "NtCreateFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile",
-                    "NtCreateFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtSetInformationFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtSetInformationFile",
-                    "NtReadFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtSetInformationFile",
-                    "NtReadFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtSetInformationFile",
-                    "NtReadFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtQueryInformationFile",
-                    "NtOpenFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtWriteFile"
-                ]
-            ]
-        },
-        "[C0047] Delete File": {
-            "DeleteFile.exe_4924_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "DeleteFileA"
-                ],
-                [
-                    "DeleteFileA",
-                    "NtWriteFile"
-                ],
-                [
-                    "DeleteFileA",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "DeleteFileA",
-                    "NtOpenFile"
-                ]
-            ]
-        },
-        "[C0063] Move File": {
-            "MoveFile.exe_4116_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "MoveFileWithProgressTransactedW",
-                    "NtWriteFile"
-                ],
-                [
-                    "MoveFileWithProgressTransactedW",
-                    "NtWriteFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "MoveFileWithProgressTransactedW",
-                    "NtWriteFile",
-                    "NtOpenFile"
-                ]
-            ],
-            "MoveFileEx.exe_940_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "MoveFileWithProgressTransactedW"
-                ],
-                [
-                    "MoveFileWithProgressTransactedW",
-                    "NtWriteFile"
-                ],
-                [
-                    "MoveFileWithProgressTransactedW",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "MoveFileWithProgressTransactedW",
-                    "NtOpenFile"
-                ]
-            ]
-        },
-        "[C0052] Write File": {
-            "WriteFileEx.exe_2296_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtCreateFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtWriteFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtWriteFile",
-                    "NtOpenFile"
-                ]
-            ],
-            "WriteFile.exe_8004_Files and I_O (Local file system)_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtCreateFile",
-                    "NtWriteFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtWriteFile",
-                    "NtQueryAttributesFile",
-                    "NtOpenFile"
-                ],
-                [
-                    "NtCreateFile",
-                    "NtWriteFile",
-                    "NtOpenFile"
-                ]
-            ]
-        }
-    },
-    "[OC0006] Communication": {
-        "[C0005] WinINet Communcation": {
-            "[C0005.003] InternetOpenURL": {
-                "InternetOpenUrl.exe_7000_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "WSAStartup"
-                    ],
-                    [
-                        "WSAStartup",
-                        "socket",
-                        "closesocket"
-                    ],
-                    [
-                        "WSAStartup",
-                        "socket",
-                        "setsockopt"
-                    ],
-                    [
-                        "WSAStartup",
-                        "closesocket",
-                        "socket",
-                        "setsockopt"
-                    ],
-                    [
-                        "WSAStartup",
-                        "NSPStartup"
-                    ],
-                    [
-                        "WSAStartup",
-                        "WSASocketW"
-                    ]
-                ],
-                "InternetOpenUrl.exe_7000_Network Management_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "WinHttpSetOption"
-                    ],
-                    [
-                        "WinHttpSetOption",
-                        "WinHttpOpen",
-                        "WinHttpSetOption"
-                    ]
-                ],
-                "InternetOpenUrl.exe_7000_Windows Internet (WinINet)_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "InternetOpenA"
-                    ],
-                    [
-                        "InternetOpenA",
-                        "InternetOpenUrlA"
-                    ],
-                    [
-                        "InternetOpenA",
-                        "InternetCloseHandle"
-                    ]
-                ]
-            },
-            "[C0005.001] InternetConnect": {
-                "InternetConnect.exe_644_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "WSAStartup"
-                    ],
-                    [
-                        "WSAStartup",
-                        "socket",
-                        "closesocket"
-                    ],
-                    [
-                        "WSAStartup",
-                        "socket",
-                        "setsockopt"
-                    ],
-                    [
-                        "WSAStartup",
-                        "closesocket",
-                        "socket",
-                        "setsockopt"
-                    ],
-                    [
-                        "WSAStartup",
-                        "NSPStartup"
-                    ],
-                    [
-                        "WSAStartup",
-                        "WSASocketW"
-                    ]
-                ],
-                "InternetConnect.exe_644_Network Management_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "WinHttpOpen",
-                        "WinHttpSetOption"
-                    ]
-                ],
-                "InternetConnect.exe_644_Windows Internet (WinINet)_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "InternetOpenA"
-                    ],
-                    [
-                        "InternetOpenA",
-                        "InternetConnectA"
-                    ],
-                    [
-                        "InternetOpenA",
-                        "HttpOpenRequestA"
-                    ],
-                    [
-                        "InternetOpenA",
-                        "HttpSendRequestA"
-                    ],
-                    [
-                        "InternetOpenA",
-                        "InternetCloseHandle"
-                    ]
+                "[C0051.001X-P5H]": [
+                    "NtReadFile"
                 ]
             }
         },
+        "[C0016X] Create or Open file": {
+            "[C0016X.002X] CreateFile2": {
+                "[C0016X.002X-P1]": [
+                    "NtCreateFile",
+                    "NtWriteFile"
+                ],
+                "[C0016X.002X-P2]": [
+                    "NtCreateFile",
+                    "NtWriteFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0016X.002X-P3]": [
+                    "NtCreateFile",
+                    "NtWriteFile",
+                    "NtOpenFile"
+                ]
+            },
+            "[C0016X.003X] OpenFile": {
+                "[C0016X.003X-P1]": [
+                    "NtQueryAttributesFile",
+                    "NtCreateFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0016X.003X-P2]": [
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0016X.003X-P3]": [
+                    "NtQueryAttributesFile",
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtWriteFile"
+                ],
+                "[C0016X.003X-P4]": [
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtWriteFile"
+                ]
+            },
+            "[C0016X.001X] CreateFile": {
+                "[C0016X.001X-P1]": [
+                    "NtCreateFile"
+                ],
+                "[C0016X.001X-P2]": [
+                    "NtCreateFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0016X.001X-P3]": [
+                    "NtCreateFile",
+                    "NtOpenFile"
+                ]
+            }
+        },
+        "[C0045] Copy File": {
+            "[C0045.003X] CopyFile2": {
+                "[C0045.003X-P1]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.003X-P2]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.003X-P3]": [
+                    "NtCreateFile"
+                ],
+                "[C0045.003X-P4]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtQueryInformationFile",
+                    "NtCreateFile"
+                ],
+                "[C0045.003X-P5]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtQueryInformationFile",
+                    "NtCreateFile"
+                ],
+                "[C0045.003X-P6]": [
+                    "NtCreateFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtQueryInformationFile",
+                    "NtCreateFile"
+                ],
+                "[C0045.003X-P7]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.003X-P8]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.003X-P9]": [
+                    "NtCreateFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.003X-P10]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.003X-P11]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.003X-P12]": [
+                    "NtCreateFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.003X-P13]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile",
+                    "NtCreateFile"
+                ],
+                "[C0045.003X-P14]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile",
+                    "NtCreateFile"
+                ],
+                "[C0045.003X-P15]": [
+                    "NtCreateFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile",
+                    "NtCreateFile"
+                ],
+                "[C0045.003X-P16]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.003X-P17]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.003X-P18]": [
+                    "NtCreateFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.003X-P19]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.003X-P20]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.003X-P21]": [
+                    "NtCreateFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.003X-P22]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtSetInformationFile",
+                    "NtReadFile",
+                    "NtWriteFile"
+                ],
+                "[C0045.003X-P23]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtSetInformationFile",
+                    "NtReadFile",
+                    "NtWriteFile"
+                ],
+                "[C0045.003X-P24]": [
+                    "NtCreateFile",
+                    "NtSetInformationFile",
+                    "NtReadFile",
+                    "NtWriteFile"
+                ],
+                "[C0045.003X-P25]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtWriteFile"
+                ],
+                "[C0045.003X-P26]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtWriteFile"
+                ],
+                "[C0045.003X-P27]": [
+                    "NtCreateFile",
+                    "NtWriteFile"
+                ]
+            },
+            "[C0045.002X] CopyFileEx": {
+                "[C0045.002X-P1]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.002X-P2]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.002X-P3]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.002X-P4]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.002X-P5]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.002X-P6]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.002X-P7]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.002X-P8]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile"
+                ],
+                "[C0045.002X-P9]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.002X-P10]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtSetInformationFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.002X-P11]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtSetInformationFile"
+                ],
+                "[C0045.002X-P12]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtSetInformationFile"
+                ],
+                "[C0045.002X-P13]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtSetInformationFile",
+                    "NtWriteFile"
+                ],
+                "[C0045.002X-P14]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtSetInformationFile",
+                    "NtWriteFile"
+                ],
+                "[C0045.002X-P15]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtWriteFile"
+                ],
+                "[C0045.002X-P16]": [
+                    "NtCreateFile",
+                    "NtQueryInformationFile",
+                    "NtOpenFile",
+                    "NtWriteFile"
+                ]
+            },
+            "[C0045.001X] CopyFile": {
+                "[C0045.001X-P1]": [
+                    "CopyFileA",
+                    "NtWriteFile"
+                ],
+                "[C0045.001X-P2]": [
+                    "CopyFileA",
+                    "NtWriteFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0045.001X-P3]": [
+                    "CopyFileA",
+                    "NtWriteFile",
+                    "NtOpenFile"
+                ]
+            }
+        },
+        "[C0047] Delete File": {
+            "[C0047.001X] DeleteFile": {
+                "[C0047.001X-P1]": [
+                    "DeleteFileA"
+                ],
+                "[C0047.001X-P2]": [
+                    "DeleteFileA",
+                    "NtWriteFile"
+                ],
+                "[C0047.001X-P3]": [
+                    "DeleteFileA",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0047.001X-P4]": [
+                    "DeleteFileA",
+                    "NtOpenFile"
+                ]
+            }
+        },
+        "[C0063] Move File": {
+            "[C0063.002X] MoveFileEx": {
+                "[C0063.002X-P1]": [
+                    "MoveFileWithProgressTransactedW"
+                ],
+                "[C0063.002X-P2]": [
+                    "MoveFileWithProgressTransactedW",
+                    "NtWriteFile"
+                ],
+                "[C0063.002X-P3]": [
+                    "MoveFileWithProgressTransactedW",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0063.002X-P4]": [
+                    "MoveFileWithProgressTransactedW",
+                    "NtOpenFile"
+                ]
+            },
+            "[C0063.001X] MoveFile": {
+                "[C0063.001X-P1]": [
+                    "MoveFileWithProgressTransactedW",
+                    "NtWriteFile"
+                ],
+                "[C0063.001X-P2]": [
+                    "MoveFileWithProgressTransactedW",
+                    "NtWriteFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0063.001X-P3]": [
+                    "MoveFileWithProgressTransactedW",
+                    "NtWriteFile",
+                    "NtOpenFile"
+                ]
+            }
+        },
+        "[C0052] Write File": {
+            "[C0052.001X] WriteFile": {
+                "[C0052.001X-P1]": [
+                    "NtCreateFile",
+                    "NtWriteFile"
+                ],
+                "[C0052.001X-P2]": [
+                    "NtCreateFile",
+                    "NtWriteFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0052.001X-P3]": [
+                    "NtCreateFile",
+                    "NtWriteFile",
+                    "NtOpenFile"
+                ],
+                "[C0052.001X-P4H]": [
+                    "NtWriteFile"
+                ]
+            },
+            "[C0052.002X] WriteFileEx": {
+                "[C0052.002X-P1]": [
+                    "NtCreateFile",
+                    "NtWriteFile"
+                ],
+                "[C0052.002X-P2]": [
+                    "NtCreateFile",
+                    "NtWriteFile",
+                    "NtQueryAttributesFile",
+                    "NtOpenFile"
+                ],
+                "[C0052.002X-P3]": [
+                    "NtCreateFile",
+                    "NtWriteFile",
+                    "NtOpenFile"
+                ],
+                "[C0052.002X-P4H]": [
+                    "NtWriteFile"
+                ]
+            }
+        }
+    },
+    "[OC0006] Communication": {
         "[C0001] Socket Communication": {
             "[C0001.007] Send Data": {
-                "socket_send.exe_3496_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "WSAStartup"
-                    ],
-                    [
-                        "WSAStartup",
-                        "socket",
-                        "connect"
-                    ]
+                "[C0001.007-P1]": [
+                    "WSAStartup",
+                    "socket",
+                    "connect"
                 ]
             },
             "[C0001.006] Receive Data": {
-                "socket_recv.exe_3968_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "WSAStartup"
-                    ],
-                    [
-                        "WSAStartup",
-                        "socket",
-                        "connect"
-                    ]
+                "[C0001.006-P1]": [
+                    "WSAStartup",
+                    "socket",
+                    "connect"
+                ]
+            }
+        },
+        "[C0005] WinINet Communication": {
+            "[C0005.003] InternetOpenURL": {
+                "[C0005.003-P1]": [
+                    "InternetOpenA",
+                    "InternetOpenUrlA"
+                ],
+                "[C0005.003-P2]": [
+                    "InternetOpenA",
+                    "InternetCloseHandle"
+                ]
+            },
+            "[C0005.001] InternetConnect": {
+                "[C0005.001-P1]": [
+                    "InternetOpenA",
+                    "InternetConnectA"
+                ],
+                "[C0005.001-P2]": [
+                    "InternetOpenA",
+                    "HttpOpenRequestA"
+                ],
+                "[C0005.001-P3]": [
+                    "InternetOpenA",
+                    "HttpSendRequestA"
+                ],
+                "[C0005.001-P4]": [
+                    "InternetOpenA",
+                    "InternetCloseHandle"
                 ]
             }
         },
         "[C0002] HTTP Communication": {
             "[C0002.008] WinHTTP": {
-                "winhttp_send_recv.exe_4196_Network Management_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "WinHttpOpen",
-                        "WinHttpConnect"
-                    ],
-                    [
-                        "WinHttpOpen",
-                        "WinHttpConnect",
-                        "WinHttpSendRequest"
-                    ]
+                "[C0002.008-P1]": [
+                    "socket",
+                    "closesocket"
                 ],
-                "winhttp_send_recv.exe_4196_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "socket",
-                        "closesocket"
-                    ],
-                    [
-                        "socket",
-                        "closesocket",
-                        "NSPStartup"
-                    ],
-                    [
-                        "socket",
-                        "closesocket",
-                        "WSASocketW"
-                    ]
+                "[C0002.008-P2]": [
+                    "socket",
+                    "closesocket",
+                    "NSPStartup"
+                ],
+                "[C0002.008-P3]": [
+                    "socket",
+                    "closesocket",
+                    "WSASocketW"
                 ]
             }
         }
     },
     "[OC0003] Process": {
         "[C0038] Create Thread": {
-            "CreateThread.exe_5240_Processes_API_per_Category_Transition_Matrix.gv": [
-                [
+            "[C0038.001X] CreateThread": {
+                "[C0038.001X-P1]": [
                     "CreateThread"
                 ],
-                [
+                "[C0038.001X-P2]": [
                     "NtQueryInformationThread",
                     "NtTerminateThread"
-                ],
-                [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
-                ],
-                [
-                    "NtTerminateProcess"
                 ]
-            ]
+            }
         },
         "[C0065] Open Process": {
-            "OpenProcess.exe_5316_Processes_API_per_Category_Transition_Matrix.gv": [
-                [
+            "[C0065.001X] OpenProcess": {
+                "[C0065.001X-P1]": [
                     "NtOpenProcess"
-                ],
-                [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
-                ],
-                [
-                    "NtTerminateProcess"
                 ]
-            ]
+            }
         },
         "[C0070X] Process Enumeration": {
-            "CreateSnapshot_Iterate.exe_2424_Processes_API_per_Category_Transition_Matrix.gv": [
-                [
+            "[C0070X.001X] CreateSnapsot_Process32Next": {
+                "[C0070X.001X-P1]": [
                     "CreateToolhelp32Snapshot",
                     "Process32First"
-                ],
-                [
-                    "Process32Next"
-                ],
-                [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
-                ],
-                [
-                    "NtTerminateProcess"
                 ]
-            ]
+            }
         },
-        "[C0042X] Create or Open Mutex": {
-            "CreateMutexEx.exe_3968_Synchronization_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtWaitForSingleObject",
-                    "NtCreateMutant"
-                ]
-            ],
-            "CreateMutex.exe_6364_Synchronization_API_per_Category_Transition_Matrix.gv": [
-                [
+        "[C0042] Create Mutex": {
+            "[C0042.001X] CreateMutex": {
+                "[C0042.001X-P1]": [
                     "NtWaitForSingleObject",
                     "CreateMutexA"
+                ],
+                "[C0042.001X-P2H]": [
+                    "CreateMutexA"
+                ],
+                "[C0042.001X-P3H]": [
+                    "NtCreateMutant"
                 ]
-            ]
+            },
+            "[C0042.002X] CreateMutexEx": {
+                "[C0042.002X-P1]": [
+                    "NtWaitForSingleObject",
+                    "NtCreateMutant"
+                ],
+                "[C0042.002X-P2H]": [
+                    "CreateMutexExA"
+                ],
+                "[C0042.002X-P3H]": [
+                    "NtCreateMutant"
+                ]
+            }
         },
         "[C0017] Create Process": {
-            "ShellExecute.exe_5292_Processes_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtQueryInformationThread"
-                ],
-                [
-                    "NtQueryInformationThread",
+            "[C0017.002X] ShellExecuteEx": {
+                "[C0017.002X-P1]": [
                     "NtOpenSection",
                     "NtMapViewOfSection"
                 ],
-                [
-                    "NtOpenSection",
-                    "NtMapViewOfSection"
-                ],
-                [
-                    "NtSetInformationProcess"
-                ],
-                [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
-                ],
-                [
-                    "NtTerminateProcess"
-                ],
-                [
-                    "NtUnmapViewOfSectionEx"
-                ]
-            ],
-            "CreateProcess.exe_4900_Processes_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtWow64WriteVirtualMemory64"
-                ],
-                [
-                    "NtResumeThread"
-                ],
-                [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
-                ],
-                [
-                    "NtTerminateProcess"
-                ]
-            ],
-            "WinExec.exe_3044_Processes_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtWow64WriteVirtualMemory64"
-                ],
-                [
-                    "NtResumeThread"
-                ],
-                [
-                    "NtQueryInformationThread",
-                    "NtOpenSection"
-                ],
-                [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
-                ],
-                [
-                    "NtTerminateProcess"
-                ]
-            ],
-            "ShellExecuteEx.exe_7164_Processes_API_per_Category_Transition_Matrix.gv": [
-                [
-                    "NtOpenSection"
-                ],
-                [
-                    "NtOpenSection",
-                    "NtMapViewOfSection"
-                ],
-                [
+                "[C0017.002X-P2]": [
                     "NtOpenSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess"
                 ],
-                [
+                "[C0017.002X-P3]": [
                     "NtOpenSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
-                [
-                    "NtCreateSection"
-                ],
-                [
-                    "NtCreateSection",
-                    "NtMapViewOfSection"
-                ],
-                [
+                "[C0017.002X-P4]": [
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtOpenSection"
                 ],
-                [
+                "[C0017.002X-P5]": [
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess"
                 ],
-                [
+                "[C0017.002X-P6]": [
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
-                [
-                    "NtMapViewOfSection"
-                ],
-                [
+                "[C0017.002X-P7]": [
                     "NtMapViewOfSection",
                     "NtOpenSection"
                 ],
-                [
+                "[C0017.002X-P8]": [
                     "NtMapViewOfSection",
                     "NtSetInformationProcess"
                 ],
-                [
+                "[C0017.002X-P9]": [
                     "NtMapViewOfSection",
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
-                [
-                    "NtSetInformationProcess"
-                ],
-                [
+                "[C0017.002X-P10]": [
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
-                [
-                    "NtUnmapViewOfSectionEx"
-                ],
-                [
+                "[C0017.002X-P11]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread"
                 ],
-                [
+                "[C0017.002X-P12]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtCreateSection"
                 ],
-                [
+                "[C0017.002X-P13]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection"
                 ],
-                [
+                "[C0017.002X-P14]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtOpenSection"
                 ],
-                [
+                "[C0017.002X-P15]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess"
                 ],
-                [
+                "[C0017.002X-P16]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtCreateSection",
@@ -884,393 +678,249 @@
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
-                [
+                "[C0017.002X-P17]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "CreateThread"
                 ],
-                [
+                "[C0017.002X-P18]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "CreateThread",
                     "NtResumeThread"
                 ],
-                [
+                "[C0017.002X-P19]": [
                     "NtUnmapViewOfSectionEx",
                     "NtQueryInformationThread",
                     "NtReadVirtualMemory"
                 ],
-                [
-                    "NtQueryInformationThread"
-                ],
-                [
+                "[C0017.002X-P20]": [
                     "NtQueryInformationThread",
                     "NtCreateSection"
                 ],
-                [
+                "[C0017.002X-P21]": [
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection"
                 ],
-                [
+                "[C0017.002X-P22]": [
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtOpenSection"
                 ],
-                [
+                "[C0017.002X-P23]": [
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess"
                 ],
-                [
+                "[C0017.002X-P24]": [
                     "NtQueryInformationThread",
                     "NtCreateSection",
                     "NtMapViewOfSection",
                     "NtSetInformationProcess",
                     "NtUnmapViewOfSection"
                 ],
-                [
+                "[C0017.002X-P25]": [
                     "NtQueryInformationThread",
                     "CreateThread"
                 ],
-                [
+                "[C0017.002X-P26]": [
                     "NtQueryInformationThread",
                     "CreateThread",
                     "NtResumeThread"
                 ],
-                [
+                "[C0017.002X-P27]": [
                     "NtQueryInformationThread",
                     "NtReadVirtualMemory"
                 ],
-                [
+                "[C0017.002X-P28]": [
                     "CreateThread"
                 ],
-                [
+                "[C0017.002X-P29]": [
                     "CreateThread",
                     "NtResumeThread"
                 ],
-                [
+                "[C0017.002X-P30]": [
                     "NtResumeThread"
                 ],
-                [
+                "[C0017.002X-P31]": [
                     "NtOpenProcess"
                 ],
-                [
-                    "NtUnmapViewOfSection"
-                ],
-                [
+                "[C0017.002X-P32]": [
                     "NtUnmapViewOfSection",
                     "NtSetInformationProcess"
-                ],
-                [
-                    "NtWow64WriteVirtualMemory64"
-                ],
-                [
-                    "NtTerminateThread"
-                ],
-                [
-                    "NtTerminateProcess"
                 ]
-            ]
+            },
+            "[C0017.001X] ShellExecute": {
+                "[C0017.001X-P1]": [
+                    "NtQueryInformationThread",
+                    "NtOpenSection",
+                    "NtMapViewOfSection"
+                ],
+                "[C0017.001X-P2]": [
+                    "NtOpenSection",
+                    "NtMapViewOfSection"
+                ]
+            },
+            "[C0017.003X] CreateProcess": {
+                "[C0017.003X-P1]": [
+                    "NtResumeThread"
+                ]
+            },
+            "[C0017.004X] WinExec": {
+                "[C0017.004X-P1]": [
+                    "NtResumeThread"
+                ]
+            }
         },
         "[C0043] Check Mutex": {
-            "OpenMutex.exe_7232_Synchronization_API_per_Category_Transition_Matrix.gv": [
-                [
+            "[C0043.001X] OpenMutex": {
+                "[C0043.001X-P1]": [
                     "NtWaitForSingleObject",
                     "NtOpenMutant"
+                ],
+                "[C0043.001X-P2H]": [
+                    "NtOpenMutant"
                 ]
-            ]
+            }
         }
     },
     "[OC0008] Operating System": {
         "[C0036] Registry": {
             "[C0036.006] Query Registry Value": {
-                "RegQueryValueEx.exe_6928_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "RegQueryValueExA"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegQueryValueExA",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegQueryValueExA",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.006-P1]": [
+                    "RegOpenKeyExA",
+                    "RegEnumValueA"
                 ],
-                "RegGetValue.exe_2524_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "NtQueryValueKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtQueryValueKey",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtQueryValueKey",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.006-P2]": [
+                    "RegOpenKeyExA",
+                    "RegEnumValueA",
+                    "RegCloseKey"
                 ],
-                "RegEnumValue.exe_5968_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "RegEnumValueA"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegEnumValueA",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegEnumValueA",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegEnumValueA",
-                        "RegCloseKey",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.006-P3]": [
+                    "RegOpenKeyExA",
+                    "RegEnumValueA",
+                    "NtOpenKey",
+                    "NtQueryValueKey"
+                ],
+                "[C0036.006-P4]": [
+                    "RegOpenKeyExA",
+                    "RegEnumValueA",
+                    "RegCloseKey",
+                    "NtOpenKey",
+                    "NtQueryValueKey"
+                ],
+                "[C0036.006-P5H]": [
+                    "RegOpenKeyExA",
+                    "RegQueryValueExA",
+                    "RegCloseKey"
                 ]
             },
             "[C0036.005] Query Registry Key": {
-                "RegQueryInfoKey.exe_640_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "RegQueryInfoKeyA"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegQueryInfoKeyA",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegQueryInfoKeyA",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.005-P1]": [
+                    "RegOpenKeyExA",
+                    "RegQueryInfoKeyA"
+                ],
+                "[C0036.005-P2]": [
+                    "RegOpenKeyExA",
+                    "RegQueryInfoKeyA",
+                    "RegCloseKey"
+                ],
+                "[C0036.005-P3]": [
+                    "RegOpenKeyExA",
+                    "RegQueryInfoKeyA",
+                    "NtOpenKey",
+                    "NtQueryValueKey"
                 ]
             },
             "[C0036.003] Open Registry Key": {
-                "RegOpenKeyEx.exe_7760_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.003-P1]": [
+                    "NtOpenKey",
+                    "NtQueryValueKey"
                 ],
-                "RegOpenKey.exe_5848_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "NtOpenKeyEx"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey",
-                        "NtOpenKeyEx"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey",
-                        "RegCloseKey"
-                    ]
+                "[C0036.003-P2]": [
+                    "NtOpenKey",
+                    "RegCloseKey"
                 ],
-                "RegOpenCurrentUser.exe_4788_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey",
-                        "RegCloseKey"
-                    ]
+                "[C0036.003-P3]": [
+                    "NtOpenKey",
+                    "NtQueryValueKey",
+                    "RegCloseKey"
                 ]
             },
             "[C0036.004] Create Registry Key": {
-                "RegCreateKeyEx.exe_2232_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegCreateKeyExA"
-                    ],
-                    [
-                        "RegCreateKeyExA",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegCreateKeyExA",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.004-P1]": [
+                    "NtOpenKey",
+                    "NtQueryValueKey"
                 ],
-                "RegCreateKey.exe_732_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "NtCreateKey"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey",
-                        "NtCreateKey"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey",
-                        "RegCloseKey"
-                    ]
+                "[C0036.004-P2]": [
+                    "NtOpenKey",
+                    "NtCreateKey"
+                ],
+                "[C0036.004-P3]": [
+                    "NtOpenKey",
+                    "NtQueryValueKey",
+                    "NtCreateKey"
+                ],
+                "[C0036.004-P4]": [
+                    "NtOpenKey",
+                    "RegCloseKey"
+                ],
+                "[C0036.004-P5]": [
+                    "NtOpenKey",
+                    "NtQueryValueKey",
+                    "RegCloseKey"
                 ]
             },
             "[C0036.001] Create or Set Registry Value": {
-                "RegSetValue.exe_7232_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "NtCreateKey",
-                        "NtSetValueKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtCreateKey",
-                        "NtSetValueKey",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtCreateKey",
-                        "NtSetValueKey",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.001-P1]": [
+                    "RegOpenKeyExA",
+                    "NtSetValueKey"
                 ],
-                "RegSetValueEx.exe_2788_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "RegSetValueExA"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegSetValueExA",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegSetValueExA",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.001-P2]": [
+                    "RegOpenKeyExA",
+                    "NtSetValueKey",
+                    "RegCloseKey"
                 ],
-                "RegSetKeyValue.exe_2864_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "NtSetValueKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtSetValueKey",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtSetValueKey",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.001-P3]": [
+                    "RegOpenKeyExA",
+                    "NtSetValueKey",
+                    "NtOpenKey",
+                    "NtQueryValueKey"
+                ],
+                "[C0036.001-P4H]": [
+                    "RegOpenKeyExA",
+                    "RegSetValueExA",
+                    "RegCloseKey"
                 ]
             },
             "[C0036.007] Delete Registry Value": {
-                "RegDeleteKeyValue.exe_2032_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "NtOpenKeyEx",
-                        "NtDeleteValueKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtOpenKeyEx",
-                        "NtDeleteValueKey",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "NtOpenKeyEx",
-                        "NtDeleteValueKey",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.007-P1]": [
+                    "RegOpenKeyExA",
+                    "RegDeleteValueA"
                 ],
-                "RegDeleteValue.exe_3416_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegOpenKeyExA",
-                        "RegDeleteValueA"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegDeleteValueA",
-                        "RegCloseKey"
-                    ],
-                    [
-                        "RegOpenKeyExA",
-                        "RegDeleteValueA",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.007-P2]": [
+                    "RegOpenKeyExA",
+                    "RegDeleteValueA",
+                    "RegCloseKey"
+                ],
+                "[C0036.007-P3]": [
+                    "RegOpenKeyExA",
+                    "RegDeleteValueA",
+                    "NtOpenKey",
+                    "NtQueryValueKey"
                 ]
             },
             "[C0036.002] Delete Registry Key": {
-                "RegDeleteKey.exe_2588_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "RegDeleteKeyA"
-                    ],
-                    [
-                        "RegDeleteKeyA",
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.002-P1]": [
+                    "RegDeleteKeyA"
                 ],
-                "RegDeleteKeyEx.exe_2564_Registry_API_per_Category_Transition_Matrix.gv": [
-                    [
-                        "NtOpenKey",
-                        "NtQueryValueKey"
-                    ]
+                "[C0036.002-P2]": [
+                    "RegDeleteKeyA",
+                    "NtOpenKey",
+                    "NtQueryValueKey"
                 ]
             }
         }
