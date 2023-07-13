@@ -1,5 +1,5 @@
-// Compiled with: cl /EHsc .\ReadFile.cpp
-// read file with ReadFile
+// Compiled with: cl /EHsc .\ReadFile_1.cpp
+// Read file with ReadFile and opening it with CreateFile
 
 #include <iostream>
 #include <windows.h>
