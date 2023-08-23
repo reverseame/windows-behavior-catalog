@@ -1,4 +1,4 @@
-// Compiled with: cl /EHsc .\VirtualPRotect.cpp
+// Compiled with: cl /EHsc .\VirtualProtect.cpp
 // Memory protection modification with VirtualProtect
 #include <Windows.h>
 #include <iostream>
