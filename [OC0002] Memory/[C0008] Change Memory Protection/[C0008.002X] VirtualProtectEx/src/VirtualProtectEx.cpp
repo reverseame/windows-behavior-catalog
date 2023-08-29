@@ -13,12 +13,11 @@ int main() {
         return 1;
     }
 
-    // Wait for Notepad to start
-    WaitForInputIdle(processInfo.hProcess, INFINITE);
+    Sleep(1000);
 
     // Address of a memory region in Notepad's address space
-    LPVOID targetAddress = reinterpret_cast<LPVOID>(0x00400000); // Base address of Notepad (adjust as needed)
-    SIZE_T size = 0x1000; // Modify protection for the first memory page
+    LPVOID targetAddress = reinterpret_cast<LPVOID>(0x00); // Base address of Notepad (adjust as needed)
+    SIZE_T size = 0x1337; // Modify protection for the first memory page
 
     DWORD newProtection = PAGE_EXECUTE_READWRITE;
     DWORD oldProtection;
