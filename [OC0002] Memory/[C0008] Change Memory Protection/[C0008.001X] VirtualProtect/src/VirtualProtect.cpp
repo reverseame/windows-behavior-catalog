@@ -4,7 +4,7 @@
 #include <iostream>
 
 int main() {
-    LPVOID lpMemory = VirtualAlloc(NULL, 4096, MEM_COMMIT, PAGE_READWRITE);  // Allocate memory with read-write protection
+    LPVOID lpMemory = VirtualAlloc(NULL, 4919, MEM_COMMIT, PAGE_READWRITE);  // Allocate memory with read-write protection
 
     if (lpMemory == NULL) {
         std::cerr << "VirtualAlloc failed." << std::endl;
@@ -13,7 +13,7 @@ int main() {
 
     // Change the memory protection to PAGE_EXECUTE_READ
     DWORD oldProtect;
-    if (!VirtualProtect(lpMemory, 4096, PAGE_EXECUTE_READ, &oldProtect)) {
+    if (!VirtualProtect(lpMemory, 4919, PAGE_EXECUTE_READ, &oldProtect)) {
         std::cerr << "VirtualProtect failed." << std::endl;
         VirtualFree(lpMemory, 0, MEM_RELEASE);  // Free the allocated memory
         return 1;
@@ -27,7 +27,7 @@ int main() {
     //     std::cerr << "VirtualProtect failed." << std::endl;
     // }
 
-    // VirtualFree(lpMemory, 0, MEM_RELEASE);  // Free the allocated memory
+    VirtualFree(lpMemory, 0, MEM_RELEASE);  // Free the allocated memory
 
     return 0;
 }
