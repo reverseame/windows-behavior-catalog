@@ -1,37 +1,35 @@
 // Compiled with: cl /EHsc .\GlobalAlloc.cpp
 // Memory Allocation with GlobalAlloc
-#include <Windows.h>
-#include <iostream>
-
-#include <Windows.h>
+#include <windows.h>
 #include <iostream>
 
 int main() {
-    UINT uFlags = GMEM_FIXED;  // Allocate memory with fixed allocation
-    DWORD dwSize = 4096;       // Size of memory to allocate (in bytes)
-    HGLOBAL hGlobal = GlobalAlloc(uFlags, dwSize);
-
+    // Allocate 1024 bytes of memory globally
+    HGLOBAL hGlobal = GlobalAlloc(GMEM_MOVEABLE, 4919);
     if (hGlobal == NULL) {
-        std::cerr << "GlobalAlloc failed." << std::endl;
+        std::cerr << "Error in GlobalAlloc: " << GetLastError() << std::endl; // Error handling
         return 1;
     }
 
-    // LPVOID lpMemory = GlobalLock(hGlobal);  // Lock the allocated memory
+    // Lock the memory and get a pointer to it
+    LPVOID pData = GlobalLock(hGlobal);
+    if (pData == NULL) {
+        std::cerr << "Error in GlobalLock: " << GetLastError() << std::endl; // Error handling
+        GlobalFree(hGlobal);
+        return 1;
+    }
 
-    // if (lpMemory == NULL) {
-    //     std::cerr << "GlobalLock failed." << std::endl;
-    //     GlobalFree(hGlobal);  // Free the allocated memory
-    //     return 1;
-    // }
+    // Write data to the allocated memory
+    strcpy_s((char*)pData, 1024, "Hello, GlobalAlloc!");
 
-    // // Use the allocated memory here...
+    // Unlock the memory
+    GlobalUnlock(hGlobal);
 
-    // GlobalUnlock(hGlobal);   // Unlock the memory
+    // Use the allocated memory...
 
-    // if (!GlobalFree(hGlobal)) {  // Free the allocated memory
-    //     std::cerr << "GlobalFree failed." << std::endl;
-    //     return 1;
-    // }
+    // Free the allocated memory
+    GlobalFree(hGlobal);
 
-    // return 0;
+    return 0;
 }
+

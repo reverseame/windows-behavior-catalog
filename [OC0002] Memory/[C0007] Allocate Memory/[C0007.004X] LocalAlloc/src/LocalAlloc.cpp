@@ -6,7 +6,7 @@
 
 int main() {
     UINT uFlags = LMEM_FIXED;  // Allocate memory with fixed allocation
-    DWORD dwSize = 4096;       // Size of memory to allocate (in bytes)
+    DWORD dwSize = 4919;       // Size of memory to allocate (in bytes)
     HLOCAL hLocal = LocalAlloc(uFlags, dwSize);
 
     if (hLocal == NULL) {
@@ -14,22 +14,22 @@ int main() {
         return 1;
     }
 
-    // LPVOID lpMemory = LocalLock(hLocal);  // Lock the allocated memory
+    LPVOID lpMemory = LocalLock(hLocal);  // Lock the allocated memory
 
-    // if (lpMemory == NULL) {
-    //     std::cerr << "LocalLock failed." << std::endl;
-    //     LocalFree(hLocal);  // Free the allocated memory
-    //     return 1;
-    // }
+    if (lpMemory == NULL) {
+        std::cerr << "LocalLock failed." << std::endl;
+        LocalFree(hLocal);  // Free the allocated memory
+        return 1;
+    }
 
-    // // Use the allocated memory here...
+    // Use the allocated memory here...
 
-    // LocalUnlock(hLocal);   // Unlock the memory
+    LocalUnlock(hLocal);   // Unlock the memory
 
-    // if (!LocalFree(hLocal)) {  // Free the allocated memory
-    //     std::cerr << "LocalFree failed." << std::endl;
-    //     return 1;
-    // }
+    if (LocalFree(hLocal) != NULL) {  // Free the allocated memory
+        std::cerr << "LocalFree failed: " << GetLastError() << std::endl;
+        return 1;
+    }
 
     return 0;
 }

@@ -4,7 +4,7 @@
 #include <iostream>
 
 int main() {
-    size_t size = 4096;  // Size of memory to allocate (in bytes)
+    size_t size = 4919;  // Size of memory to allocate (in bytes)
     LPVOID lpMemory = malloc(size);  // Allocate memory using malloc
 
     if (lpMemory == NULL) {
@@ -14,7 +14,7 @@ int main() {
 
     // Use the allocated memory here...
 
-    //free(lpMemory);  // Free the allocated memory
+    free(lpMemory);  // Free the allocated memory
 
     return 0;
 }

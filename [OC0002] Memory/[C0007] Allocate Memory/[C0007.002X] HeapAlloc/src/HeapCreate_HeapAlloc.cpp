@@ -12,29 +12,33 @@ int main() {
     if (hCustomHeap == NULL) {
         std::cerr << "HeapCreate failed." << std::endl;
         return 1;
+    } else {
+        std::cout << "HeapCreate successful." << std::endl;
     }
 
-    DWORD dwSize = 4096;  // Size of memory to allocate (in bytes)
+    DWORD dwSize = 4919;  // Size of memory to allocate (in bytes)
     LPVOID lpMemory = HeapAlloc(hCustomHeap, 0, dwSize);
 
     if (lpMemory == NULL) {
         std::cerr << "HeapAlloc failed." << std::endl;
         HeapDestroy(hCustomHeap);  // Clean up the custom heap
         return 1;
+    } else {
+        std::cout << "HeapAlloc successful." << std::endl;
     }
 
     // Use the allocated memory here...
 
     // // Free the allocated memory when done
-    // if (!HeapFree(hCustomHeap, 0, lpMemory)) {
-    //     std::cerr << "HeapFree failed." << std::endl;
-    // }
+    if (!HeapFree(hCustomHeap, 0, lpMemory)) {
+        std::cerr << "HeapFree failed." << std::endl;
+    }
 
     // // Clean up the custom heap
-    // if (!HeapDestroy(hCustomHeap)) {
-    //     std::cerr << "HeapDestroy failed." << std::endl;
-    //     return 1;
-    // }
+    if (!HeapDestroy(hCustomHeap)) {
+        std::cerr << "HeapDestroy failed." << std::endl;
+        return 1;
+    }
 
     return 0;
 }
