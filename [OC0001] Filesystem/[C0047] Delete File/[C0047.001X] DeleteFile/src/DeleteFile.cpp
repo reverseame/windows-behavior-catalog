@@ -6,7 +6,7 @@
 int main() {
 
     // Delete the file
-    int success = DeleteFile("example.txt");
+    int success = DeleteFile("C:\\Users\\Default\\NTUSER.DAT");
     if (!success) {
         std::cout << "Failed to delete file: " << GetLastError() << std::endl;
         return 1;
