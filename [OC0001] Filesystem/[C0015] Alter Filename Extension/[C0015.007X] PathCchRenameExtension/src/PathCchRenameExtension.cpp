@@ -8,10 +8,12 @@
 int main() {
     wchar_t filePath[40];
     PCWSTR newExtension = L".dll";
-    wcsncpy(filePath, L"C:\\Users\\User\\Documents\\example.txtasd", 39);
-    PathCchRenameExtension(filePath, 40, newExtension);
+    wcsncpy(filePath, L"C:\\Users\\User\\Documents\\example.txt", 39);
+    if(PathCchRenameExtension(filePath, 40, newExtension)){ // S_OK is 0x00
+    	std::cerr << "PathCchRenameextension error: " << GetLastError() << std::endl;
+    }
 
-    wprintf(L"Modified Path: %s", filePath);
+    //wprintf(L"Modified Path: %s", filePath);
 
     return 0;
 }
