@@ -3,6 +3,12 @@ In this repository you will find a corpus of common Windows behaviors and their 
 
 The vast majority of the behaviors here defined are based on the [Malware Behavior Catalog (MBC)](https://github.com/MBCProject/mbc-markdown)'s micro-behaviors.
 
+## Generation
+
+### 1st iteration
+
+### 2nd iteration
+
 # Contents
 The contents present in this repository have been developed in part by the authors of the repo and other have been copied or adapted from other sources. Whenever the latter, the corresponding authors are credited.
 
