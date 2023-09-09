@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <pathcch.h>
 #include <iostream>
+#include <stdio.h>
 
 int main() {
     const size_t cchPathOut = 300;
@@ -13,10 +14,10 @@ int main() {
     // Check if the combination was successful
     if (SUCCEEDED(hr)) {
         // Print the combined path
-        std::wcout << "Combined path: " << pszPathOut << std::endl;
+        wprintf(L"Combined path: %s", pszPathOut);
     } else {
         // Print an error message
-        std::cout << "Error combining paths: " << hr << std::endl;
+        std::cerr << "Error combining paths: " << hr << std::endl;
     }
 
     return 0;
