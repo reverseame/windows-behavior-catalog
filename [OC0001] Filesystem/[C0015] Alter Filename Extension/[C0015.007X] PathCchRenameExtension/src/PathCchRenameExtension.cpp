@@ -11,7 +11,7 @@ int main() {
     wcsncpy(filePath, L"C:\\Users\\User\\Documents\\example.txtasd", 39);
     PathCchRenameExtension(filePath, 40, newExtension);
 
-    std::wcout << L"Modified Path: " << filePath << std::endl;
+    wprintf(L"Modified Path: %s", filePath);
 
     return 0;
 }
