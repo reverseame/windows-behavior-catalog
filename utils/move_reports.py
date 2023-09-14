@@ -2,7 +2,6 @@
 # Script that moves reports from a given folder to their corresponding folder in the behavior catalog based on their process name.
 
 import pathlib
-import sys
 import json
 import argparse
 
