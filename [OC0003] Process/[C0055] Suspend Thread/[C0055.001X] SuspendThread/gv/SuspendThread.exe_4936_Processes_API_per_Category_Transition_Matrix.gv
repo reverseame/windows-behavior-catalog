@@ -1,0 +1,16 @@
+digraph "./REPORTS/3966/API_PER_CATEGORY/SuspendThread.exe_4936_Processes_API_per_Category_Transition_Matrix" {
+	GetCommandLineA [label=GetCommandLineA fillcolor=darkorchid peripheries=2 style=filled]
+	GetCommandLineW [label=GetCommandLineW fillcolor=darkorchid style=filled]
+	GetCommandLineA -> GetCommandLineW [label=""]
+	others [label=others fillcolor=red style=filled]
+	GetCommandLineW -> others [label=""]
+	others -> others [label=""]
+	CreateThread [label=CreateThread fillcolor=darkorchid style=filled]
+	others -> CreateThread [label=""]
+	NtTerminateProcess [label=NtTerminateProcess fillcolor=darkorchid style=filled]
+	others -> NtTerminateProcess [label=""]
+	NtSuspendThread [label=NtSuspendThread fillcolor=darkorchid style=filled]
+	CreateThread -> NtSuspendThread [label=""]
+	NtSuspendThread -> others [label=""]
+	NtTerminateProcess -> others [label=""]
+}

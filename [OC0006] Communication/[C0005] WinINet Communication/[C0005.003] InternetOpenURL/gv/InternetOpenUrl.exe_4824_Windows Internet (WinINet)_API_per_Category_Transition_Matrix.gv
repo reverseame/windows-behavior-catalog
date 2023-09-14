@@ -1,0 +1,12 @@
+digraph "./REPORTS/3900/API_PER_CATEGORY/InternetOpenUrl.exe_4824_Windows Internet (WinINet)_API_per_Category_Transition_Matrix" {
+	InternetOpenA [label=InternetOpenA fillcolor=chartreuse peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	InternetOpenA -> others [label=""]
+	others -> others [label=""]
+	InternetOpenUrlA [label=InternetOpenUrlA fillcolor=chartreuse style=filled]
+	others -> InternetOpenUrlA [label=""]
+	InternetCloseHandle [label=InternetCloseHandle fillcolor=chartreuse style=filled]
+	others -> InternetCloseHandle [label=""]
+	InternetOpenUrlA -> others [label=""]
+	InternetCloseHandle -> others [label=""]
+}

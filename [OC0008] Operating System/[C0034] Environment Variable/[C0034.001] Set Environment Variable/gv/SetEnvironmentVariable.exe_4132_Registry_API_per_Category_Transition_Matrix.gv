@@ -1,0 +1,9 @@
+digraph "./REPORTS/3941/API_PER_CATEGORY/SetEnvironmentVariable.exe_4132_Registry_API_per_Category_Transition_Matrix" {
+	NtOpenKey [label=NtOpenKey fillcolor=cadetblue peripheries=2 style=filled]
+	NtQueryValueKey [label=NtQueryValueKey fillcolor=cadetblue style=filled]
+	NtOpenKey -> NtQueryValueKey [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtQueryValueKey -> others [label=""]
+	others -> NtOpenKey [label=""]
+	others -> others [label=""]
+}

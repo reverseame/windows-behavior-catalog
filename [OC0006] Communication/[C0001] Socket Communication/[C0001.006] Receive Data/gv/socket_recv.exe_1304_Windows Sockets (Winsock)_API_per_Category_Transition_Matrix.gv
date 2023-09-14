@@ -1,0 +1,5 @@
+digraph "./REPORTS/3903/API_PER_CATEGORY/socket_recv.exe_1304_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix" {
+	WSAStartup [label=WSAStartup fillcolor=crimson peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	WSAStartup -> others [label=""]
+}

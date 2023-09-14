@@ -1,0 +1,14 @@
+digraph "./REPORTS/3975/API_PER_CATEGORY/OpenProcess.exe_3396_Processes_API_per_Category_Transition_Matrix" {
+	GetCommandLineA [label=GetCommandLineA fillcolor=darkorchid peripheries=2 style=filled]
+	GetCommandLineW [label=GetCommandLineW fillcolor=darkorchid style=filled]
+	GetCommandLineA -> GetCommandLineW [label=""]
+	others [label=others fillcolor=red style=filled]
+	GetCommandLineW -> others [label=""]
+	others -> others [label=""]
+	NtOpenProcess [label=NtOpenProcess fillcolor=darkorchid style=filled]
+	others -> NtOpenProcess [label=""]
+	NtTerminateProcess [label=NtTerminateProcess fillcolor=darkorchid style=filled]
+	others -> NtTerminateProcess [label=""]
+	NtOpenProcess -> others [label=""]
+	NtTerminateProcess -> others [label=""]
+}

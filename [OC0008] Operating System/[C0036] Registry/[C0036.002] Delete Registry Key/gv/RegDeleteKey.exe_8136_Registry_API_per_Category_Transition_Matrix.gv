@@ -1,0 +1,11 @@
+digraph "./REPORTS/3945/API_PER_CATEGORY/RegDeleteKey.exe_8136_Registry_API_per_Category_Transition_Matrix" {
+	RegDeleteKeyA [label=RegDeleteKeyA fillcolor=cadetblue peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	RegDeleteKeyA -> others [label=""]
+	others -> others [label=""]
+	NtOpenKey [label=NtOpenKey fillcolor=cadetblue style=filled]
+	others -> NtOpenKey [label=""]
+	NtQueryValueKey [label=NtQueryValueKey fillcolor=cadetblue style=filled]
+	NtOpenKey -> NtQueryValueKey [label=""]
+	NtQueryValueKey -> others [label=""]
+}

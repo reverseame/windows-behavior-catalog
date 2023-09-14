@@ -1,0 +1,9 @@
+digraph "./REPORTS/3936/API_PER_CATEGORY/GetFileAttributes.exe_5448_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
+	NtQueryAttributesFile [label=NtQueryAttributesFile fillcolor=bisque peripheries=2 style=filled]
+	NtWriteFile [label=NtWriteFile fillcolor=bisque style=filled]
+	NtQueryAttributesFile -> NtWriteFile [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtWriteFile -> others [label=""]
+	others -> NtWriteFile [label=""]
+	others -> others [label=""]
+}

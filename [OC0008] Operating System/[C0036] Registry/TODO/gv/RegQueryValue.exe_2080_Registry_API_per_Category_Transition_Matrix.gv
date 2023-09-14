@@ -1,0 +1,16 @@
+digraph "./REPORTS/3958/API_PER_CATEGORY/RegQueryValue.exe_2080_Registry_API_per_Category_Transition_Matrix" {
+	RegOpenKeyExA [label=RegOpenKeyExA fillcolor=cadetblue peripheries=2 style=filled]
+	NtOpenKeyEx [label=NtOpenKeyEx fillcolor=cadetblue style=filled]
+	RegOpenKeyExA -> NtOpenKeyEx [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtOpenKeyEx -> others [label=""]
+	others -> others [label=""]
+	RegCloseKey [label=RegCloseKey fillcolor=cadetblue style=filled]
+	others -> RegCloseKey [label=""]
+	NtOpenKey [label=NtOpenKey fillcolor=cadetblue style=filled]
+	others -> NtOpenKey [label=""]
+	RegCloseKey -> others [label=""]
+	NtQueryValueKey [label=NtQueryValueKey fillcolor=cadetblue style=filled]
+	NtOpenKey -> NtQueryValueKey [label=""]
+	NtQueryValueKey -> others [label=""]
+}

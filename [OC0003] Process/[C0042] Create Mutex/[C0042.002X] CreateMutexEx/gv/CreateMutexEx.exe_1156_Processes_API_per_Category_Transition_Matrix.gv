@@ -1,0 +1,8 @@
+digraph "./REPORTS/3972/API_PER_CATEGORY/CreateMutexEx.exe_1156_Processes_API_per_Category_Transition_Matrix" {
+	GetCommandLineA [label=GetCommandLineA fillcolor=darkorchid peripheries=2 style=filled]
+	GetCommandLineW [label=GetCommandLineW fillcolor=darkorchid style=filled]
+	GetCommandLineA -> GetCommandLineW [label=""]
+	others [label=others fillcolor=red style=filled]
+	GetCommandLineW -> others [label=""]
+	others -> others [label=""]
+}

@@ -1,0 +1,9 @@
+digraph "./REPORTS/3915/API_PER_CATEGORY/CopyFile.exe_2080_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
+	CopyFileA [label=CopyFileA fillcolor=bisque peripheries=2 style=filled]
+	NtWriteFile [label=NtWriteFile fillcolor=bisque style=filled]
+	CopyFileA -> NtWriteFile [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtWriteFile -> others [label=""]
+	others -> NtWriteFile [label=""]
+	others -> others [label=""]
+}

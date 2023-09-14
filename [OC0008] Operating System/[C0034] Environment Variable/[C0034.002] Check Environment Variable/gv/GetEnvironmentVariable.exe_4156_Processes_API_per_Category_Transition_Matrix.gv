@@ -1,0 +1,11 @@
+digraph "./REPORTS/3942/API_PER_CATEGORY/GetEnvironmentVariable.exe_4156_Processes_API_per_Category_Transition_Matrix" {
+	GetCommandLineA [label=GetCommandLineA fillcolor=darkorchid peripheries=2 style=filled]
+	GetCommandLineW [label=GetCommandLineW fillcolor=darkorchid style=filled]
+	GetCommandLineA -> GetCommandLineW [label=""]
+	others [label=others fillcolor=red style=filled]
+	GetCommandLineW -> others [label=""]
+	others -> others [label=""]
+	NtTerminateProcess [label=NtTerminateProcess fillcolor=darkorchid style=filled]
+	others -> NtTerminateProcess [label=""]
+	NtTerminateProcess -> others [label=""]
+}

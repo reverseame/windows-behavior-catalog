@@ -1,0 +1,11 @@
+digraph "./REPORTS/3919/API_PER_CATEGORY/PathCombine.exe_4940_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
+	NtWriteFile [label=NtWriteFile fillcolor=bisque peripheries=2 style=filled]
+	NtWriteFile -> NtWriteFile [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtWriteFile -> others [label=""]
+	PathCombineA [label=PathCombineA fillcolor=bisque style=filled]
+	NtWriteFile -> PathCombineA [label=""]
+	others -> NtWriteFile [label=""]
+	others -> others [label=""]
+	PathCombineA -> NtWriteFile [label=""]
+}
