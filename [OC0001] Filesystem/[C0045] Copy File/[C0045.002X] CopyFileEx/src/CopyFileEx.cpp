@@ -22,10 +22,8 @@ int main() {
    LPCSTR sourceFile = "C:\\Windows\\explorer.exe";
    LPCSTR destinationFile = ".\\copiedexample.exe";
 
-    if (CopyFileEx(sourceFile, destinationFile, CopyProgressCallback, nullptr, nullptr,
+    if (!CopyFileEx(sourceFile, destinationFile, CopyProgressCallback, nullptr, nullptr,
                    COPY_FILE_COPY_SYMLINK | COPY_FILE_FAIL_IF_EXISTS | COPY_FILE_RESTARTABLE)) {
-        std::cout << "File copy completed successfully." << std::endl;
-    } else {
         std::cout << "File copy failed. Error code: " << GetLastError() << std::endl;
         return 1;
     }

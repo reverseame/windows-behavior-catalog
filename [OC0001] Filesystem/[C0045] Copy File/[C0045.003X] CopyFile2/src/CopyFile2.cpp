@@ -7,9 +7,7 @@ int main() {
     PCWSTR sourceFile = L"C:\\Windows\\explorer.exe";
     PCWSTR destinationFile = L".\\copiedexample.exe";
 
-    if (SUCCEEDED(CopyFile2(sourceFile, destinationFile, NULL))) {
-        std::cout << "File copied successfully." << std::endl;
-    } else {
+    if (!SUCCEEDED(CopyFile2(sourceFile, destinationFile, NULL))) {
         std::cout << "Failed to copy file. Error code: " << GetLastError() << std::endl;
     }
 

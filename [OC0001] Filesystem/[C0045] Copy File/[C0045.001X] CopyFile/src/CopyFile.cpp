@@ -7,9 +7,7 @@ int main() {
     LPCSTR sourceFile = "C:\\Windows\\explorer.exe";
     LPCSTR destinationFile = ".\\copiedexample.exe";
 
-    if (CopyFile(sourceFile, destinationFile, FALSE)) {
-        std::cout << "File copied successfully." << std::endl;
-    } else {
+    if (!CopyFile(sourceFile, destinationFile, FALSE)) {
         std::cout << "Failed to copy file. Error code: " << GetLastError() << std::endl;
     }
 
