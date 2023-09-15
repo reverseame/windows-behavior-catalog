@@ -9,12 +9,7 @@ int main()
     LPCSTR destinationFile = ".\\movedexample";
 
     BOOL result = MoveFile(sourceFile, destinationFile);
-    if (result)
-    {
-        std::cout << "File moved successfully." << std::endl;
-    }
-    else
-    {
+    if (!result){
         DWORD errorCode = GetLastError();
         std::cout << "Failed to move file: " << errorCode << std::endl;
     }

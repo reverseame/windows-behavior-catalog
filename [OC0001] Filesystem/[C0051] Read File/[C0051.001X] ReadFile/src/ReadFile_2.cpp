@@ -23,8 +23,8 @@ int main() {
             return 1;
         }
 
-        std::cout << "Read " << bytesRead << " bytes from the file." << std::endl;
-        std::cout << "File contents: " << buffer << std::endl;
+        //std::cout << "Read " << bytesRead << " bytes from the file." << std::endl;
+        //std::cout << "File contents: " << buffer << std::endl;
 
         // Close the file handle
         CloseHandle(fileHandle);
