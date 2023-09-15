@@ -10,8 +10,6 @@ int main() {
         return 1;
     }
 
-    std::cout << "File created successfully." << std::endl;
-
     CloseHandle(hFile);
     return 0;
 }

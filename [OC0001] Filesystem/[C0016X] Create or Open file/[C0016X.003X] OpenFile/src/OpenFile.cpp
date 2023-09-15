@@ -9,17 +9,13 @@ int main()
     OFSTRUCT buffer;
 
     HFILE hFile = OpenFile(filePath, &buffer, OF_READ);
-    if (hFile != HFILE_ERROR){
-        // File opened successfully.
-        std::cout << "File opened successfully." << std::endl;
-
-        // Close the file handle.
-        _lclose(hFile);
-    }
-    else {
-        // Failed to open file. 
+    if (hFile == HFILE_ERROR){
         std::cout << "Failed to open file: " << GetLastError() << std::endl;
+        return 1;
+        
     }
+
+    _lclose(hFile);
 
     return 0;
 }
