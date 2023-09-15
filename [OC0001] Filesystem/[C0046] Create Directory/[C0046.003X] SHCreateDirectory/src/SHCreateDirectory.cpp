@@ -5,9 +5,7 @@
 
 int main() {
     HRESULT result = SHCreateDirectory(NULL, L"C:\\ExampleDirectory");
-    if (SUCCEEDED(result)) {
-        std::cout << "Directory created successfully." << std::endl;
-    } else {
+    if (!SUCCEEDED(result)) {
         std::cerr << "Failed to create directory. HRESULT: " << result << std::endl;
     }
 

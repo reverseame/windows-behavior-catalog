@@ -4,9 +4,7 @@
 #include <Windows.h>
 
 int main() {
-    if (CreateDirectoryEx(".\\", "ExampleDirectory", NULL)) {
-        std::cout << "Directory created successfully." << std::endl;
-    } else {
+    if (!CreateDirectoryEx(".\\", "ExampleDirectory", NULL)) {
         std::cerr << "Failed to create directory. Error code: " << GetLastError() << std::endl;
     }
 
