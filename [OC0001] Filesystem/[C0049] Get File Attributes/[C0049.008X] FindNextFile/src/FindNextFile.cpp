@@ -13,13 +13,19 @@ int main() {
         return 1;
     }
   
-    if (FindNextFile(hFind, &findFileData) != 0){
+    /*if (FindNextFile(hFind, &findFileData) != 0){
         if (!(findFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
             std::cout << "File: " << findFileData.cFileName << std::endl;
         } else {
             std::cout << "Directory: " << findFileData.cFileName << std::endl;
         }
     } else {
+        std::cerr << "FindNextFileA failed, error: " << GetLastError() << std::endl;
+        FindClose(hFind);
+        return 1;
+    }*/
+
+    if (!FindNextFile(hFind, &findFileData) != 0){
         std::cerr << "FindNextFileA failed, error: " << GetLastError() << std::endl;
         FindClose(hFind);
         return 1;

@@ -13,6 +13,7 @@ int main() {
     }
 
     BY_HANDLE_FILE_INFORMATION fileInfo;
+    /*
     if (GetFileInformationByHandle(hFile, &fileInfo)) {
         std::cout << "File Size: " << fileInfo.nFileSizeLow << std::endl;
         if (fileInfo.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
@@ -22,6 +23,10 @@ int main() {
         }
         // You can extract other file information from the fileInfo structure
     } else {
+        std::cerr << "Failed to get file information. Error code: " << GetLastError() << std::endl;
+    }*/
+
+    if (!GetFileInformationByHandle(hFile, &fileInfo)) {
         std::cerr << "Failed to get file information. Error code: " << GetLastError() << std::endl;
     }
 

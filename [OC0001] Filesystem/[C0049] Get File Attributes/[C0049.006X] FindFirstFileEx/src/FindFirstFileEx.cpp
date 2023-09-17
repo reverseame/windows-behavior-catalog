@@ -14,7 +14,7 @@ void main(){
    if (hFind == INVALID_HANDLE_VALUE) {
        std::cerr << "FindFirstFileEx failed " << GetLastError() << std::endl;
       return;
-   } else {
+   } /*else {
        std::cout << "The first file found is :" << FindFileData.cFileName << std::endl;
       if (FindFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
             std::cout << "File is a directory" << std::endl;
@@ -22,5 +22,6 @@ void main(){
             std::cout << "File is not a directory" << std::endl;
       }
       FindClose(hFind);
-   }
+   }*/
+  FindClose(hFind);
 }

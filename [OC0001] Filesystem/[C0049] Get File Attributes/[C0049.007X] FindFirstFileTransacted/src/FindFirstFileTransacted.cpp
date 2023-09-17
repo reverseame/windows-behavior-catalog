@@ -20,14 +20,14 @@ int main() {
         return 1;
     }
 
-    do {
+    /*do {
         std::cout << "File Name: " << findFileData.cFileName << std::endl;
         if (findFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
             std::cout << "File is a directory" << std::endl;
         } else {
             std::cout << "File is not a directory" << std::endl;
         }
-    } while (FindNextFileA(hFind, &findFileData));
+    } while (FindNextFileA(hFind, &findFileData));*/
 
     FindClose(hFind);
     CloseHandle(hTransaction);

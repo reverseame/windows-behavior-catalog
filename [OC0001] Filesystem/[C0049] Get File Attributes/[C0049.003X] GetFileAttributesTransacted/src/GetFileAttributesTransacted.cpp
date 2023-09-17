@@ -13,7 +13,7 @@ int main() {
         std::cerr << "Failed to create transaction. Error code: " << GetLastError() << std::endl;
         return 1;
     }
-
+    /*
     if (GetFileAttributesTransacted(filePath, GetFileExInfoStandard, &fileInfo, hTransaction)) {
         if (fileInfo.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
             std::cout << "File is a directory" << std::endl;
@@ -21,6 +21,12 @@ int main() {
             std::cout << "File is not a directory" << std::endl;
         }
     } else {
+        DWORD error = GetLastError();
+        std::cerr << "Failed to get file attributes transacted. Error code: " << error << std::endl;
+    }
+    */
+
+    if (!GetFileAttributesTransacted(filePath, GetFileExInfoStandard, &fileInfo, hTransaction)) {
         DWORD error = GetLastError();
         std::cerr << "Failed to get file attributes transacted. Error code: " << error << std::endl;
     }
