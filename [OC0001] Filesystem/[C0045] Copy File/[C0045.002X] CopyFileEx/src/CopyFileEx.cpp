@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <iostream>
 
+/*
 // Callback function for copy progress
 DWORD CALLBACK CopyProgressCallback(LARGE_INTEGER TotalFileSize, LARGE_INTEGER TotalBytesTransferred,
                                     LARGE_INTEGER StreamSize, LARGE_INTEGER StreamBytesTransferred,
@@ -16,13 +17,18 @@ DWORD CALLBACK CopyProgressCallback(LARGE_INTEGER TotalFileSize, LARGE_INTEGER T
 
     // Continue the copy operation
     return PROGRESS_CONTINUE;
-}
+}*/
 
 int main() {
    LPCSTR sourceFile = "C:\\Windows\\explorer.exe";
    LPCSTR destinationFile = ".\\copiedexample.exe";
 
-    if (!CopyFileEx(sourceFile, destinationFile, CopyProgressCallback, nullptr, nullptr,
+   /*
+   if (!CopyFileEx(sourceFile, destinationFile, CopyProgressCallback, nullptr, nullptr,
+                   COPY_FILE_COPY_SYMLINK | COPY_FILE_FAIL_IF_EXISTS | COPY_FILE_RESTARTABLE)) 
+   */
+
+    if (!CopyFileEx(sourceFile, destinationFile, NULL, nullptr, nullptr,
                    COPY_FILE_COPY_SYMLINK | COPY_FILE_FAIL_IF_EXISTS | COPY_FILE_RESTARTABLE)) {
         std::cout << "File copy failed. Error code: " << GetLastError() << std::endl;
         return 1;

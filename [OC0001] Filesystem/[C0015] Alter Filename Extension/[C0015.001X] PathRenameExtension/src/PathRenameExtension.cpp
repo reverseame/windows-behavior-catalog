@@ -11,10 +11,12 @@ int main() {
     // Change the file extension to ".dat"
     char modifiedPath[MAX_PATH];
     strcpy_s(modifiedPath, ansiFilePath);
-    PathRenameExtension(modifiedPath, ".dat");
+    if(!PathRenameExtension(modifiedPath, ".dat")){
+    	std::cerr << "PathRenameExtension error: " << GetLastError() << std::endl;
+    }
 
     // Print the modified file path
-    std::cout << "Modified file path: " << modifiedPath;
+    //std::cout << "Modified file path: " << modifiedPath;
 
     return 0;
 }

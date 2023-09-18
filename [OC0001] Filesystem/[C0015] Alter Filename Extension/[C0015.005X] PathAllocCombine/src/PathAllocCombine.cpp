@@ -12,10 +12,13 @@ int main() {
     PWSTR combinedPath = NULL;
     HRESULT result = PathAllocCombine(basePath, additionalPath, 0, &combinedPath);
 
-    if (SUCCEEDED(result)) {
+    /*if (SUCCEEDED(result)) {
         wprintf(L"Combined Path: %s\n", combinedPath);
         //LocalFree(combinedPath); // Remember to free the allocated memory
     } else {
+        wprintf(L"Path combination failed with HRESULT 0x%X\n", result);
+    }*/
+    if (!SUCCEEDED(result)) {
         wprintf(L"Path combination failed with HRESULT 0x%X\n", result);
     }
 
