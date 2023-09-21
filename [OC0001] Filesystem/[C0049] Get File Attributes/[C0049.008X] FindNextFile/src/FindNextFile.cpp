@@ -26,7 +26,7 @@ int main() {
     }*/
 
     while (FindNextFile(hFind, &findFileData)){
-       printf("File: %s\n", findFileData.cFileName);
+       //printf("File: %s\n", findFileData.cFileName);
     }
 
     FindClose(hFind);
