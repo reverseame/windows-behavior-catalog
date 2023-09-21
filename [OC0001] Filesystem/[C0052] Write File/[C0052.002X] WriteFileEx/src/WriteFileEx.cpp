@@ -4,9 +4,7 @@
 #include <iostream>
 
 void CALLBACK WriteCompletionRoutine(DWORD dwErrorCode, DWORD dwBytesTransferred, LPOVERLAPPED lpOverlapped) {
-    if (dwErrorCode == ERROR_SUCCESS) {
-        std::cout << "Write operation completed. Bytes written: " << dwBytesTransferred << std::endl;
-    } else {
+    if (dwErrorCode =! ERROR_SUCCESS) {
         std::cout << "Write operation failed. Error code: " << dwErrorCode << std::endl;
     }
 }
@@ -35,7 +33,7 @@ int main() {
         return 1;
     }
 
-    std::cout << "Write operation started." << std::endl;
+    //std::cout << "Write operation started." << std::endl;
 
     /*
     // Wait for the write operation to complete
