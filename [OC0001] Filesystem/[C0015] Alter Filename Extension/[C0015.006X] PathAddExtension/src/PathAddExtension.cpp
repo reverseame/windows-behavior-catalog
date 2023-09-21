@@ -5,7 +5,6 @@
 #include <iostream>
 #include "Shlwapi.h"
 
-using namespace std;
 void main( void ){
      // String for path name without file name extension.
      char buffer_1[MAX_PATH] = "file";
@@ -18,8 +17,11 @@ void main( void ){
      lpStr3 = F_Ext;
 
      // Path 1 without the file name extension.
-     cout << "The original path string 1 is  " << lpStr1 << endl;
+     //std::cout << "The original path string 1 is  " << lpStr1 << std::endl;
 
-     int ret_1 = PathAddExtension(lpStr1,lpStr3);
-     cout << "The modified path string 1 is  " << lpStr1 << endl;
+     if(!PathAddExtension(lpStr1,lpStr3)){ // FALSE in case of errors
+          std::cerr << "PathAddExtension error: " << GetLastError() << std::endl;
+     }
+     //std::cout << "The modified path string 1 is  " << lpStr1 << std::endl;
+     
 }
