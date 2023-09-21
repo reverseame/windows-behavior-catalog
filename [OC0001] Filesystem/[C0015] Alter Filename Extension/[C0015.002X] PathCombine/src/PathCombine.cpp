@@ -17,7 +17,7 @@ void main( void ) {
 	lpStr2 = buffer_2;
 
 	// String for directory name.
-	char buffer_3[ ] = "Carbot";
+	char buffer_3[ ] = "C:";
 	char *lpStr3;
 	lpStr3 = buffer_3;
 
