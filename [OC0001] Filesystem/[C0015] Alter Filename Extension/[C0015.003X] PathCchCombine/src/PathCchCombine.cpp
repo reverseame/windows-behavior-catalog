@@ -10,12 +10,17 @@ int main() {
 
     HRESULT hr = PathCchCombine(pszPathOut, cchPathOut, L"C:\\Razvi\\",  L".dll");
 
+    /*
     // Check if the combination was successful
     if (SUCCEEDED(hr)) {
         // Print the combined path
         wprintf(L"Combined path: %s", pszPathOut);
     } else {
         // Print an error message
+        std::cerr << "Error combining paths: " << hr << std::endl;
+    }*/
+
+    if (!SUCCEEDED(hr)) {
         std::cerr << "Error combining paths: " << hr << std::endl;
     }
 
