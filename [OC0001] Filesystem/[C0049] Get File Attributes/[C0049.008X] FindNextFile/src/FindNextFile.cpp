@@ -25,10 +25,8 @@ int main() {
         return 1;
     }*/
 
-    if (!FindNextFile(hFind, &findFileData) != 0){
-        std::cerr << "FindNextFileA failed, error: " << GetLastError() << std::endl;
-        FindClose(hFind);
-        return 1;
+    while (FindNextFile(hFind, &findFileData)){
+       //printf("File: %s\n", findFileData.cFileName);
     }
 
     FindClose(hFind);
