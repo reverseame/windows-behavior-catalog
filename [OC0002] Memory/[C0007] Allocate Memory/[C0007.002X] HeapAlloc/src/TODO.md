@@ -1,0 +1,1 @@
+- [GetProcessHeaps](https://learn.microsoft.com/en-us/windows/win32/api/heapapi/nf-heapapi-getprocessheaps) (with final s)
