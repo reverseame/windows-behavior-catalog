@@ -10,7 +10,7 @@ int main() {
 
     // Acquire a cryptographic context
     // Acquire a cryptographic context
-    if (!CryptAcquireContext(&hCryptProv, "random_container_name", NULL, PROV_RSA_FULL, NULL )) {
+    if (!CryptAcquireContext(&hCryptProv, "random_container_name", NULL, PROV_RSA_FULL, 0)) {
         if (GetLastError() == NTE_BAD_KEYSET){
            if (!CryptAcquireContext(&hCryptProv,  "random_container_name",  NULL,  PROV_RSA_FULL,  CRYPT_NEWKEYSET)){
                 std::cerr << "CryptAcquireContext failed, error: " << GetLastError() <<  std::endl;
