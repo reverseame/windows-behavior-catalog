@@ -12,12 +12,14 @@ int main() {
     if (!CryptAcquireContext(&hCryptProv, "random_container_name", NULL, PROV_RSA_FULL, 0)) {
         if (GetLastError() == NTE_BAD_KEYSET){
            if (!CryptAcquireContext(&hCryptProv,  "random_container_name",  NULL,  PROV_RSA_FULL,  CRYPT_NEWKEYSET)){
-                std::cerr << "CryptAcquireContext failed, error: " << GetLastError() << std::endl;
+                std::cerr << "CryptAcquireContext with CRYPT_NEWKEYSET failed, error: " << GetLastError() << std::endl;
                 CryptReleaseContext(hCryptProv, 0);
+                return 1;
            }
-            std::cerr << "CryptAcquireContext failed, error: " << GetLastError() << std::endl;
+        } else {
+            std::cerr << "CryptAcquireContext with null flags failed, error: " << GetLastError() << std::endl;
             CryptReleaseContext(hCryptProv, 0);
-        return 1;
+            return 1;
         }
     }
 

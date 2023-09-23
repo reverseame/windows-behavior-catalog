@@ -9,16 +9,17 @@ int main() {
     HCRYPTKEY hKey = NULL;
 
     // Acquire a cryptographic context
-    // Acquire a cryptographic context
-    if (!CryptAcquireContext(&hCryptProv, "random_container_name", NULL, PROV_RSA_FULL, 0)) {
+    if (!CryptAcquireContext(&hCryptProv, "random_container_name_1337", NULL, PROV_RSA_FULL, 0)) {
         if (GetLastError() == NTE_BAD_KEYSET){
-           if (!CryptAcquireContext(&hCryptProv,  "random_container_name",  NULL,  PROV_RSA_FULL,  CRYPT_NEWKEYSET)){
-                std::cerr << "CryptAcquireContext failed, error: " << GetLastError() <<  std::endl;
+           if (!CryptAcquireContext(&hCryptProv,  "random_container_name_1337",  NULL,  PROV_RSA_FULL,  CRYPT_NEWKEYSET)){
+                std::cerr << "CryptAcquireContext with CRYPT_NEWKEYSET failed, error: " << GetLastError() << std::endl;
                 CryptReleaseContext(hCryptProv, 0);
+                return 1;
            }
-            std::cerr << "CryptAcquireContext failed, error: " << GetLastError() << std::endl;
+        } else {
+            std::cerr << "CryptAcquireContext with null flags failed, error: " << GetLastError() << std::endl;
             CryptReleaseContext(hCryptProv, 0);
-        return 1;
+            return 1;
         }
     }
 
