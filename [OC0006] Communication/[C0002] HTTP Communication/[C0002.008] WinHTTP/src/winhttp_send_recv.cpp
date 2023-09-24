@@ -11,7 +11,7 @@ int main()
     HINTERNET hSession = WinHttpOpen(L"WinHTTP Example/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0);
     if (hSession == NULL)
     {
-        std::cerr << "Failed to initialize WinHTTP: " << GetLastError() << std::endl;
+        printf("Failed to initialize WinHTTP: %d", GetLastError());
         return 1;
     }
 
@@ -23,7 +23,7 @@ int main()
     HINTERNET hConnect = WinHttpConnect(hSession, serverName, serverPort, flags);
     if (hConnect == NULL)
     {
-        std::cerr << "Failed to connect to the server." << GetLastError() << std::endl;
+        printf("Failed to connect to the server.%d", GetLastError());
         WinHttpCloseHandle(hSession);
         return 1;
     }
@@ -32,7 +32,7 @@ int main()
     HINTERNET hRequest = WinHttpOpenRequest(hConnect, L"GET", NULL, NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, WINHTTP_FLAG_SECURE );
     if (hRequest == NULL)
     {
-        std::cerr << "Failed to open connection: " << GetLastError() << std::endl;
+        printf("Failed to open connection: %d", GetLastError());
         WinHttpCloseHandle(hConnect);
         WinHttpCloseHandle(hSession);
         return 1;
@@ -41,7 +41,7 @@ int main()
     // Send the request
     if (!WinHttpSendRequest(hRequest, WINHTTP_NO_ADDITIONAL_HEADERS, 0, WINHTTP_NO_REQUEST_DATA, 0, 0, 0))
     {
-        std::cerr << "Failed to send request: " << GetLastError() << std::endl;
+        printf("Failed to send request: %d", GetLastError());
         WinHttpCloseHandle(hRequest);
         WinHttpCloseHandle(hConnect);
         WinHttpCloseHandle(hSession);
@@ -51,7 +51,7 @@ int main()
     // Wait for the response
     if (!WinHttpReceiveResponse(hRequest, NULL))
     {
-        std::cerr << "Failed to receive response: " << GetLastError() << std::endl;
+        printf("Failed to receive response: %d", GetLastError());
         WinHttpCloseHandle(hRequest);
         WinHttpCloseHandle(hConnect);
         WinHttpCloseHandle(hSession);
