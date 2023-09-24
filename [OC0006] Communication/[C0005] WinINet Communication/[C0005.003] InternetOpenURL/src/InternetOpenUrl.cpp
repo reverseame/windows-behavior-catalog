@@ -12,14 +12,14 @@ int main() {
     // Initialize WinINet
     HINTERNET hInternet = InternetOpen("HTTP Example", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, 0);
     if (!hInternet) {
-        std::cerr << "Failed to open internet connection: " << GetLastError() << std::endl;
+        printf("Failed to open internet connection: %d", GetLastError());
         return 1;
     }
 
     // Open the connection 
-    HINTERNET hConnect = InternetOpenUrl(hInternet, "https://www.google.com", NULL, 0, INTERNET_FLAG_RELOAD, 0);
+    HINTERNET hConnect = InternetOpenUrl(hInternet, "https://www.httpbin.org", NULL, 0, INTERNET_FLAG_RELOAD, 0);
     if (!hConnect) {
-        std::cerr << "InternetOpenUrl failed: " << GetLastError() << std::endl;
+        printf("InternetOpenUrl failed: %d", GetLastError());
         InternetCloseHandle(hInternet);
         return 1;
     }
