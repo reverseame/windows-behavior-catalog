@@ -8,14 +8,14 @@ int main() {
     // Open a connection to the internet
     HINTERNET hInternet = InternetOpen("HTTP Example", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
     if (!hInternet) {
-        std::cerr << "Failed to open internet connection" << std::endl;
+        printf("Failed to open internet connection: %d", GetLastError());
         return 1;
     }
 
     // Open a connection to a website
-    HINTERNET hConnect = InternetConnect(hInternet, "www.google.com", INTERNET_DEFAULT_HTTP_PORT, NULL, NULL, INTERNET_SERVICE_HTTP, 0, 0);
+    HINTERNET hConnect = InternetConnect(hInternet, "www.httpbin.org", INTERNET_DEFAULT_HTTP_PORT, NULL, NULL, INTERNET_SERVICE_HTTP, 0, 0);
     if (!hConnect) {
-        std::cerr << "Failed to connect to website" << std::endl;
+        printf("Failed to connect to website: %d", GetLastError());
         InternetCloseHandle(hInternet);
         return 1;
     }
@@ -23,7 +23,7 @@ int main() {
     // Open an HTTP request
     HINTERNET hRequest = HttpOpenRequest(hConnect, "GET", "/", NULL, NULL, NULL, INTERNET_FLAG_RELOAD, 0);
     if (!hRequest) {
-        std::cerr << "Failed to open HTTP request" << std::endl;
+        printf("Failed to open HTTP request: %d", GetLastError());
         InternetCloseHandle(hConnect);
         InternetCloseHandle(hInternet);
         return 1;
@@ -32,7 +32,7 @@ int main() {
     // Send the HTTP request
     BOOL bSendRequest = HttpSendRequest(hRequest, NULL, 0, NULL, 0);
     if (!bSendRequest) {
-        std::cerr << "Failed to send HTTP request" << std::endl;
+        printf("Failed to send HTTP request: %d", GetLastError());
         InternetCloseHandle(hRequest);
         InternetCloseHandle(hConnect);
         InternetCloseHandle(hInternet);
