@@ -1,9 +1,0 @@
-digraph "./REPORTS/3921/API_PER_CATEGORY/PathRenameExtension.exe_4512_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
-	PathRenameExtensionA [label=PathRenameExtensionA fillcolor=bisque peripheries=2 style=filled]
-	NtWriteFile [label=NtWriteFile fillcolor=bisque style=filled]
-	PathRenameExtensionA -> NtWriteFile [label=""]
-	others [label=others fillcolor=red style=filled]
-	NtWriteFile -> others [label=""]
-	others -> NtWriteFile [label=""]
-	others -> others [label=""]
-}

@@ -1,7 +1,0 @@
-digraph "./REPORTS/3978/API_PER_CATEGORY/VirtualProtectEx.exe_5724_Memory Management_API_per_Category_Transition_Matrix" {
-	NtAllocateVirtualMemory [label=NtAllocateVirtualMemory fillcolor=darkgreen peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	NtAllocateVirtualMemory -> others [label=""]
-	others -> NtAllocateVirtualMemory [label=""]
-	others -> others [label=""]
-}

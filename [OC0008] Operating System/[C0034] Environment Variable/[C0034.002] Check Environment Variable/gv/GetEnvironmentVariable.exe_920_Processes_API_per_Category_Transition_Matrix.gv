@@ -1,0 +1,13 @@
+digraph "./REPORTS/6139/API_PER_CATEGORY/GetEnvironmentVariable.exe_920_Processes_API_per_Category_Transition_Matrix" {
+	GetCommandLine [label=GetCommandLine fillcolor=darkorchid peripheries=2 style=filled]
+	GetCommandLine -> GetCommandLine [label=""]
+	others [label=others fillcolor=red style=filled]
+	GetCommandLine -> others [label=""]
+	others -> others [label=""]
+	GetEnvironmentVariable [label=GetEnvironmentVariable fillcolor=darkorchid style=filled]
+	others -> GetEnvironmentVariable [label=""]
+	NtTerminateProcess [label=NtTerminateProcess fillcolor=darkorchid style=filled]
+	others -> NtTerminateProcess [label=""]
+	GetEnvironmentVariable -> others [label=""]
+	NtTerminateProcess -> others [label=""]
+}

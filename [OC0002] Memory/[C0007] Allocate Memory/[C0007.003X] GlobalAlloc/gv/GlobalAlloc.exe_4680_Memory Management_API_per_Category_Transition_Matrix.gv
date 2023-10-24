@@ -1,0 +1,17 @@
+digraph "./REPORTS/6833/API_PER_CATEGORY/GlobalAlloc.exe_4680_Memory Management_API_per_Category_Transition_Matrix" {
+	NtAllocateVirtualMemory [label=NtAllocateVirtualMemory fillcolor=darkgreen peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	NtAllocateVirtualMemory -> others [label=""]
+	others -> NtAllocateVirtualMemory [label=""]
+	others -> others [label=""]
+	GetProcessHeap [label=GetProcessHeap fillcolor=darkgreen style=filled]
+	others -> GetProcessHeap [label=""]
+	GlobalAlloc [label=GlobalAlloc fillcolor=darkgreen style=filled]
+	others -> GlobalAlloc [label=""]
+	NtProtectVirtualMemory [label=NtProtectVirtualMemory fillcolor=darkgreen style=filled]
+	others -> NtProtectVirtualMemory [label=""]
+	GetProcessHeap -> others [label=""]
+	GlobalAlloc -> others [label=""]
+	NtProtectVirtualMemory -> others [label=""]
+	NtProtectVirtualMemory -> NtProtectVirtualMemory [label=""]
+}

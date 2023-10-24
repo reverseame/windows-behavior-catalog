@@ -1,0 +1,13 @@
+digraph "./REPORTS/6835/API_PER_CATEGORY/malloc.exe_1804_Memory Management_API_per_Category_Transition_Matrix" {
+	GetProcessHeap [label=GetProcessHeap fillcolor=darkgreen peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	GetProcessHeap -> others [label=""]
+	others -> others [label=""]
+	NtAllocateVirtualMemory [label=NtAllocateVirtualMemory fillcolor=darkgreen style=filled]
+	others -> NtAllocateVirtualMemory [label=""]
+	NtProtectVirtualMemory [label=NtProtectVirtualMemory fillcolor=darkgreen style=filled]
+	others -> NtProtectVirtualMemory [label=""]
+	NtAllocateVirtualMemory -> others [label=""]
+	NtProtectVirtualMemory -> others [label=""]
+	NtProtectVirtualMemory -> NtProtectVirtualMemory [label=""]
+}

@@ -1,0 +1,15 @@
+digraph "./REPORTS/6754/API_PER_CATEGORY/winhttp_send_recv.exe_6304_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix" {
+	socket [label=socket fillcolor=crimson peripheries=2 style=filled]
+	closesocket [label=closesocket fillcolor=crimson style=filled]
+	socket -> closesocket [label=""]
+	closesocket -> socket [label=""]
+	others [label=others fillcolor=red style=filled]
+	closesocket -> others [label=""]
+	others -> others [label=""]
+	NSPStartup [label=NSPStartup fillcolor=crimson style=filled]
+	others -> NSPStartup [label=""]
+	WSASocket [label=WSASocket fillcolor=crimson style=filled]
+	others -> WSASocket [label=""]
+	NSPStartup -> others [label=""]
+	WSASocket -> others [label=""]
+}

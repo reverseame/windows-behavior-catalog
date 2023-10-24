@@ -1,0 +1,15 @@
+digraph "./REPORTS/6708/API_PER_CATEGORY/CryptEncrypt.exe_7320_Cryptography_API_per_Category_Transition_Matrix" {
+	CryptAcquireContext [label=CryptAcquireContext fillcolor="#004bf0" peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	CryptAcquireContext -> others [label=""]
+	CryptGenKey [label=CryptGenKey fillcolor="#004bf0" style=filled]
+	CryptAcquireContext -> CryptGenKey [label=""]
+	others -> CryptAcquireContext [label=""]
+	others -> others [label=""]
+	CryptDestroyKey [label=CryptDestroyKey fillcolor="#004bf0" style=filled]
+	others -> CryptDestroyKey [label=""]
+	CryptEncrypt [label=CryptEncrypt fillcolor="#004bf0" style=filled]
+	CryptGenKey -> CryptEncrypt [label=""]
+	CryptEncrypt -> others [label=""]
+	CryptDestroyKey -> others [label=""]
+}

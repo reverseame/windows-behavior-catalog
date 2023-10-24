@@ -1,0 +1,12 @@
+digraph "./REPORTS/6804/API_PER_CATEGORY/RegGetValue.exe_7884_Processes_API_per_Category_Transition_Matrix" {
+	NtQueryInformationThread [label=NtQueryInformationThread fillcolor=darkorchid peripheries=2 style=filled]
+	NtTerminateThread [label=NtTerminateThread fillcolor=darkorchid style=filled]
+	NtQueryInformationThread -> NtTerminateThread [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtTerminateThread -> others [label=""]
+	others -> others [label=""]
+	GetCommandLine [label=GetCommandLine fillcolor=darkorchid style=filled]
+	others -> GetCommandLine [label=""]
+	GetCommandLine -> others [label=""]
+	GetCommandLine -> GetCommandLine [label=""]
+}

@@ -1,0 +1,14 @@
+digraph "./REPORTS/6732/API_PER_CATEGORY/ShellExecute.exe_2968_Synchronization_API_per_Category_Transition_Matrix" {
+	NtWaitForSingleObject [label=NtWaitForSingleObject fillcolor=darkgray peripheries=2 style=filled]
+	NtWaitForSingleObject -> NtWaitForSingleObject [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtWaitForSingleObject -> others [label=""]
+	others -> NtWaitForSingleObject [label=""]
+	others -> others [label=""]
+	NtCreateMutant [label=NtCreateMutant fillcolor=darkgray style=filled]
+	others -> NtCreateMutant [label=""]
+	NtReleaseMutant [label=NtReleaseMutant fillcolor=darkgray style=filled]
+	others -> NtReleaseMutant [label=""]
+	NtCreateMutant -> others [label=""]
+	NtReleaseMutant -> others [label=""]
+}

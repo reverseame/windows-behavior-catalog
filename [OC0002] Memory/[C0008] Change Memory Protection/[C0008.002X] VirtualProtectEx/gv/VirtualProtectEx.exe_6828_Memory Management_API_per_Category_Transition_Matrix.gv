@@ -1,0 +1,11 @@
+digraph "./REPORTS/6746/API_PER_CATEGORY/VirtualProtectEx.exe_6828_Memory Management_API_per_Category_Transition_Matrix" {
+	NtAllocateVirtualMemory [label=NtAllocateVirtualMemory fillcolor=darkgreen peripheries=2 style=filled]
+	NtAllocateVirtualMemory -> NtAllocateVirtualMemory [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtAllocateVirtualMemory -> others [label=""]
+	others -> NtAllocateVirtualMemory [label=""]
+	others -> others [label=""]
+	GetProcessHeap [label=GetProcessHeap fillcolor=darkgreen style=filled]
+	others -> GetProcessHeap [label=""]
+	GetProcessHeap -> others [label=""]
+}

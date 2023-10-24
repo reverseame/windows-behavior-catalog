@@ -1,7 +1,0 @@
-digraph "./REPORTS/3985/API_PER_CATEGORY/GetProcessHeap_HeapAlloc.exe_1348_Memory Management_API_per_Category_Transition_Matrix" {
-	NtProtectVirtualMemory [label=NtProtectVirtualMemory fillcolor=darkgreen peripheries=2 style=filled]
-	NtProtectVirtualMemory -> NtProtectVirtualMemory [label=""]
-	others [label=others fillcolor=red style=filled]
-	NtProtectVirtualMemory -> others [label=""]
-	others -> others [label=""]
-}

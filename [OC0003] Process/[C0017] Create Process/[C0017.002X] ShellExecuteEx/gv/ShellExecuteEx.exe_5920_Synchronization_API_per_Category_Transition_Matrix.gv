@@ -1,0 +1,6 @@
+digraph "./REPORTS/6734/API_PER_CATEGORY/ShellExecuteEx.exe_5920_Synchronization_API_per_Category_Transition_Matrix" {
+	NtWaitForSingleObject [label=NtWaitForSingleObject fillcolor=darkgray peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	NtWaitForSingleObject -> others [label=""]
+	others -> others [label=""]
+}

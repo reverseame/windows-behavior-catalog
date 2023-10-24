@@ -1,0 +1,18 @@
+digraph "./REPORTS/6830/API_PER_CATEGORY/CreateSnapshot_Iterate.exe_5660_Processes_API_per_Category_Transition_Matrix" {
+	GetCommandLine [label=GetCommandLine fillcolor=darkorchid peripheries=2 style=filled]
+	GetCommandLine -> GetCommandLine [label=""]
+	others [label=others fillcolor=red style=filled]
+	GetCommandLine -> others [label=""]
+	others -> others [label=""]
+	CreateToolhelp32Snapshot [label=CreateToolhelp32Snapshot fillcolor=darkorchid style=filled]
+	others -> CreateToolhelp32Snapshot [label=""]
+	Process32Next [label=Process32Next fillcolor=darkorchid style=filled]
+	others -> Process32Next [label=""]
+	NtTerminateProcess [label=NtTerminateProcess fillcolor=darkorchid style=filled]
+	others -> NtTerminateProcess [label=""]
+	Process32First [label=Process32First fillcolor=darkorchid style=filled]
+	CreateToolhelp32Snapshot -> Process32First [label=""]
+	Process32First -> others [label=""]
+	Process32Next -> others [label=""]
+	NtTerminateProcess -> others [label=""]
+}

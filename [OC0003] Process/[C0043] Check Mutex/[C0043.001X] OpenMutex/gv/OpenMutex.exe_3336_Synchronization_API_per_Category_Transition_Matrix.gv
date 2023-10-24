@@ -1,0 +1,9 @@
+digraph "./REPORTS/6821/API_PER_CATEGORY/OpenMutex.exe_3336_Synchronization_API_per_Category_Transition_Matrix" {
+	NtWaitForSingleObject [label=NtWaitForSingleObject fillcolor=darkgray peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	NtWaitForSingleObject -> others [label=""]
+	others -> others [label=""]
+	NtOpenMutant [label=NtOpenMutant fillcolor=darkgray style=filled]
+	others -> NtOpenMutant [label=""]
+	NtOpenMutant -> others [label=""]
+}

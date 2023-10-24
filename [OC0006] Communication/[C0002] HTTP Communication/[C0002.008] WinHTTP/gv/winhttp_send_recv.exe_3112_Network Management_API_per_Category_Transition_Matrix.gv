@@ -1,6 +1,0 @@
-digraph "./REPORTS/3899/API_PER_CATEGORY/winhttp_send_recv.exe_3112_Network Management_API_per_Category_Transition_Matrix" {
-	WinHttpSendRequest [label=WinHttpSendRequest fillcolor=coral peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	WinHttpSendRequest -> others [label=""]
-	others -> others [label=""]
-}

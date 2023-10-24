@@ -1,8 +1,0 @@
-digraph "./REPORTS/3917/API_PER_CATEGORY/PathCchRenameExtension.exe_1700_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
-	PathCchRenameExtension [label=PathCchRenameExtension fillcolor=bisque peripheries=2 style=filled]
-	NtWriteFile [label=NtWriteFile fillcolor=bisque style=filled]
-	PathCchRenameExtension -> NtWriteFile [label=""]
-	others [label=others fillcolor=red style=filled]
-	NtWriteFile -> others [label=""]
-	others -> others [label=""]
-}
