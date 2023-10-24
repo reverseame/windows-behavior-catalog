@@ -16,7 +16,7 @@ catalog_categories_to_gv_categories_mapping = {
 	"[OC0005] Cryptography":[
 		"Cryptography", 
 		"Cryptographic Next Generation (CNG)",
-		"Windows Internet (WinINet)",
+		"CNG Cryptographic Primitive",
 		],
 	"[OC0006] Communication":[
 		"Network Management", 
@@ -28,7 +28,8 @@ catalog_categories_to_gv_categories_mapping = {
 		"Memory Management"
 		],
 	"[OC0003] Process":[
-		"Processes"
+		"Processes",
+		"Synchronization"
 		],
 	"[OC0008] Operating System":[
 		"Registry",
