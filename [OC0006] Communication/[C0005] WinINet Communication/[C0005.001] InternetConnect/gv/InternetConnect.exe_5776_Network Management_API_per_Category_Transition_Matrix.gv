@@ -1,9 +1,0 @@
-digraph "./REPORTS/6022/API_PER_CATEGORY/InternetConnect.exe_5776_Network Management_API_per_Category_Transition_Matrix" {
-	WinHttpOpen [label=WinHttpOpen fillcolor=coral peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	WinHttpOpen -> others [label=""]
-	others -> others [label=""]
-	WinHttpSetOption [label=WinHttpSetOption fillcolor=coral style=filled]
-	others -> WinHttpSetOption [label=""]
-	WinHttpSetOption -> others [label=""]
-}

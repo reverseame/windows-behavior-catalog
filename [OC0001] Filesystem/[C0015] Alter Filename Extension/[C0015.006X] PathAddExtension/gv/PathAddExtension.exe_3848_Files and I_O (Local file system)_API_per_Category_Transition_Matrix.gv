@@ -1,6 +1,0 @@
-digraph "./REPORTS/6690/API_PER_CATEGORY/PathAddExtension.exe_3848_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
-	PathAddExtension [label=PathAddExtension fillcolor=bisque peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	PathAddExtension -> others [label=""]
-	others -> others [label=""]
-}

@@ -1,6 +1,0 @@
-digraph "./REPORTS/6165/API_PER_CATEGORY/ResumeThread.exe_3816_Synchronization_API_per_Category_Transition_Matrix" {
-	NtWaitForSingleObject [label=NtWaitForSingleObject fillcolor=darkgray peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	NtWaitForSingleObject -> others [label=""]
-	others -> others [label=""]
-}

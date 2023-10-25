@@ -1,6 +1,0 @@
-digraph "./REPORTS/6109/API_PER_CATEGORY/DeleteFileTransacted.exe_6060_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
-	DeleteFileTransacted [label=DeleteFileTransacted fillcolor=bisque peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	DeleteFileTransacted -> others [label=""]
-	others -> others [label=""]
-}

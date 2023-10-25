@@ -1,7 +1,0 @@
-digraph "./REPORTS/6738/API_PER_CATEGORY/CreateRemoteThread.exe_7608_Synchronization_API_per_Category_Transition_Matrix" {
-	NtWaitForSingleObject [label=NtWaitForSingleObject fillcolor=darkgray peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	NtWaitForSingleObject -> others [label=""]
-	others -> NtWaitForSingleObject [label=""]
-	others -> others [label=""]
-}

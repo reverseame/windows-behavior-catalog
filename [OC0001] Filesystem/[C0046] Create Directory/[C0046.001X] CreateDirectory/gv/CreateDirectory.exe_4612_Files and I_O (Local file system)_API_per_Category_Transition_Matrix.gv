@@ -1,6 +1,0 @@
-digraph "./REPORTS/6102/API_PER_CATEGORY/CreateDirectory.exe_4612_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
-	NtCreateFile [label=NtCreateFile fillcolor=bisque peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	NtCreateFile -> others [label=""]
-	others -> others [label=""]
-}

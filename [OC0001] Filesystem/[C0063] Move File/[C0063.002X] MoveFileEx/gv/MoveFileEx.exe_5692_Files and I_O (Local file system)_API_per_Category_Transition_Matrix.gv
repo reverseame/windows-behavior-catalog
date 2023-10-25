@@ -1,6 +1,0 @@
-digraph "./REPORTS/6782/API_PER_CATEGORY/MoveFileEx.exe_5692_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
-	MoveFileWithProgressTransacted [label=MoveFileWithProgressTransacted fillcolor=bisque peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	MoveFileWithProgressTransacted -> others [label=""]
-	others -> others [label=""]
-}

@@ -1,7 +1,0 @@
-digraph "./REPORTS/6156/API_PER_CATEGORY/RegSetValue.exe_5356_Processes_API_per_Category_Transition_Matrix" {
-	GetCommandLine [label=GetCommandLine fillcolor=darkorchid peripheries=2 style=filled]
-	GetCommandLine -> GetCommandLine [label=""]
-	others [label=others fillcolor=red style=filled]
-	GetCommandLine -> others [label=""]
-	others -> others [label=""]
-}

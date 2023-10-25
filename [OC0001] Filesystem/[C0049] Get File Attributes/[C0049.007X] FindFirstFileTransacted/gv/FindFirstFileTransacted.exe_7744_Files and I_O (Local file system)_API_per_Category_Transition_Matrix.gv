@@ -1,6 +1,0 @@
-digraph "./REPORTS/6701/API_PER_CATEGORY/FindFirstFileTransacted.exe_7744_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
-	FindFirstFileEx [label=FindFirstFileEx fillcolor=bisque peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	FindFirstFileEx -> others [label=""]
-	others -> others [label=""]
-}

@@ -1,6 +1,0 @@
-digraph "./REPORTS/6113/API_PER_CATEGORY/CopyFile.exe_5832_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
-	CopyFile [label=CopyFile fillcolor=bisque peripheries=2 style=filled]
-	others [label=others fillcolor=red style=filled]
-	CopyFile -> others [label=""]
-	others -> others [label=""]
-}
