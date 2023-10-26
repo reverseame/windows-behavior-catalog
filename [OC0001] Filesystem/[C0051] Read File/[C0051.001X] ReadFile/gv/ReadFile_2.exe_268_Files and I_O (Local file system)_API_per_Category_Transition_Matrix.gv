@@ -1,0 +1,12 @@
+digraph "./REPORTS/6764/API_PER_CATEGORY/ReadFile_2.exe_268_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
+	NtQueryAttributesFile [label=NtQueryAttributesFile fillcolor=bisque peripheries=2 style=filled]
+	NtCreateFile [label=NtCreateFile fillcolor=bisque style=filled]
+	NtQueryAttributesFile -> NtCreateFile [label=""]
+	NtQueryInformationFile [label=NtQueryInformationFile fillcolor=bisque style=filled]
+	NtCreateFile -> NtQueryInformationFile [label=""]
+	NtReadFile [label=NtReadFile fillcolor=bisque style=filled]
+	NtQueryInformationFile -> NtReadFile [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtReadFile -> others [label=""]
+	others -> others [label=""]
+}

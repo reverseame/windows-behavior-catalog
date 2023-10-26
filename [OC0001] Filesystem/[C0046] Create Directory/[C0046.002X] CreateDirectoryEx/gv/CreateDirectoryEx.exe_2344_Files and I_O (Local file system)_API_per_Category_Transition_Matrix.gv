@@ -1,0 +1,13 @@
+digraph "./REPORTS/6760/API_PER_CATEGORY/CreateDirectoryEx.exe_2344_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
+	NtOpenFile [label=NtOpenFile fillcolor=bisque peripheries=2 style=filled]
+	NtQueryInformationFile [label=NtQueryInformationFile fillcolor=bisque style=filled]
+	NtOpenFile -> NtQueryInformationFile [label=""]
+	NtQueryInformationFile -> NtQueryInformationFile [label=""]
+	NtCreateFile [label=NtCreateFile fillcolor=bisque style=filled]
+	NtQueryInformationFile -> NtCreateFile [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtQueryInformationFile -> others [label=""]
+	NtCreateFile -> others [label=""]
+	others -> NtQueryInformationFile [label=""]
+	others -> others [label=""]
+}

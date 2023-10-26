@@ -1,0 +1,17 @@
+digraph "./REPORTS/6717/API_PER_CATEGORY/RegEnumValue.exe_7852_Registry_API_per_Category_Transition_Matrix" {
+	RegOpenKeyEx [label=RegOpenKeyEx fillcolor=cadetblue peripheries=2 style=filled]
+	RegEnumValue [label=RegEnumValue fillcolor=cadetblue style=filled]
+	RegOpenKeyEx -> RegEnumValue [label=""]
+	others [label=others fillcolor=red style=filled]
+	RegEnumValue -> others [label=""]
+	RegCloseKey [label=RegCloseKey fillcolor=cadetblue style=filled]
+	RegEnumValue -> RegCloseKey [label=""]
+	others -> RegEnumValue [label=""]
+	others -> others [label=""]
+	NtOpenKey [label=NtOpenKey fillcolor=cadetblue style=filled]
+	others -> NtOpenKey [label=""]
+	RegCloseKey -> others [label=""]
+	NtQueryValueKey [label=NtQueryValueKey fillcolor=cadetblue style=filled]
+	NtOpenKey -> NtQueryValueKey [label=""]
+	NtQueryValueKey -> others [label=""]
+}

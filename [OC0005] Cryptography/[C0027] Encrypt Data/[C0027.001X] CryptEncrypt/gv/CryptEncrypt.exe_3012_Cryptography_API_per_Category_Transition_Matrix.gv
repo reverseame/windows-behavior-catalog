@@ -1,0 +1,6 @@
+digraph "./REPORTS/6793/API_PER_CATEGORY/CryptEncrypt.exe_3012_Cryptography_API_per_Category_Transition_Matrix" {
+	CryptAcquireContext [label=CryptAcquireContext fillcolor="#004bf0" peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	CryptAcquireContext -> others [label=""]
+	others -> CryptAcquireContext [label=""]
+}

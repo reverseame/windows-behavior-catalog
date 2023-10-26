@@ -1,0 +1,6 @@
+digraph "./REPORTS/6792/API_PER_CATEGORY/GetFileAttributesEx.exe_7940_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
+	NtQueryFullAttributesFile [label=NtQueryFullAttributesFile fillcolor=bisque peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	NtQueryFullAttributesFile -> others [label=""]
+	others -> others [label=""]
+}

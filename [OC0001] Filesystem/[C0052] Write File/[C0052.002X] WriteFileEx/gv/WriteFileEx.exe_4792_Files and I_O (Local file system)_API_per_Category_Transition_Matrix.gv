@@ -1,0 +1,8 @@
+digraph "./REPORTS/6127/API_PER_CATEGORY/WriteFileEx.exe_4792_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
+	NtCreateFile [label=NtCreateFile fillcolor=bisque peripheries=2 style=filled]
+	NtWriteFile [label=NtWriteFile fillcolor=bisque style=filled]
+	NtCreateFile -> NtWriteFile [label=""]
+	others [label=others fillcolor=red style=filled]
+	NtWriteFile -> others [label=""]
+	others -> others [label=""]
+}

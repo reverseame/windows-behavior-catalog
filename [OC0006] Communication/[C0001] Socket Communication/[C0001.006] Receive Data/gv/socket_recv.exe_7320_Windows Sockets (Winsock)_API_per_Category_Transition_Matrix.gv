@@ -1,0 +1,18 @@
+digraph "./REPORTS/6029/API_PER_CATEGORY/socket_recv.exe_7320_Windows Sockets (Winsock)_API_per_Category_Transition_Matrix" {
+	WSAStartup [label=WSAStartup fillcolor=crimson peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	WSAStartup -> others [label=""]
+	others -> others [label=""]
+	socket [label=socket fillcolor=crimson style=filled]
+	others -> socket [label=""]
+	closesocket [label=closesocket fillcolor=crimson style=filled]
+	others -> closesocket [label=""]
+	connect [label=connect fillcolor=crimson style=filled]
+	socket -> connect [label=""]
+	send [label=send fillcolor=crimson style=filled]
+	connect -> send [label=""]
+	recv [label=recv fillcolor=crimson style=filled]
+	send -> recv [label=""]
+	recv -> others [label=""]
+	closesocket -> others [label=""]
+}
