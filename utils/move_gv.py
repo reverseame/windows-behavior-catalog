@@ -9,6 +9,9 @@ import argparse
 behavior_catalog_exe_paths = {}
 behavior_catalog_exe_categories = {}
 
+# What .gv categories should be copied to the behavior catalog directory
+# based on the category of the .exe file. Notice there are two different levels,
+# the micro-objective (generic) and the micro-behavior (specific)
 catalog_categories_to_gv_categories_mapping = {
 	"[OC0001] Filesystem":[
 		"Files and I_O (Local file system)" # Notice I_O instead of I/O, since our module replaces "/" with "_" to avoid directory naming problems
@@ -29,11 +32,17 @@ catalog_categories_to_gv_categories_mapping = {
 		],
 	"[OC0003] Process":[
 		"Processes",
+		],
+	"[C0042] Create Mutex":[
 		"Synchronization"
 		],
-	"[OC0008] Operating System":[
-		"Registry",
-		"Processes",
+	"[C0043] Check Mutex":[
+		"Synchronization"
+		],
+	"[C0036] Registry":[
+		"Registry"
+		],
+	"[C0034] Environment Variable":[
 		"System Information Functions"
 		],
 }
@@ -69,7 +78,13 @@ if __name__ == "__main__":
 		exe_name = exe_file.absolute().name # FindFirstFile.exe
 		exe_path = exe_file.absolute().parent.parent # Abspath. Double .parent call to get rid of the /exe folder.
 		behavior_catalog_exe_paths[exe_name] = exe_path.as_posix()
-		category = exe_path.parent.parent.as_posix()
+
+		# The category of this binary and its gv mapping depend on whether is micro-behavior
+		# level is specified in the 'catalog_categories_to_gv_categories_mapping' dict or
+		# just its micro-objective level
+		micro_objective = exe_path.parent.as_posix()
+		micro_objective = micro_objective[micro_objective.index("[C"):] # "[C" is for micro-behaviors
+		category = micro_objective if micro_objective in catalog_categories_to_gv_categories_mapping else exe_path.parent.parent.as_posix()
 		category = category[category.index("["):]
 		behavior_catalog_exe_categories[exe_name] = category
 
