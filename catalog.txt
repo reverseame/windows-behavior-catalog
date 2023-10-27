@@ -1,200 +1,259 @@
 [OC0001] Filesystem
 	[C0049] Get File Attributes
 		[C0049.005X] FindFirstFile
-			[C0049.005X-P1]:['NtOpenFile', 'NtWriteFile']
+			[C0049.005X-P1]:['FindFirstFileEx']
 		[C0049.001X] GetFileAttributes
+			[C0049.001X-P1]:['NtQueryAttributesFile']
 		[C0049.002X] GetFileAttributesEx
 			[C0049.002X-P1]:['NtQueryFullAttributesFile']
-			[C0049.002X-P2]:['NtQueryFullAttributesFile', 'NtWriteFile']
 		[C0049.004X] GetFileInformationByHandle
-			[C0049.004X-P1]:['NtCreateFile', 'NtQueryInformationFile', 'NtWriteFile']
+			[C0049.004X-P1]:['NtQueryInformationFile']
 		[C0049.007X] FindFirstFileTransacted
-			[C0049.007X-P1]:['NtOpenFile']
-			[C0049.007X-P2]:['NtOpenFile', 'NtWriteFile']
+			[C0049.007X-P1]:['FindFirstFileEx']
 		[C0049.003X] GetFileAttributesTransacted
 			[C0049.003X-P1]:['NtQueryFullAttributesFile']
-			[C0049.003X-P2]:['NtQueryFullAttributesFile', 'NtWriteFile']
 		[C0049.008X] FindNextFile
-			[C0049.008X-P1]:['NtOpenFile']
-			[C0049.008X-P2]:['NtOpenFile', 'NtWriteFile']
+			[C0049.008X-P1]:['FindNextFile']
 		[C0049.006X] FindFirstFileEx
-			[C0049.006X-P1]:['FindFirstFileExA', 'NtWriteFile']
+			[C0049.006X-P1]:['FindFirstFileEx']
 	[C0051] Read File
 		[C0051.001X] ReadFile
-			[C0051.001X-P1]:['NtCreateFile', 'NtReadFile', 'NtWriteFile']
-			[C0051.001X-P2H]:['NtReadFile']
+			[C0051.001X-P1]:['NtReadFile']
+			[C0051.001X-P2]:['NtCreateFile', 'NtReadFile']
 	[C0016X] Create or Open file
 		[C0016X.002X] CreateFile2
 			[C0016X.002X-P1]:['NtCreateFile']
-			[C0016X.002X-P2]:['NtCreateFile', 'NtWriteFile']
 		[C0016X.003X] OpenFile
-			[C0016X.003X-P1]:['NtQueryAttributesFile', 'NtCreateFile', 'NtQueryInformationFile', 'NtWriteFile']
+			[C0016X.003X-P1]:['NtQueryAttributesFile', 'NtCreateFile', 'NtQueryInformationFile']
 		[C0016X.001X] CreateFile
 			[C0016X.001X-P1]:['NtCreateFile']
 	[C0015] Alter Filename Extension
 		[C0015.006X] PathAddExtension
+			[C0015.006X-P1]:['PathAddExtension']
 		[C0015.002X] PathCombine
+			[C0015.002X-P1]:['PathCombine']
 		[C0015.007X] PathCchRenameExtension
-			[C0015.007X-P1]:['PathCchRenameExtension', 'NtWriteFile']
+			[C0015.007X-P1]:['PathCchRenameExtension']
 		[C0015.003X] PathCchCombine
-			[C0015.003X-P1]:['PathCchCombineEx', 'NtWriteFile']
+			[C0015.003X-P1]:['PathCchCombineEx']
 		[C0015.004X] PathCchCombineEx
-			[C0015.004X-P1]:['PathCchCombineEx', 'NtWriteFile']
+			[C0015.004X-P1]:['PathCchCombineEx']
 		[C0015.001X] PathRenameExtension
-			[C0015.001X-P1]:['PathRenameExtensionA', 'NtWriteFile']
+			[C0015.001X-P1]:['PathRenameExtension']
 		[C0015.005X] PathAllocCombine
-			[C0015.005X-P1]:['PathAllocCombine', 'NtWriteFile']
+			[C0015.005X-P1]:['PathAllocCombine']
 	[C0046] Create Directory
 		[C0046.003X] SHCreateDirectory
 			[C0046.003X-P1]:['NtQueryAttributesFile', 'NtOpenFile']
 			[C0046.003X-P2]:['NtQueryAttributesFile', 'NtOpenFile', 'NtCreateFile']
-			[C0046.003X-P3]:['NtQueryAttributesFile', 'NtOpenFile', 'PathCchCombineEx']
-			[C0046.003X-P4]:['NtQueryAttributesFile', 'NtOpenFile', 'NtWriteFile']
+			[C0046.003X-P3]:['NtQueryAttributesFile', 'NtOpenFile', 'PathCombine']
 		[C0046.004X] SHCreateDirectoryEx
 			[C0046.004X-P1]:['NtQueryAttributesFile', 'NtOpenFile']
 			[C0046.004X-P2]:['NtQueryAttributesFile', 'NtOpenFile', 'NtCreateFile']
-			[C0046.004X-P3]:['NtQueryAttributesFile', 'NtOpenFile', 'PathCchCombineEx']
-			[C0046.004X-P4]:['NtQueryAttributesFile', 'NtOpenFile', 'NtWriteFile']
+			[C0046.004X-P3]:['NtQueryAttributesFile', 'NtOpenFile', 'PathCombine']
 		[C0046.005X] CreateFileTransacted
 			[C0046.005X-P1]:['NtCreateFile']
-			[C0046.005X-P2]:['NtCreateFile', 'NtWriteFile']
 		[C0046.002X] CreateDirectoryEx
-			[C0046.002X-P1]:['NtOpenFile', 'NtQueryInformationFile']
-			[C0046.002X-P2]:['NtOpenFile', 'NtQueryInformationFile', 'NtCreateFile']
-			[C0046.002X-P3]:['NtOpenFile', 'NtQueryInformationFile', 'NtWriteFile']
-			[C0046.002X-P4]:['NtOpenFile', 'NtQueryInformationFile', 'NtCreateFile', 'NtWriteFile']
+			[C0046.002X-P1]:['NtOpenFile', 'NtQueryInformationFile', 'NtCreateFile']
+			[C0046.002X-P2]:['NtOpenFile', 'NtQueryInformationFile']
 		[C0046.001X] CreateDirectory
-			[C0046.001X-P1]:['NtCreateFile', 'NtWriteFile']
+			[C0046.001X-P1]:['NtCreateFile']
 	[C0045] Copy File
 		[C0045.003X] CopyFile2
-			[C0045.003X-P1]:['NtCreateFile', 'NtQueryInformationFile']
-			[C0045.003X-P2]:['NtCreateFile']
-			[C0045.003X-P3]:['NtCreateFile', 'NtQueryInformationFile', 'NtQueryAttributesFile', 'NtOpenFile', 'NtQueryInformationFile', 'NtCreateFile']
-			[C0045.003X-P4]:['NtCreateFile', 'NtQueryAttributesFile', 'NtOpenFile', 'NtQueryInformationFile', 'NtCreateFile']
-			[C0045.003X-P5]:['NtCreateFile', 'NtQueryInformationFile', 'NtQueryAttributesFile', 'NtOpenFile', 'NtQueryInformationFile']
-			[C0045.003X-P6]:['NtCreateFile', 'NtQueryAttributesFile', 'NtOpenFile', 'NtQueryInformationFile']
-			[C0045.003X-P7]:['NtCreateFile', 'NtQueryInformationFile', 'NtQueryAttributesFile', 'NtOpenFile']
-			[C0045.003X-P8]:['NtCreateFile', 'NtQueryAttributesFile', 'NtOpenFile']
-			[C0045.003X-P9]:['NtCreateFile', 'NtQueryInformationFile', 'NtOpenFile', 'NtQueryInformationFile', 'NtCreateFile']
-			[C0045.003X-P10]:['NtCreateFile', 'NtOpenFile', 'NtQueryInformationFile', 'NtCreateFile']
-			[C0045.003X-P11]:['NtCreateFile', 'NtQueryInformationFile', 'NtOpenFile', 'NtQueryInformationFile']
-			[C0045.003X-P12]:['NtCreateFile', 'NtOpenFile', 'NtQueryInformationFile']
-			[C0045.003X-P13]:['NtCreateFile', 'NtQueryInformationFile', 'NtOpenFile']
-			[C0045.003X-P14]:['NtCreateFile', 'NtOpenFile']
-			[C0045.003X-P15]:['NtCreateFile', 'NtQueryInformationFile', 'NtSetInformationFile', 'NtQueryInformationFile', 'NtCreateFile']
-			[C0045.003X-P16]:['NtCreateFile', 'NtSetInformationFile', 'NtQueryInformationFile', 'NtCreateFile']
-			[C0045.003X-P17]:['NtCreateFile', 'NtQueryInformationFile', 'NtSetInformationFile', 'NtQueryInformationFile']
-			[C0045.003X-P18]:['NtCreateFile', 'NtSetInformationFile', 'NtQueryInformationFile']
-			[C0045.003X-P19]:['NtCreateFile', 'NtQueryInformationFile', 'NtSetInformationFile', 'NtReadFile', 'NtWriteFile']
-			[C0045.003X-P20]:['NtCreateFile', 'NtSetInformationFile', 'NtReadFile', 'NtWriteFile']
-			[C0045.003X-P21]:['NtCreateFile', 'NtQueryInformationFile', 'NtWriteFile']
-			[C0045.003X-P22]:['NtCreateFile', 'NtWriteFile']
+			[C0045.003X-P1]:['CopyFile2']
 		[C0045.002X] CopyFileEx
-			[C0045.002X-P1]:['NtCreateFile', 'NtQueryInformationFile']
-			[C0045.002X-P2]:['NtCreateFile', 'NtQueryInformationFile', 'NtQueryAttributesFile', 'NtOpenFile', 'NtQueryInformationFile']
-			[C0045.002X-P3]:['NtCreateFile', 'NtQueryInformationFile', 'NtQueryAttributesFile', 'NtOpenFile']
-			[C0045.002X-P4]:['NtCreateFile', 'NtQueryInformationFile', 'NtOpenFile', 'NtQueryInformationFile']
-			[C0045.002X-P5]:['NtCreateFile', 'NtQueryInformationFile', 'NtOpenFile']
-			[C0045.002X-P6]:['NtCreateFile', 'NtQueryInformationFile', 'NtSetInformationFile', 'NtQueryInformationFile']
-			[C0045.002X-P7]:['NtCreateFile', 'NtQueryInformationFile', 'NtSetInformationFile']
-			[C0045.002X-P8]:['NtCreateFile', 'NtQueryInformationFile', 'NtSetInformationFile', 'NtReadFile', 'NtWriteFile']
-			[C0045.002X-P9]:['NtCreateFile', 'NtQueryInformationFile', 'NtWriteFile']
-			[C0045.002X-P10]:['NtCreateFile', 'NtQueryInformationFile', 'NtReadFile', 'NtWriteFile']
+			[C0045.002X-P1]:['CopyFileEx']
 		[C0045.001X] CopyFile
-			[C0045.001X-P1]:['CopyFileA', 'NtWriteFile']
+			[C0045.001X-P1]:['CopyFile']
 	[C0047] Delete File
 		[C0047.001X] DeleteFile
-			[C0047.001X-P1]:['DeleteFileA', 'NtWriteFile']
+			[C0047.001X-P1]:['DeleteFile']
+			[C0047.001X-P2H]:['NtDeleteFile']
+		[C0047.002X] DeleteFileTransacted
+			[C0047.002X-P1]:['DeleteFileTransacted']
 	[C0063] Move File
 		[C0063.002X] MoveFileEx
-			[C0063.002X-P1]:['MoveFileWithProgressTransactedW']
-			[C0063.002X-P2]:['MoveFileWithProgressTransactedW', 'NtWriteFile']
+			[C0063.002X-P1]:['MoveFileWithProgressTransacted']
 		[C0063.001X] MoveFile
-			[C0063.001X-P1]:['MoveFileWithProgressTransactedW']
-			[C0063.001X-P2]:['MoveFileWithProgressTransactedW', 'NtWriteFile']
+			[C0063.001X-P1]:['MoveFileWithProgressTransacted']
 	[C0052] Write File
 		[C0052.001X] WriteFile
-			[C0052.001X-P1]:['NtCreateFile', 'NtWriteFile']
-			[C0052.001X-P2H]:['NtWriteFile']
+			[C0052.001X-P1]:['NtWriteFile']
 		[C0052.002X] WriteFileEx
-			[C0052.002X-P1]:['NtCreateFile', 'NtWriteFile']
-			[C0052.002X-P2H]:['NtWriteFile']
+			[C0052.002X-P1]:['NtWriteFile']
 [OC0005] Cryptography
 	[C0028] Encryption Key
 		[C0028.001X] CryptGenKey
+			[C0028.001X-P1]:['CryptAcquireContext', 'CryptGenKey']
+			[C0028.001X-P2]:['CryptAcquireContext', 'CryptDestroyKey']
+			[C0028.001X-P3]:['CryptAcquireContext', 'CryptGenKey', 'CryptDestroyKey']
 	[C0027] Encrypt Data
 		[C0027.001X] CryptEncrypt
+			[C0027.001X-P1]:['CryptAcquireContext', 'CryptGenKey', 'CryptEncrypt']
+			[C0027.001X-P2]:['CryptAcquireContext', 'CryptDestroyKey']
+			[C0027.001X-P3]:['CryptAcquireContext', 'CryptGenKey', 'CryptEncrypt', 'CryptDestroyKey']
 [OC0006] Communication
 	[C0001] Socket Communication
 		[C0001.007] Send Data
 			[C0001.007-P1]:['WSAStartup', 'socket', 'connect']
+			[C0001.007-P2]:['WSAStartup', 'socket', 'connect', 'send']
+			[C0001.007-P3H]:['send']
 		[C0001.006] Receive Data
+			[C0001.006-P1]:['recv']
+			[C0001.006-P3H]:['WSAStartup', 'socket', 'connect', 'recv']
 	[C0005] WinINet Communication
 		[C0005.003] InternetOpenURL
-			[C0005.003-P1]:['WSAStartup', 'socket', 'closesocket']
-			[C0005.003-P2]:['WSAStartup', 'socket', 'setsockopt']
-			[C0005.003-P3]:['WSAStartup', 'closesocket', 'socket', 'setsockopt']
-			[C0005.003-P4]:['WSAStartup', 'NSPStartup']
-			[C0005.003-P5]:['WSAStartup', 'WSASocketW']
+			[C0005.003-P1]:['WinHttpSetOption', 'WinHttpOpen', 'WinHttpSetOption']
+			[C0005.003-P2]:['WinHttpSetOption', 'WinHttpConnect', 'WinHttpOpenRequest']
+			[C0005.003-P3]:['WinHttpSetOption', 'WinHttpSendRequest', 'WinHttpReceiveResponse', 'WinHttpQueryHeaders']
+			[C0005.003-P4]:['InternetOpen', 'InternetCrackUrl']
+			[C0005.003-P5]:['InternetOpen', 'InternetOpenUrl', 'InternetReadFile']
+			[C0005.003-P6]:['InternetOpen', 'InternetOpenUrl', 'InternetReadFile', 'InternetCloseHandle']
+			[C0005.003-P7]:['InternetOpen', 'InternetReadFile']
+			[C0005.003-P8]:['InternetOpen', 'InternetReadFile', 'InternetCloseHandle']
+			[C0005.003-P9]:['WinHttpSetOption', 'WinHttpSendRequest']
+			[C0005.003-P10]:['WinHttpSetOption', 'WinHttpQueryHeaders']
+			[C0005.003-P11]:['WSAStartup', 'socket', 'setsockopt']
+			[C0005.003-P12]:['WSAStartup', 'socket', 'setsockopt', 'bind']
+			[C0005.003-P13]:['WSAStartup', 'socket', 'setsockopt', 'ConnectEx']
+			[C0005.003-P14]:['WSAStartup', 'socket', 'closesocket']
+			[C0005.003-P15]:['WSAStartup', 'setsockopt']
+			[C0005.003-P16]:['WSAStartup', 'setsockopt', 'bind']
+			[C0005.003-P17]:['WSAStartup', 'setsockopt', 'ConnectEx']
+			[C0005.003-P18]:['WSAStartup', 'closesocket', 'socket', 'setsockopt']
+			[C0005.003-P19]:['WSAStartup', 'closesocket', 'socket', 'setsockopt', 'bind']
+			[C0005.003-P20]:['WSAStartup', 'closesocket', 'socket', 'setsockopt', 'ConnectEx']
+			[C0005.003-P21]:['WSAStartup', 'NSPStartup']
+			[C0005.003-P22]:['WSAStartup', 'WSASocket']
+			[C0005.003-P23]:['WSAStartup', 'WSASocket', 'setsockopt']
+			[C0005.003-P24]:['WSAStartup', 'WSASocket', 'setsockopt', 'bind']
+			[C0005.003-P25]:['WSAStartup', 'WSASocket', 'setsockopt', 'ConnectEx']
+			[C0005.003-P26]:['WSAStartup', 'bind']
+			[C0005.003-P27]:['WSAStartup', 'bind', 'setsockopt']
+			[C0005.003-P28]:['WSAStartup', 'bind', 'setsockopt', 'ConnectEx']
+			[C0005.003-P29]:['WSAStartup', 'ConnectEx']
+			[C0005.003-P30]:['WSAStartup', 'ConnectEx', 'setsockopt']
+			[C0005.003-P31]:['WSAStartup', 'ConnectEx', 'setsockopt', 'bind']
+			[C0005.003-P32]:['WSAStartup', 'WSASend']
+			[C0005.003-P33]:['WSAStartup', 'WSASend', 'WSARecv']
+			[C0005.003-P34]:['WSAStartup', 'WSARecv']
+			[C0005.003-P35]:['WSAStartup', 'WSARecv', 'WSASend']
+			[C0005.003-P36]:['InternetOpen', 'InternetOpenUrl']
+			[C0005.003-P37]:['InternetOpen', 'InternetCloseHandle']
 		[C0005.001] InternetConnect
-			[C0005.001-P1]:['WinHttpOpen', 'WinHttpSetOption']
+			[C0005.001-P1]:['WSAStartup', 'socket', 'setsockopt']
+			[C0005.001-P2]:['WSAStartup', 'socket', 'setsockopt', 'WSASend', 'WSARecv']
+			[C0005.001-P3]:['WSAStartup', 'socket', 'closesocket']
+			[C0005.001-P4]:['WSAStartup', 'setsockopt']
+			[C0005.001-P5]:['WSAStartup', 'setsockopt', 'WSASend', 'WSARecv']
+			[C0005.001-P6]:['WSAStartup', 'closesocket', 'socket', 'setsockopt']
+			[C0005.001-P7]:['WSAStartup', 'closesocket', 'socket', 'setsockopt', 'WSASend', 'WSARecv']
+			[C0005.001-P8]:['WSAStartup', 'NSPStartup']
+			[C0005.001-P9]:['WSAStartup', 'WSASocket']
+			[C0005.001-P10]:['WSAStartup', 'bind']
+			[C0005.001-P11]:['InternetOpen', 'InternetConnect']
+			[C0005.001-P12]:['InternetOpen', 'InternetConnect', 'HttpOpenRequest']
+			[C0005.001-P13]:['WinHttpOpen', 'WinHttpSetOption']
+			[C0005.001-P14]:['InternetOpen', 'HttpSendRequest']
+			[C0005.001-P15]:['InternetOpen', 'InternetCrackUrl']
+			[C0005.001-P16]:['InternetOpen', 'HttpSendRequest', 'InternetReadFile']
+			[C0005.001-P17]:['InternetOpen', 'HttpSendRequest', 'InternetReadFile', 'InternetCloseHandle']
+			[C0005.001-P18]:['InternetOpen', 'InternetReadFile']
+			[C0005.001-P19]:['InternetOpen', 'InternetReadFile', 'InternetCloseHandle']
+			[C0005.001-P20]:['InternetOpen', 'InternetConnect', 'HttpOpenRequest', 'InternetCrackUrl']
+			[C0005.001-P21]:['InternetOpen', 'InternetConnect', 'HttpOpenRequest', 'HttpSendRequest', 'InternetReadFile']
+			[C0005.001-P22]:['InternetOpen', 'InternetConnect', 'HttpOpenRequest', 'HttpSendRequest', 'InternetReadFile', 'InternetCloseHandle']
+			[C0005.001-P23]:['InternetOpen', 'InternetConnect', 'HttpOpenRequest', 'InternetReadFile']
+			[C0005.001-P24]:['InternetOpen', 'InternetConnect', 'HttpOpenRequest', 'InternetReadFile', 'InternetCloseHandle']
 	[C0002] HTTP Communication
 		[C0002.008] WinHTTP
-			[C0002.008-P1]:['socket', 'closesocket']
-			[C0002.008-P2]:['socket', 'closesocket', 'NSPStartup']
-			[C0002.008-P3]:['socket', 'closesocket', 'WSASocketW']
+			[C0002.008-P1]:['WinHttpOpen', 'WinHttpConnect', 'WinHttpOpenRequest']
+			[C0002.008-P2]:['WinHttpOpen', 'WinHttpConnect', 'WinHttpOpenRequest', 'WinHttpSendRequest', 'WinHttpReceiveResponse']
+			[C0002.008-P3]:['socket', 'closesocket']
+			[C0002.008-P4]:['socket', 'closesocket', 'NSPStartup']
+			[C0002.008-P5]:['socket', 'closesocket', 'WSASocket']
+			[C0002.008-P6]:['socket', 'closesocket', 'WSASocket', 'setsockopt']
+			[C0002.008-P7]:['socket', 'closesocket', 'setsockopt']
+			[C0002.008-P8]:['socket', 'closesocket', 'ConnectEx']
+			[C0002.008-P9]:['socket', 'closesocket', 'WSASend']
+			[C0002.008-P10]:['socket', 'closesocket', 'WSASend', 'WSARecv']
+			[C0002.008-P11]:['socket', 'closesocket', 'WSARecv']
+			[C0002.008-P12]:['WinHttpOpen', 'WinHttpConnect', 'WinHttpOpenRequest', 'WinHttpSendRequest']
+			[C0002.008-P13]:['WinHttpOpen', 'WinHttpConnect']
 [OC0002] Memory
 	[C0007] Allocate Memory
 		[C0007.004X] LocalAlloc
-			[C0007.004X-P1]:['LocalAlloc']
-			[C0007.004X-P2]:['LocalAlloc', 'NtProtectVirtualMemory']
-		[C0007.002X] HeapAlloc
-			[C0007.002X-P1]:['NtAllocateVirtualMemory']
+			[C0007.004X-P1]:['GetProcessHeap', 'LocalAlloc']
+			[C0007.004X-P2]:['GetProcessHeap', 'NtProtectVirtualMemory']
 		[C0007.003X] GlobalAlloc
-			[C0007.003X-P1]:['NtAllocateVirtualMemory']
-			[C0007.003X-P2]:['NtAllocateVirtualMemory', 'GlobalAlloc']
-			[C0007.003X-P3]:['NtAllocateVirtualMemory', 'NtProtectVirtualMemory']
-			[C0007.003X-P4]:['NtAllocateVirtualMemory', 'GlobalAlloc', 'NtProtectVirtualMemory']
+			[C0007.003X-P1]:['GetProcessHeap', 'NtAllocateVirtualMemory']
+			[C0007.003X-P2]:['GetProcessHeap', 'NtAllocateVirtualMemory', 'GlobalAlloc']
+			[C0007.003X-P3]:['GetProcessHeap', 'NtProtectVirtualMemory']
+			[C0007.003X-P4]:['NtAllocateVirtualMemory']
+			[C0007.003X-P5]:['NtAllocateVirtualMemory', 'GetProcessHeap']
+			[C0007.003X-P6]:['NtAllocateVirtualMemory', 'GlobalAlloc']
+			[C0007.003X-P7]:['NtAllocateVirtualMemory', 'NtProtectVirtualMemory']
 		[C0007.001X] VirtualAlloc
 			[C0007.001X-P1]:['NtAllocateVirtualMemory']
-			[C0007.001X-P2]:['NtAllocateVirtualMemory', 'VirtualAlloc']
-			[C0007.001X-P3]:['NtAllocateVirtualMemory', 'NtProtectVirtualMemory']
-			[C0007.001X-P4]:['NtAllocateVirtualMemory', 'VirtualAlloc', 'NtProtectVirtualMemory']
+			[C0007.001X-P2]:['NtAllocateVirtualMemory', 'GetProcessHeap']
+			[C0007.001X-P3]:['NtAllocateVirtualMemory', 'VirtualAlloc', 'NtAllocateVirtualMemory']
+			[C0007.001X-P4]:['NtAllocateVirtualMemory', 'NtProtectVirtualMemory']
+			[C0007.001X-P5]:['GetProcessHeap', 'NtAllocateVirtualMemory']
+			[C0007.001X-P6]:['GetProcessHeap', 'VirtualAlloc', 'NtAllocateVirtualMemory']
+			[C0007.001X-P7]:['GetProcessHeap', 'NtProtectVirtualMemory']
 		[C0007.005X] malloc
-			[C0007.005X-P1]:['NtAllocateVirtualMemory']
-			[C0007.005X-P2]:['NtAllocateVirtualMemory', 'NtProtectVirtualMemory']
+			[C0007.005X-P1]:['GetProcessHeap', 'NtAllocateVirtualMemory']
+			[C0007.005X-P2]:['GetProcessHeap', 'NtProtectVirtualMemory']
 	[C0008] Change Memory Protection
 		[C0008.001X] VirtualProtect
 			[C0008.001X-P1]:['NtAllocateVirtualMemory']
-			[C0008.001X-P2]:['NtAllocateVirtualMemory', 'VirtualAlloc', 'NtProtectVirtualMemory']
+			[C0008.001X-P2]:['NtAllocateVirtualMemory', 'GetProcessHeap']
+			[C0008.001X-P3]:['NtAllocateVirtualMemory', 'VirtualAlloc', 'NtProtectVirtualMemory']
+			[C0008.001X-P4]:['NtAllocateVirtualMemory', 'NtProtectVirtualMemory']
+			[C0008.001X-P5]:['GetProcessHeap', 'VirtualAlloc', 'NtProtectVirtualMemory']
+			[C0008.001X-P6]:['GetProcessHeap', 'NtProtectVirtualMemory']
+			[C0008.001X-P7]:['GetProcessHeap', 'NtAllocateVirtualMemory']
 		[C0008.002X] VirtualProtectEx
 			[C0008.002X-P1]:['NtAllocateVirtualMemory']
+			[C0008.002X-P2]:['NtAllocateVirtualMemory', 'GetProcessHeap']
+			[C0008.002X-P3]:['NtAllocateVirtualMemory', 'VirtualProtectEx']
+			[C0008.002X-P4]:['NtAllocateVirtualMemory', 'NtProtectVirtualMemory']
 [OC0003] Process
 	[C0038] Create Thread
 		[C0038.001X] CreateThread
+			[C0038.001X-P1]:['CreateThread']
 		[C0038.002X] CreateRemoteThread
-			[C0038.002X-P1]:['NtCreateUserProcess', 'CreateProcessA', 'NtOpenProcess']
+			[C0038.002X-P2]:['CreateRemoteThread']
 	[C0064] Enumerate Threads
 		[C0064.001X] Thread32First_Thread32Next
 			[C0064.001X-P1]:['CreateToolhelp32Snapshot', 'Thread32First']
+			[C0064.001X-P2]:['Thread32Next']
+			[C0064.001X-P3]:['NtQueryInformationThread', 'NtTerminateThread', 'GetCommandLine']
+			[C0064.001X-P4]:['NtQueryInformationThread', 'NtTerminateThread', 'CreateToolhelp32Snapshot', 'Thread32First']
+			[C0064.001X-P5]:['NtQueryInformationThread', 'NtTerminateThread', 'Thread32Next']
+			[C0064.001X-P6]:['NtQueryInformationThread', 'NtTerminateThread', 'NtTerminateProcess']
 	[C0054] Resume Thread
 		[C0054.001X] ResumeThread
+			[C0054.001X-P1]:['NtResumeThread']
 	[C0055] Suspend Thread
 		[C0055.001X] SuspendThread
+			[C0055.001X-P1]:['CreateThread', 'NtSuspendThread']
 	[C0065] Open Process
 		[C0065.001X] OpenProcess
 			[C0065.001X-P1]:['NtOpenProcess']
 	[C0066] Open Thread
 		[C0066.001X] OpenThread
+			[C0066.001X-P1]:['NtOpenThread']
 	[C0070X] Process Enumeration
 		[C0070X.001X] CreateSnapshot_Process32Next
 			[C0070X.001X-P1]:['CreateToolhelp32Snapshot', 'Process32First']
+			[C0070X.001X-P2]:['Process32Next']
 	[C0042] Create Mutex
 		[C0042.001X] CreateMutex
-			[C0042.001X-P1H]:['CreateMutexA']
+			[C0042.001X-P1]:['NtWaitForSingleObject', 'NtCreateMutant']
 			[C0042.001X-P2H]:['NtCreateMutant']
 		[C0042.002X] CreateMutexEx
-			[C0042.002X-P1H]:['CreateMutexExA']
+			[C0042.002X-P1]:['NtWaitForSingleObject', 'NtCreateMutant']
 			[C0042.002X-P2H]:['NtCreateMutant']
 	[C0017] Create Process
 		[C0017.002X] ShellExecuteEx
@@ -227,7 +286,7 @@
 			[C0017.002X-P27]:['NtUnmapViewOfSectionEx', 'NtQueryInformationThread', 'CreateThread']
 			[C0017.002X-P28]:['NtUnmapViewOfSectionEx', 'NtQueryInformationThread', 'CreateThread', 'NtResumeThread']
 			[C0017.002X-P29]:['NtUnmapViewOfSectionEx', 'NtQueryInformationThread', 'NtReadVirtualMemory']
-			[C0017.002X-P30]:['NtUnmapViewOfSectionEx', 'NtQueryInformationThread', 'NtCreateUserProcess', 'CreateProcessW']
+			[C0017.002X-P30]:['NtUnmapViewOfSectionEx', 'NtQueryInformationThread', 'NtCreateUserProcess', 'CreateProcess']
 			[C0017.002X-P31]:['NtQueryInformationThread', 'NtCreateSection']
 			[C0017.002X-P32]:['NtQueryInformationThread', 'NtCreateSection', 'NtMapViewOfSection']
 			[C0017.002X-P33]:['NtQueryInformationThread', 'NtCreateSection', 'NtMapViewOfSection', 'NtOpenSection']
@@ -238,7 +297,7 @@
 			[C0017.002X-P38]:['NtQueryInformationThread', 'CreateThread']
 			[C0017.002X-P39]:['NtQueryInformationThread', 'CreateThread', 'NtResumeThread']
 			[C0017.002X-P40]:['NtQueryInformationThread', 'NtReadVirtualMemory']
-			[C0017.002X-P41]:['NtQueryInformationThread', 'NtCreateUserProcess', 'CreateProcessW']
+			[C0017.002X-P41]:['NtQueryInformationThread', 'NtCreateUserProcess', 'CreateProcess']
 			[C0017.002X-P42]:['CreateThread']
 			[C0017.002X-P43]:['CreateThread', 'NtResumeThread']
 			[C0017.002X-P44]:['NtResumeThread']
@@ -248,37 +307,93 @@
 			[C0017.002X-P48]:['UpdateProcThreadAttribute', 'NtQueryInformationToken']
 			[C0017.002X-P49]:['UpdateProcThreadAttribute', 'NtQueryInformationToken', 'NtOpenProcessToken']
 			[C0017.002X-P50]:['NtUnmapViewOfSection', 'NtSetInformationProcess']
-			[C0017.002X-P51]:['NtTerminateThread', 'ShellExecuteExW']
+			[C0017.002X-P51]:['NtTerminateThread', 'ShellExecuteEx']
+			[C0017.002X-P52]:['ShellExecuteEx']
 		[C0017.001X] ShellExecute
 			[C0017.001X-P1]:['NtQueryInformationThread', 'NtOpenSection', 'NtMapViewOfSection']
-			[C0017.001X-P2]:['NtQueryInformationThread', 'NtCreateUserProcess', 'ShellExecuteExW']
-			[C0017.001X-P3]:['NtOpenSection', 'NtMapViewOfSection']
-			[C0017.001X-P4]:['NtOpenProcessToken', 'NtQueryInformationToken']
+			[C0017.001X-P2]:['NtQueryInformationThread', 'NtQueryInformationToken']
+			[C0017.001X-P3]:['NtQueryInformationThread', 'NtCreateUserProcess', 'ShellExecuteEx']
+			[C0017.001X-P4]:['NtOpenSection', 'NtMapViewOfSection']
+			[C0017.001X-P5]:['NtOpenProcessToken', 'NtQueryInformationThread']
+			[C0017.001X-P6]:['NtOpenProcessToken', 'NtQueryInformationThread', 'NtOpenSection', 'NtMapViewOfSection']
+			[C0017.001X-P7]:['NtOpenProcessToken', 'NtQueryInformationThread', 'NtQueryInformationToken']
+			[C0017.001X-P8]:['NtOpenProcessToken', 'NtQueryInformationThread', 'NtCreateUserProcess', 'ShellExecuteEx']
+			[C0017.001X-P9]:['NtOpenProcessToken', 'NtQueryInformationToken']
+			[C0017.001X-P10]:['NtTerminateThread', 'NtQueryInformationThread']
+			[C0017.001X-P11]:['NtTerminateThread', 'NtQueryInformationThread', 'NtOpenSection', 'NtMapViewOfSection']
+			[C0017.001X-P12]:['NtTerminateThread', 'NtQueryInformationThread', 'NtCreateUserProcess', 'ShellExecuteEx']
 		[C0017.003X] CreateProcess
+			[C0017.003X-P1]:['NtQueryInformationThread', 'NtTerminateThread', 'GetCommandLine']
+			[C0017.003X-P2]:['NtQueryInformationThread', 'NtTerminateThread', 'NtCreateUserProcess', 'CreateProcess']
+			[C0017.003X-P3]:['NtQueryInformationThread', 'NtTerminateThread', 'NtTerminateProcess']
+			[C0017.003X-P4]:['NtCreateUserProcess', 'CreateProcess']
 		[C0017.004X] WinExec
+			[C0017.004X-P1]:['NtCreateUserProcess', 'WinExec']
 	[C0043] Check Mutex
 		[C0043.001X] OpenMutex
-			[C0043.001X-P1H]:['NtOpenMutant']
+			[C0043.001X-P1]:['NtWaitForSingleObject', 'NtOpenMutant']
+			[C0043.001X-P2H]:['NtOpenMutant']
 [OC0008] Operating System
 	[C0036] Registry
 		[C0036.006] Query Registry Value
-			[C0036.006-P1H]:['RegOpenKeyExA', 'RegQueryValueExA', 'RegCloseKey']
+			[C0036.006-P1]:['RegEnumValue']
+			[C0036.006-P2]:['RegEnumValue', 'RegCloseKey']
+			[C0036.006-P3]:['RegEnumValue']
+			[C0036.006-P4]:['RegEnumValue', 'RegCloseKey']
+			[C0036.006-P5]:['NtQueryValueKey']
+			[C0036.006-P6]:['NtQueryValueKey', 'RegCloseKey']
+			[C0036.006-P7]:['NtQueryValueKey']
+			[C0036.006-P8]:['RegQueryValueEx']
+			[C0036.006-P9]:['RegQueryValueEx', 'RegCloseKey']
+			[C0036.006-P10]:['RegQueryValueEx']
 		[C0036.005] Query Registry Key
+			[C0036.005-P1]:['RegQueryInfoKey']
+			[C0036.005-P2]:['RegQueryInfoKey', 'RegCloseKey']
+			[C0036.005-P3]:['RegQueryInfoKey']
 		[C0036.003] Open Registry Key
+			[C0036.003-P1]:['NtOpenKey', 'NtQueryValueKey']
+			[C0036.003-P2]:['NtOpenKey', 'NtOpenKeyEx']
+			[C0036.003-P3]:['NtOpenKey', 'NtQueryValueKey', 'NtOpenKeyEx']
+			[C0036.003-P4]:['NtOpenKey', 'RegCloseKey']
+			[C0036.003-P5]:['NtOpenKey', 'NtQueryValueKey', 'RegCloseKey']
+			[C0036.003-P6]:['RegOpenKeyEx']
+			[C0036.003-P7]:['RegOpenKeyEx', 'RegCloseKey']
+			[C0036.003-P8]:['RegOpenKeyEx', 'NtOpenKey', 'NtQueryValueKey']
 		[C0036.004] Create Registry Key
+			[C0036.004-P1]:['RegCreateKeyEx']
+			[C0036.004-P2]:['RegCreateKeyEx', 'RegCloseKey']
+			[C0036.004-P3]:['RegCreateKeyEx', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.004-P4]:['NtOpenKey', 'NtQueryValueKey']
+			[C0036.004-P5]:['NtOpenKey', 'NtCreateKey']
+			[C0036.004-P6]:['NtOpenKey', 'NtQueryValueKey', 'NtCreateKey']
+			[C0036.004-P7]:['NtOpenKey', 'RegCloseKey']
+			[C0036.004-P8]:['NtOpenKey', 'NtQueryValueKey', 'RegCloseKey']
 		[C0036.001] Create or Set Registry Value
-			[C0036.001-P1]:['RegOpenKeyExA', 'NtCreateKey', 'NtSetValueKey']
-			[C0036.001-P2]:['RegOpenKeyExA', 'NtCreateKey', 'NtSetValueKey', 'RegCloseKey']
-			[C0036.001-P3]:['RegOpenKeyExA', 'NtCreateKey', 'NtSetValueKey', 'NtOpenKey', 'NtQueryValueKey']
-			[C0036.001-P4H]:['RegOpenKeyExA', 'RegSetValueExA', 'RegCloseKey']
+			[C0036.001-P1]:['NtSetValueKey']
+			[C0036.001-P2]:['NtSetValueKey', 'RegCloseKey']
+			[C0036.001-P3]:['NtSetValueKey']
+			[C0036.001-P4]:['NtCreateKey', 'NtSetValueKey']
+			[C0036.001-P5]:['NtCreateKey', 'NtSetValueKey', 'RegCloseKey']
+			[C0036.001-P6]:['NtCreateKey', 'NtSetValueKey']
+			[C0036.001-P7]:['RegSetValueEx']
+			[C0036.001-P8]:['RegSetValueEx', 'RegCloseKey']
+			[C0036.001-P9]:['RegSetValueEx']
 		[C0036.007] Delete Registry Value
-			[C0036.007-P1]:['RegOpenKeyExA', 'RegDeleteValueA']
-			[C0036.007-P2]:['RegOpenKeyExA', 'RegDeleteValueA', 'RegCloseKey']
-			[C0036.007-P3]:['RegOpenKeyExA', 'RegDeleteValueA', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.007-P1]:['RegDeleteValue']
+			[C0036.007-P2]:['RegDeleteValue', 'RegCloseKey']
+			[C0036.007-P3]:['RegDeleteValue']
+			[C0036.007-P4]:['NtOpenKeyEx', 'NtDeleteValueKey']
+			[C0036.007-P5]:['NtOpenKeyEx', 'NtDeleteValueKey', 'RegCloseKey']
+			[C0036.007-P6]:['NtOpenKeyEx', 'NtDeleteValueKey']
 		[C0036.002] Delete Registry Key
-			[C0036.002-P1]:['RegDeleteKeyExA']
-			[C0036.002-P2]:['RegDeleteKeyExA', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.002-P1]:['RegDeleteKeyEx']
+			[C0036.002-P2]:['RegDeleteKeyEx', 'NtOpenKey', 'NtQueryValueKey']
+			[C0036.002-P3]:['RegDeleteKey']
+			[C0036.002-P4]:['RegDeleteKey', 'NtOpenKey', 'NtQueryValueKey']
 	[C0034] Environment Variable
 		[C0034.001] Set Environment Variable
-			[C0034.001-P1]:['NtOpenKey', 'NtQueryValueKey']
+			[C0034.001-P1]:['SetEnvironmentVariable']
 		[C0034.002] Check Environment Variable
+			[C0034.002-P1]:['ExpandEnvironmentStrings']
+			[C0034.002-P2]:['GetEnvironmentVariable']
+			[C0034.002-P3]:['GetEnvironmentStrings']
