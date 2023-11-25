@@ -1,6 +1,6 @@
 digraph "./REPORTS/6117/API_PER_CATEGORY/PathCombine.exe_5408_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
 	PathCombine [label=PathCombine fillcolor=bisque peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	PathCombine -> others [label=""]
-	others -> others [label=""]
+	PathCombine -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

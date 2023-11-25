@@ -1,12 +1,12 @@
 digraph "./REPORTS/6755/API_PER_CATEGORY/InternetOpenUrl.exe_4564_Windows Internet (WinINet)_API_per_Category_Transition_Matrix" {
 	InternetOpen [label=InternetOpen fillcolor=chartreuse peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	InternetOpen -> others [label=""]
-	others -> others [label=""]
+	InternetOpen -> others [label=1.0 fontcolor=white]
+	others -> others [label=0.998 fontcolor=white]
 	InternetOpenUrl [label=InternetOpenUrl fillcolor=chartreuse style=filled]
-	others -> InternetOpenUrl [label=""]
+	others -> InternetOpenUrl [label=0.001 fontcolor=white]
 	InternetCloseHandle [label=InternetCloseHandle fillcolor=chartreuse style=filled]
-	others -> InternetCloseHandle [label=""]
-	InternetOpenUrl -> others [label=""]
-	InternetCloseHandle -> others [label=""]
+	others -> InternetCloseHandle [label=0.001 fontcolor=white]
+	InternetOpenUrl -> others [label=1.0 fontcolor=white]
+	InternetCloseHandle -> others [label=1.0 fontcolor=white]
 }

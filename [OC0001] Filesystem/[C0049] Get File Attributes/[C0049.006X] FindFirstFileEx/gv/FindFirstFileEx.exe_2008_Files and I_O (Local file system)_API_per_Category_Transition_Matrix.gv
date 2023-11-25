@@ -1,6 +1,6 @@
 digraph "./REPORTS/6700/API_PER_CATEGORY/FindFirstFileEx.exe_2008_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
 	FindFirstFileEx [label=FindFirstFileEx fillcolor=bisque peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	FindFirstFileEx -> others [label=""]
-	others -> others [label=""]
+	FindFirstFileEx -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

@@ -1,9 +1,9 @@
 digraph "./REPORTS/6705/API_PER_CATEGORY/FindNextFile.exe_6452_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
 	FindFirstFileEx [label=FindFirstFileEx fillcolor=bisque peripheries=2 style=filled]
 	FindNextFile [label=FindNextFile fillcolor=bisque style=filled]
-	FindFirstFileEx -> FindNextFile [label=""]
-	FindNextFile -> FindNextFile [label=""]
+	FindFirstFileEx -> FindNextFile [label=1.0 fontcolor=white]
+	FindNextFile -> FindNextFile [label=0.9091 fontcolor=white]
 	others [label=others fillcolor=red style=filled]
-	FindNextFile -> others [label=""]
-	others -> others [label=""]
+	FindNextFile -> others [label=0.0909 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

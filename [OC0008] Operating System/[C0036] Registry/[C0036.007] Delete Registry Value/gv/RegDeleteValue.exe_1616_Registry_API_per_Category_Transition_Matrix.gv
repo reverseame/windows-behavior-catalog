@@ -1,5 +1,5 @@
 digraph "./REPORTS/6722/API_PER_CATEGORY/RegDeleteValue.exe_1616_Registry_API_per_Category_Transition_Matrix" {
 	RegOpenKeyEx [label=RegOpenKeyEx fillcolor=cadetblue peripheries=2 style=filled]
 	RegDeleteValue [label=RegDeleteValue fillcolor=cadetblue style=filled]
-	RegOpenKeyEx -> RegDeleteValue [label=""]
+	RegOpenKeyEx -> RegDeleteValue [label=1.0 fontcolor=white]
 }

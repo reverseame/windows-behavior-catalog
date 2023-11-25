@@ -1,6 +1,6 @@
 digraph "./REPORTS/6119/API_PER_CATEGORY/PathRenameExtension.exe_5360_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
 	PathRenameExtension [label=PathRenameExtension fillcolor=bisque peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	PathRenameExtension -> others [label=""]
-	others -> others [label=""]
+	PathRenameExtension -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

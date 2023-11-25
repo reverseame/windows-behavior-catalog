@@ -1,7 +1,7 @@
 digraph "./REPORTS/6171/API_PER_CATEGORY/enumerate_threads.exe_4516_Processes_API_per_Category_Transition_Matrix" {
 	GetCommandLine [label=GetCommandLine fillcolor=darkorchid peripheries=2 style=filled]
-	GetCommandLine -> GetCommandLine [label=""]
+	GetCommandLine -> GetCommandLine [label=0.5 fontcolor=white]
 	others [label=others fillcolor=red style=filled]
-	GetCommandLine -> others [label=""]
-	others -> others [label=""]
+	GetCommandLine -> others [label=0.5 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

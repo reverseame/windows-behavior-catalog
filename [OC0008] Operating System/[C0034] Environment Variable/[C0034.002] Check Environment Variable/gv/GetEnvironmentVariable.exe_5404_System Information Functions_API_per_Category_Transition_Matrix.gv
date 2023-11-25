@@ -1,6 +1,6 @@
 digraph "./REPORTS/6711/API_PER_CATEGORY/GetEnvironmentVariable.exe_5404_System Information Functions_API_per_Category_Transition_Matrix" {
 	GetEnvironmentVariable [label=GetEnvironmentVariable fillcolor=lime peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	GetEnvironmentVariable -> others [label=""]
-	others -> others [label=""]
+	GetEnvironmentVariable -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

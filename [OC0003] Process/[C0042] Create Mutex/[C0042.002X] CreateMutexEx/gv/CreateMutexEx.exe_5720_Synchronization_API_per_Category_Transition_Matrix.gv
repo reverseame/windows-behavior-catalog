@@ -1,9 +1,9 @@
 digraph "./REPORTS/6169/API_PER_CATEGORY/CreateMutexEx.exe_5720_Synchronization_API_per_Category_Transition_Matrix" {
 	NtWaitForSingleObject [label=NtWaitForSingleObject fillcolor=darkgray peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	NtWaitForSingleObject -> others [label=""]
-	others -> others [label=""]
+	NtWaitForSingleObject -> others [label=1.0 fontcolor=white]
+	others -> others [label=0.9904 fontcolor=white]
 	NtCreateMutant [label=NtCreateMutant fillcolor=darkgray style=filled]
-	others -> NtCreateMutant [label=""]
-	NtCreateMutant -> others [label=""]
+	others -> NtCreateMutant [label=0.0096 fontcolor=white]
+	NtCreateMutant -> others [label=1.0 fontcolor=white]
 }

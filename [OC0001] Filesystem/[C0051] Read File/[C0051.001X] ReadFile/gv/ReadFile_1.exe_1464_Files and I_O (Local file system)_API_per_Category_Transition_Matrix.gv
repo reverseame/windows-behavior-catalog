@@ -1,8 +1,8 @@
 digraph "./REPORTS/6680/API_PER_CATEGORY/ReadFile_1.exe_1464_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
 	NtCreateFile [label=NtCreateFile fillcolor=bisque peripheries=2 style=filled]
 	NtReadFile [label=NtReadFile fillcolor=bisque style=filled]
-	NtCreateFile -> NtReadFile [label=""]
+	NtCreateFile -> NtReadFile [label=1.0 fontcolor=white]
 	others [label=others fillcolor=red style=filled]
-	NtReadFile -> others [label=""]
-	others -> others [label=""]
+	NtReadFile -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

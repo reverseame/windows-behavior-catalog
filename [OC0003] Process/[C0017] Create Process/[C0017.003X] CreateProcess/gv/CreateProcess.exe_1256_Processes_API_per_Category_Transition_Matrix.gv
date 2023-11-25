@@ -1,9 +1,9 @@
 digraph "./REPORTS/6161/API_PER_CATEGORY/CreateProcess.exe_1256_Processes_API_per_Category_Transition_Matrix" {
 	GetCommandLine [label=GetCommandLine fillcolor=darkorchid peripheries=2 style=filled]
-	GetCommandLine -> GetCommandLine [label=""]
+	GetCommandLine -> GetCommandLine [label=0.5 fontcolor=white]
 	others [label=others fillcolor=red style=filled]
-	GetCommandLine -> others [label=""]
-	others -> others [label=""]
+	GetCommandLine -> others [label=0.5 fontcolor=white]
+	others -> others [label=0.9412 fontcolor=white]
 	NtCreateUserProcess [label=NtCreateUserProcess fillcolor=darkorchid style=filled]
-	others -> NtCreateUserProcess [label=""]
+	others -> NtCreateUserProcess [label=0.0588 fontcolor=white]
 }

@@ -1,11 +1,11 @@
 digraph "./REPORTS/6032/API_PER_CATEGORY/winhttp_send_recv.exe_4100_Network Management_API_per_Category_Transition_Matrix" {
 	WinHttpOpen [label=WinHttpOpen fillcolor=coral peripheries=2 style=filled]
 	WinHttpConnect [label=WinHttpConnect fillcolor=coral style=filled]
-	WinHttpOpen -> WinHttpConnect [label=""]
+	WinHttpOpen -> WinHttpConnect [label=1.0 fontcolor=white]
 	others [label=others fillcolor=red style=filled]
-	WinHttpConnect -> others [label=""]
-	others -> others [label=""]
+	WinHttpConnect -> others [label=1.0 fontcolor=white]
+	others -> others [label=0.9986 fontcolor=white]
 	WinHttpOpenRequest [label=WinHttpOpenRequest fillcolor=coral style=filled]
-	others -> WinHttpOpenRequest [label=""]
-	WinHttpOpenRequest -> others [label=""]
+	others -> WinHttpOpenRequest [label=0.0014 fontcolor=white]
+	WinHttpOpenRequest -> others [label=1.0 fontcolor=white]
 }

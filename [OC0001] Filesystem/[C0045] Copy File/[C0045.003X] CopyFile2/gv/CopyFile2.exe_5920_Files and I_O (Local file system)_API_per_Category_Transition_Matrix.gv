@@ -1,6 +1,6 @@
 digraph "./REPORTS/6768/API_PER_CATEGORY/CopyFile2.exe_5920_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
 	CopyFile2 [label=CopyFile2 fillcolor=bisque peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	CopyFile2 -> others [label=""]
-	others -> others [label=""]
+	CopyFile2 -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

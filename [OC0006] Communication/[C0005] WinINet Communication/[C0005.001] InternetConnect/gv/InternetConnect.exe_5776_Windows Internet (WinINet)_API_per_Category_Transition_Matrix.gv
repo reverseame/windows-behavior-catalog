@@ -1,11 +1,11 @@
 digraph "./REPORTS/6022/API_PER_CATEGORY/InternetConnect.exe_5776_Windows Internet (WinINet)_API_per_Category_Transition_Matrix" {
 	InternetOpen [label=InternetOpen fillcolor=chartreuse peripheries=2 style=filled]
 	InternetConnect [label=InternetConnect fillcolor=chartreuse style=filled]
-	InternetOpen -> InternetConnect [label=""]
+	InternetOpen -> InternetConnect [label=1.0 fontcolor=white]
 	others [label=others fillcolor=red style=filled]
-	InternetConnect -> others [label=""]
-	others -> others [label=""]
+	InternetConnect -> others [label=1.0 fontcolor=white]
+	others -> others [label=0.9957 fontcolor=white]
 	HttpOpenRequest [label=HttpOpenRequest fillcolor=chartreuse style=filled]
-	others -> HttpOpenRequest [label=""]
-	HttpOpenRequest -> others [label=""]
+	others -> HttpOpenRequest [label=0.0043 fontcolor=white]
+	HttpOpenRequest -> others [label=1.0 fontcolor=white]
 }

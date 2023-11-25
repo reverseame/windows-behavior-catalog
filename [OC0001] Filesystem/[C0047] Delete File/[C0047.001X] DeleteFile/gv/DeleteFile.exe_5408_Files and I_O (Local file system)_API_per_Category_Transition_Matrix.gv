@@ -1,6 +1,6 @@
 digraph "./REPORTS/6682/API_PER_CATEGORY/DeleteFile.exe_5408_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
 	DeleteFile [label=DeleteFile fillcolor=bisque peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	DeleteFile -> others [label=""]
-	others -> others [label=""]
+	DeleteFile -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

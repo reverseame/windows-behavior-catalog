@@ -1,6 +1,6 @@
 digraph "./REPORTS/6115/API_PER_CATEGORY/PathCchRenameExtension.exe_4440_Files and I_O (Local file system)_API_per_Category_Transition_Matrix" {
 	PathCchRenameExtension [label=PathCchRenameExtension fillcolor=bisque peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	PathCchRenameExtension -> others [label=""]
-	others -> others [label=""]
+	PathCchRenameExtension -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

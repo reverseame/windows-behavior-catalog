@@ -1,6 +1,6 @@
 digraph "./REPORTS/6461/API_PER_CATEGORY/SetEnvironmentVariable.exe_5880_System Information Functions_API_per_Category_Transition_Matrix" {
 	SetEnvironmentVariable [label=SetEnvironmentVariable fillcolor=lime peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	SetEnvironmentVariable -> others [label=""]
-	others -> others [label=""]
+	SetEnvironmentVariable -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }

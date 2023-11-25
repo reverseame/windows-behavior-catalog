@@ -1,6 +1,6 @@
 digraph "./REPORTS/6798/API_PER_CATEGORY/GetEnvironmentStrings.exe_4864_System Information Functions_API_per_Category_Transition_Matrix" {
 	GetEnvironmentStrings [label=GetEnvironmentStrings fillcolor=lime peripheries=2 style=filled]
 	others [label=others fillcolor=red style=filled]
-	GetEnvironmentStrings -> others [label=""]
-	others -> others [label=""]
+	GetEnvironmentStrings -> others [label=1.0 fontcolor=white]
+	others -> others [label=1.0 fontcolor=white]
 }
