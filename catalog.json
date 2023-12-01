@@ -236,6 +236,10 @@
                     "CryptAcquireContext",
                     "CryptGenKey",
                     "CryptDestroyKey"
+                ],
+                "[C0028.001X-P4H]": [
+                    "CryptAcquireContext",
+                    "CryptGenRandom"
                 ]
             }
         },

@@ -87,6 +87,7 @@
 			[C0028.001X-P1]:['CryptAcquireContext', 'CryptGenKey']
 			[C0028.001X-P2]:['CryptAcquireContext', 'CryptDestroyKey']
 			[C0028.001X-P3]:['CryptAcquireContext', 'CryptGenKey', 'CryptDestroyKey']
+			[C0028.001X-P4H]:['CryptAcquireContext', 'CryptGenRandom']
 	[C0027] Encrypt Data
 		[C0027.001X] CryptEncrypt
 			[C0027.001X-P1]:['CryptAcquireContext', 'CryptGenKey', 'CryptEncrypt']
