@@ -83,16 +83,44 @@
 			[C0052.002X-P1]:['NtWriteFile']
 [OC0005] Cryptography
 	[C0028] Encryption Key
+		[C0028.008X] CryptExportKey
+			[C0028.008X-P1H]:['CryptExportKey']
+		[C0028.005X] BCryptImportKeyPair
+			[C0028.005X-P1H]:['BCryptImportKeyPair']
+		[C0028.003X] CryptImportPublicKeyInfo
+			[C0028.003X-P1H]:['CryptImportPublicKeyInfo']
 		[C0028.001X] CryptGenKey
 			[C0028.001X-P1]:['CryptAcquireContext', 'CryptGenKey']
 			[C0028.001X-P2]:['CryptAcquireContext', 'CryptDestroyKey']
 			[C0028.001X-P3]:['CryptAcquireContext', 'CryptGenKey', 'CryptDestroyKey']
 			[C0028.001X-P4H]:['CryptAcquireContext', 'CryptGenRandom']
+		[C0028.004X] CryptImportPublicKeyInfoEx
+			[C0028.004X-P1H]:['CryptImportPublicKeyInfoEx']
+		[C0028.007X] CryptDecodeObjectEx
+			[C0028.007X-P1H]:['CryptDecodeObjectEx']
+		[C0028.002X] CryptImportKey
+			[C0028.002X-P1H]:['CryptImportKey']
+		[C0028.006X] BCryptImportKey
+			[C0028.006X-P1H]:['BCryptImportKey']
 	[C0027] Encrypt Data
+		[C0027.002X] BCryptEncrypt
+			[C0027.002X-P1H]:['BCryptEncrypt']
 		[C0027.001X] CryptEncrypt
 			[C0027.001X-P1]:['CryptAcquireContext', 'CryptGenKey', 'CryptEncrypt']
 			[C0027.001X-P2]:['CryptAcquireContext', 'CryptDestroyKey']
 			[C0027.001X-P3]:['CryptAcquireContext', 'CryptGenKey', 'CryptEncrypt', 'CryptDestroyKey']
+	[C0029] Cryptographic Hash
+		[C0029.001X] CryptCreateHash
+			[C0029.001X-P1H]:['CryptCreateHash']
+		[C0029.002X] CryptHashData
+			[C0029.002X-P1H]:['CryptHashData']
+		[C0029.003X] CryptDestroyHash
+			[C0029.003X-P1H]:['CryptDestroyHash']
+	[C0031] Decrypt Data
+		[C0031.002X] BCryptDecrypt
+			[C0031.002X-P1H]:['BCryptDecrypt']
+		[C0031.001X] CryptDecrypt
+			[C0031.001X-P1H]:['CryptDecrypt']
 [OC0006] Communication
 	[C0001] Socket Communication
 		[C0001.007] Send Data
