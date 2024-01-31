@@ -255,6 +255,12 @@
                 "[C0028.001X-P4H]": [
                     "CryptAcquireContext",
                     "CryptGenRandom"
+                ],
+                "[C0028.001X-P5H]": [
+                    "CryptGenKey"
+                ],
+                "[C0028.001X-P6H]": [
+                    "CryptGenRandom"
                 ]
             },
             "[C0028.004X] CryptImportPublicKeyInfoEx": {
@@ -299,6 +305,9 @@
                     "CryptGenKey",
                     "CryptEncrypt",
                     "CryptDestroyKey"
+                ],
+                "[C0027.001X-P4H]": [
+                    "CryptEncrypt"
                 ]
             }
         },

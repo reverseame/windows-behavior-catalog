@@ -94,6 +94,8 @@
 			[C0028.001X-P2]:['CryptAcquireContext', 'CryptDestroyKey']
 			[C0028.001X-P3]:['CryptAcquireContext', 'CryptGenKey', 'CryptDestroyKey']
 			[C0028.001X-P4H]:['CryptAcquireContext', 'CryptGenRandom']
+			[C0028.001X-P5H]:['CryptGenKey']
+			[C0028.001X-P6H]:['CryptGenRandom']
 		[C0028.004X] CryptImportPublicKeyInfoEx
 			[C0028.004X-P1H]:['CryptImportPublicKeyInfoEx']
 		[C0028.007X] CryptDecodeObjectEx
@@ -109,6 +111,7 @@
 			[C0027.001X-P1]:['CryptAcquireContext', 'CryptGenKey', 'CryptEncrypt']
 			[C0027.001X-P2]:['CryptAcquireContext', 'CryptDestroyKey']
 			[C0027.001X-P3]:['CryptAcquireContext', 'CryptGenKey', 'CryptEncrypt', 'CryptDestroyKey']
+			[C0027.001X-P4H]:['CryptEncrypt']
 	[C0029] Cryptographic Hash
 		[C0029.001X] CryptCreateHash
 			[C0029.001X-P1H]:['CryptCreateHash']
