@@ -40,7 +40,10 @@ Files have been compiled with `cl`. The same compiler Visual Studio uses, bur fr
 The specific command used to compile each `.cpp` file is specified within the header of the file itself.
 
 ## TODO
-Review Crypto micro objective and behaviors.
+- Review Crypto micro objective and behaviors.
+- Code for:
+	- NtDeleteFile
+	- NtOpenFile
 
 # Authors
 This repository was created and (sometimes) maintained by:
