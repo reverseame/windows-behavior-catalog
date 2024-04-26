@@ -280,6 +280,9 @@
 		[C0070X.001X] CreateSnapshot_Process32Next
 			[C0070X.001X-P1]:['CreateToolhelp32Snapshot', 'Process32First']
 			[C0070X.001X-P2]:['Process32Next']
+		[C0070X.002X] EnumProcesses
+			[C0070X.002X-P1H]:['EnumProcesses']
+			[C0070X.002X-P2H]:['K32EnumProcesses']
 	[C0042] Create Mutex
 		[C0042.001X] CreateMutex
 			[C0042.001X-P1]:['NtWaitForSingleObject', 'NtCreateMutant']

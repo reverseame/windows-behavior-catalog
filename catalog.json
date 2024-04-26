@@ -981,6 +981,14 @@
                 "[C0070X.001X-P2]": [
                     "Process32Next"
                 ]
+            },
+            "[C0070X.002X] EnumProcesses": {
+                "[C0070X.002X-P1H]": [
+                    "EnumProcesses"
+                ],
+                "[C0070X.002X-P2H]": [
+                    "K32EnumProcesses"
+                ]
             }
         },
         "[C0042] Create Mutex": {
