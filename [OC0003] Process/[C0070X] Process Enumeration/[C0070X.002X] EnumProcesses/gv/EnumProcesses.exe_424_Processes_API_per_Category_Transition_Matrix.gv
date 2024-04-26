@@ -1,0 +1,14 @@
+digraph "./REPORTS/32675/API_PER_CATEGORY/EnumProcesses.exe_424_Processes_API_per_Category_Transition_Matrix" {
+	GetCommandLine [label=GetCommandLine fillcolor=darkorchid peripheries=2 style=filled]
+	GetCommandLine -> GetCommandLine [label=0.5 fontcolor=black]
+	others [label=others fillcolor=red style=filled]
+	GetCommandLine -> others [label=0.5 fontcolor=black]
+	others -> others [label=0.8333 fontcolor=black]
+	K32EnumProcesses [label=K32EnumProcesses fillcolor=darkorchid style=filled]
+	others -> K32EnumProcesses [label=0.1667 fontcolor=black]
+	NtQueryInformationThread [label=NtQueryInformationThread fillcolor=darkorchid style=filled]
+	K32EnumProcesses -> NtQueryInformationThread [label=1.0 fontcolor=black]
+	NtQueryInformationThread -> NtQueryInformationThread [label=0.5 fontcolor=black]
+	NtTerminateThread [label=NtTerminateThread fillcolor=darkorchid style=filled]
+	NtQueryInformationThread -> NtTerminateThread [label=0.5 fontcolor=black]
+}

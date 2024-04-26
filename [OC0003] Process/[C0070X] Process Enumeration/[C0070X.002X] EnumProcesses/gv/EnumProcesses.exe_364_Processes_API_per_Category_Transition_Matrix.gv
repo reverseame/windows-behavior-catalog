@@ -1,0 +1,13 @@
+digraph "./REPORTS/32678/API_PER_CATEGORY/9ba14908a8bd32ced573f480.exe_364_Processes_API_per_Category_Transition_Matrix" {
+	GetCommandLine [label=GetCommandLine fillcolor=darkorchid peripheries=2 style=filled]
+	GetCommandLine -> GetCommandLine [label=0.5 fontcolor=black]
+	others [label=others fillcolor=red style=filled]
+	GetCommandLine -> others [label=0.5 fontcolor=black]
+	others -> others [label=0.9811 fontcolor=black]
+	K32EnumProcesses [label=K32EnumProcesses fillcolor=darkorchid style=filled]
+	others -> K32EnumProcesses [label=0.0063 fontcolor=black]
+	NtTerminateProcess [label=NtTerminateProcess fillcolor=darkorchid style=filled]
+	others -> NtTerminateProcess [label=0.0126 fontcolor=black]
+	K32EnumProcesses -> others [label=1.0 fontcolor=black]
+	NtTerminateProcess -> others [label=1.0 fontcolor=black]
+}
