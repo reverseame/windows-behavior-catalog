@@ -20,12 +20,12 @@ In order to understand what a micro-objective, micro-behavior, or method is, ple
 ## Categories
 The code is divided into several categories:
 
-- [Filesystem](./[OC0001]\ Filesystem)
-- [Memory](./[OC0002]\ Memory)
-- [Process](./[OC0003]\ Process)
-- [Cryptography](./[OC0005]\ Cryptography)
-- [Communication](./[OC0006]\ Communication)
-- [Operating System](./[OC0008]\ Operating\ System)
+- [Filesystem](<./[OC0001] Filesystem>)
+- [Memory](<./[OC0002] Memory>)
+- [Process](<./[OC0003] Process>)
+- [Cryptography](<./[OC0005] Cryptography>)
+- [Communication](<./[OC0006] Communication>)
+- [Operating System](<./[OC0008] Operating System>)
 
 Within each category (or micro-objective) you will find the all the associated behaviors and their corresponding source code files, as well as the executables and the reports generated from CAPEv2. For each behavior, the source code file has (or pretends to) a self-explanatory name. Each category has the following structure: 
 
@@ -48,9 +48,24 @@ Files have been compiled with `cl`. The same compiler Visual Studio uses, bur fr
 
 The specific command used to compile each `.cpp` file is specified within the header of the file itself.
 
+# How to update
+The process of including new contents in the Windows Behavior Catalog should look similar to the following steps:
+
+1. Create the corresponding folder for the method.
+2. Place in `\src` the (ideally working) C/C++ source code.
+3. Compile the source code and place the resulting executable in the `\exe` folder.
+4. Submit the executable file to CAPEv2 for analysis. **ATTENTION!** We are using our modified version of capemon.
+5. Download the generated `report.json` file(s) and place them in the `\reports` folder.
+6. Transform the analysis/es into their corresponding transition matrices and callgraphs (using our tool TBA). Place the resulting `.gv` files into their corresponding `\gv` folder.
+	1. In the [utils](./utils) folder there are some tools to help automatically move .gv and report files.
+7. Update [winapi_categories_json](https://github.com/RazviOverflow/winapi_categories_json) if needed.
+8. Update the catalog creation script if needed.
+9. Use the script to regenerate the .json and .txt catalogs (the WBC itself).
+
 # Authors
-[Razvan Raducu](https://razvioverflow.github.io/)
-[Ricardo J. Rodríguez](https://webdiis.unizar.es/~ricardo/)
+
+[Razvan Raducu](https://razvioverflow.github.io/)  
+[Ricardo J. Rodríguez](https://webdiis.unizar.es/~ricardo/)  
 [Pedro Álvarez](https://i3a.unizar.es/es/investigadores/pedro-javier-alvarez-perez-aradros)
 
 ## TODO
