@@ -64,7 +64,7 @@ The process of including new contents in the Windows Behavior Catalog should loo
 
 # Authors
 
-[Razvan Raducu](https://razvioverflow.github.io/)  
+[Razvan Raducu](https://www.youtube.com/@RazviOverflow)  
 [Ricardo J. Rodríguez](https://webdiis.unizar.es/~ricardo/)  
 [Pedro Álvarez](https://i3a.unizar.es/es/investigadores/pedro-javier-alvarez-perez-aradros)
 
