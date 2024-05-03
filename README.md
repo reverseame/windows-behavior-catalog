@@ -48,13 +48,13 @@ Files have been compiled with `cl`. The same compiler Visual Studio uses, bur fr
 
 The specific command used to compile each `.cpp` file is specified within the header of the file itself.
 
+# Authors
+[Razvan Raducu](https://razvioverflow.github.io/)
+[Ricardo J. Rodríguez](https://webdiis.unizar.es/~ricardo/)
+[Pedro Álvarez](https://i3a.unizar.es/es/investigadores/pedro-javier-alvarez-perez-aradros)
+
 ## TODO
 - Review Crypto micro objective and behaviors.
 - Code for:
 	- NtDeleteFile
 	- NtOpenFile
-
-# Authors
-This repository was created and (sometimes) maintained by:
-
-[Razvan Raducu](https://razvioverflow.github.io/)
