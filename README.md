@@ -20,12 +20,12 @@ In order to understand what a micro-objective, micro-behavior, or method is, ple
 ## Categories
 The code is divided into several categories:
 
-- [Filesystem](./[OC0001] Filesystem)
-- [Memory](./[OC0002] Memory)
-- [Process](./[OC0003] Process)
-- [Cryptography](./[OC0005] Cryptography)
-- [Communication](./[OC0006] Communication)
-- [Operating System](./[OC0008] Operating System)
+- [Filesystem](./[OC0001]\ Filesystem)
+- [Memory](./[OC0002]\ Memory)
+- [Process](./[OC0003]\ Process)
+- [Cryptography](./[OC0005]\ Cryptography)
+- [Communication](./[OC0006]\ Communication)
+- [Operating System](./[OC0008]\ Operating\ System)
 
 Within each category (or micro-objective) you will find the all the associated behaviors and their corresponding source code files, as well as the executables and the reports generated from CAPEv2. For each behavior, the source code file has (or pretends to) a self-explanatory name. Each category has the following structure: 
 
