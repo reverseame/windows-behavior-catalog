@@ -59,8 +59,8 @@ The process of including new contents in the Windows Behavior Catalog should loo
 6. Transform the analysis/es into their corresponding transition matrices and callgraphs (using our tool TBA). Place the resulting `.gv` files into their corresponding `\gv` folder.
 	1. In the [utils](./utils) folder there are some tools to help automatically move .gv and report files.
 7. Update [winapi_categories_json](https://github.com/RazviOverflow/winapi_categories_json) if needed.
-8. Update the catalog creation script if needed.
-9. Use the script to regenerate the .json and .txt catalogs (the WBC itself).
+8. Update the catalog creation [script](https://github.com/RazviOverflow/API_call_traces_to_Markov_chains/blob/main/testing_NetworkX/Backtraking_DFS_test/create_behavior_catalog.py) if needed.
+9. Use the [script](https://github.com/RazviOverflow/API_call_traces_to_Markov_chains/blob/main/testing_NetworkX/Backtraking_DFS_test/create_behavior_catalog.py) to regenerate the .json and .txt catalogs (the WBC itself).
 
 # Authors
 
