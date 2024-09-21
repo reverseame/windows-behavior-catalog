@@ -73,3 +73,4 @@ The process of including new contents in the Windows Behavior Catalog should loo
 - Code for:
 	- NtDeleteFile
 	- NtOpenFile
+	- getaddrinfo
