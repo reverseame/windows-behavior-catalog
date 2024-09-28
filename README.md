@@ -74,3 +74,4 @@ The process of including new contents in the Windows Behavior Catalog should loo
 	- NtDeleteFile
 	- NtOpenFile
 	- getaddrinfo
+	- More code with HttpOpenRequest and HttpSendRequest (maybe consider them single-node patterns)
