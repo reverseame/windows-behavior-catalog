@@ -48,8 +48,8 @@ int main() {
         return 1;
     }
 
-    //std::cout << "Encryption succeeded. CipherText length: " << cipherTextLen << std::endl;
-    //std::cout << "Plaintext is: " << plainText << " while ciphertext is: " << cipherText << std::endl;
+    std::cout << "Encryption succeeded. CipherText length: " << cipherTextLen << std::endl;
+    std::cout << "Plaintext is: " << plainText << " while ciphertext is: " << cipherText << std::endl;
 
     // Cleanup
     BCryptDestroyKey(hKey);
