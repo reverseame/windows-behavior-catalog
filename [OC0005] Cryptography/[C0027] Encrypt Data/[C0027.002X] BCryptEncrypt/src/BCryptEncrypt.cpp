@@ -1,11 +1,11 @@
 // Compiled with: cl /EHsc .\BCryptEncrypt.cpp bcrypt.lib
 // Encrypt data with BCryptEncrypt
-#include <ntstatus.h>
+//#include <ntstatus.h>
 #include <windows.h>
 #include <bcrypt.h>
 #include <iostream>
 
-// STATUS_SUCCESS = 0
+#define STATUS_SUCCESS 0
 
 int main() {
     BCRYPT_ALG_HANDLE hAlg = NULL;
