@@ -5,8 +5,6 @@
 #include <bcrypt.h>
 #include <iostream>
 
-#define STATUS_SUCCESS 0
-
 int main() {
     BCRYPT_ALG_HANDLE hAlg = NULL;
     BCRYPT_KEY_HANDLE hKey = NULL;
@@ -20,14 +18,14 @@ int main() {
 
     // Open AES algorithm provider
     status = BCryptOpenAlgorithmProvider(&hAlg, BCRYPT_AES_ALGORITHM, NULL, 0);
-    if (status != STATUS_SUCCESS) {
+    if (status) {
         std::cerr << "BCryptOpenAlgorithmProvider failed. Error: " << std::hex << status << "\n";
         return 1;
     }
 
     // Set the block chaining mode to CBC
     status = BCryptSetProperty(hAlg, BCRYPT_CHAINING_MODE, (PUCHAR)BCRYPT_CHAIN_MODE_CBC, sizeof(BCRYPT_CHAIN_MODE_CBC), 0);
-    if (status != STATUS_SUCCESS) {
+    if (status) {
         std::cerr << "BCryptSetProperty failed. Error: " << std::hex << status << "\n";
         BCryptCloseAlgorithmProvider(hAlg, 0);
         return 1;
@@ -35,7 +33,7 @@ int main() {
 
     // Generate a symmetric key
     status = BCryptGenerateSymmetricKey(hAlg, &hKey, NULL, 0, keyMaterial, sizeof(keyMaterial), 0);
-    if (status != STATUS_SUCCESS) {
+    if (status) {
         std::cerr << "BCryptGenerateSymmetricKey failed. Error: " << std::hex << status << "\n";
         BCryptCloseAlgorithmProvider(hAlg, 0);
         return 1;
@@ -43,7 +41,7 @@ int main() {
 
     // Encrypt the data
     status = BCryptEncrypt(hKey, plainText, sizeof(plainText) - 1, NULL, iv, sizeof(iv), cipherText, sizeof(cipherText), &cipherTextLen, 0);
-    if (status != STATUS_SUCCESS) {
+    if (status) {
         std::cerr << "BCryptEncrypt failed. Error: " << std::hex << status << "\n";
         BCryptDestroyKey(hKey);
         BCryptCloseAlgorithmProvider(hAlg, 0);
