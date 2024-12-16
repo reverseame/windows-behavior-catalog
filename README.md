@@ -51,6 +51,9 @@ Files have been compiled with `cl`, the same compiler Visual Studio uses, but fr
 
 The specific command used to compile each `.cpp` file is specified within the header of the file itself.
 
+## How to cite
+TBD
+
 # How to update
 The typical workflow for adding new content to the Windows Behavior Catalog is as follows:
 
