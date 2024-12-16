@@ -1,7 +1,9 @@
 # Windows Behavior Catalog (WBC)
-In this repository you will find a corpus of common Windows behaviors and their corresponding implementation. The source code is written in C++ and has been tested with `cl` (`Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31935 for x86`). **The files have been compiled and tested under Windows 10 Pro Version 10.0.19044 Build 19044**.
+Collection of common Windows behaviors and their corresponding implementation. The source code is written in C++ and has been tested with `cl` (`Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31935 for x86`). **The files have been compiled and tested under Windows 10 Pro Version 10.0.19044 Build 19044**.
 
 The vast majority of the behaviors here defined are based on the [Malware Behavior Catalog (MBC)](https://github.com/MBCProject/mbc-markdown)'s micro-behaviors.
+
+Feel free to contribute to the WBC's corpus by opening PRs and/or issues.
 
 # Contents
 
@@ -27,6 +29,7 @@ The code is divided into several categories:
 - [Communication](<./[OC0006] Communication>)
 - [Operating System](<./[OC0008] Operating System>)
 
+## Structure
 Within each category (or micro-objective) you will find the all the associated behaviors and their corresponding source code files, as well as the executables and the reports generated from CAPEv2. For each behavior, the source code file has (or pretends to) a self-explanatory name. Each category has the following structure: 
 
 - [ID] Micro-objective
@@ -38,27 +41,27 @@ Within each category (or micro-objective) you will find the all the associated b
 			- **gv**: Folder containing the _graphviz_ files, used to perform pattern matching and other analysis techniques.
 
 ## Source Code
-The contents present in this repository have been developed in part by the authors of the repo and other have been copied or adapted from other sources. Whenever the latter, the corresponding authors are credited.
+This repository contains a mix of original work by the WBC authors and code adapted or inspired by other sources. When using content from others, we make sure to credit the original creators.
 
-Each behavior's implementations pretends to be the simplest working example of such behavior. Keep things simple and straight to the point!
+Each behavior implementation is designed to be a straightforward, working example of that behavior. Keep it simple, clear, and focused!
 
 ## Compilation
 
-Files have been compiled with `cl`. The same compiler Visual Studio uses, bur from the command line: [Use the Microsoft C++ toolset from the command line](https://learn.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=msvc-170). You can find more information and instructions here: [Walkthrough: Compiling a Native C++ Program on the Command Line](https://learn.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=msvc-170).
+Files have been compiled with `cl`, the same compiler Visual Studio uses, but from the command line: [Use the Microsoft C++ toolset from the command line](https://learn.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=msvc-170). You can find more information and instructions here: [Walkthrough: Compiling a Native C++ Program on the Command Line](https://learn.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=msvc-170).
 
 The specific command used to compile each `.cpp` file is specified within the header of the file itself.
 
 # How to update
-The process of including new contents in the Windows Behavior Catalog should look similar to the following steps:
+The typical workflow for adding new content to the Windows Behavior Catalog is as follows:
 
 1. Create the corresponding folder for the method.
 2. Place in `\src` the (ideally working) C/C++ source code.
 3. Compile the source code and place the resulting executable in the `\exe` folder.
-4. Submit the executable file to CAPEv2 for analysis. **ATTENTION!** We are using our modified version of capemon.
+4. Submit the executable file to CAPEv2 for analysis. **ATTENTION!** We are using [our modified version of capemon](https://github.com/reverseame/capemon).
 5. Download the generated `report.json` file(s) and place them in the `\reports` folder.
 6. Transform the analysis/es into their corresponding transition matrices and callgraphs (using our tool TBA). Place the resulting `.gv` files into their corresponding `\gv` folder.
 	1. In the [utils](./utils) folder there are some tools to help automatically move .gv and report files.
-7. Update [winapi_categories_json](https://github.com/RazviOverflow/winapi_categories_json) if needed.
+7. Update [winapi_categories_json](https://github.com/reverseame/winapi-categories) if needed.
 8. Update the catalog creation [script](https://github.com/RazviOverflow/API_call_traces_to_Markov_chains/blob/main/testing_NetworkX/Backtraking_DFS_test/create_behavior_catalog.py) if needed.
 9. Use the [script](https://github.com/RazviOverflow/API_call_traces_to_Markov_chains/blob/main/testing_NetworkX/Backtraking_DFS_test/create_behavior_catalog.py) to regenerate the .json and .txt catalogs (the WBC itself).
 
@@ -67,14 +70,6 @@ The process of including new contents in the Windows Behavior Catalog should loo
 [Razvan Raducu](https://www.youtube.com/@RazviOverflow)  
 [Ricardo J. Rodríguez](https://webdiis.unizar.es/~ricardo/)  
 [Pedro Álvarez](https://i3a.unizar.es/es/investigadores/pedro-javier-alvarez-perez-aradros)
-
-## TODO
-- Review Crypto micro objective and behaviors.
-- Code for:
-	- NtDeleteFile
-	- NtOpenFile
-	- getaddrinfo
-	- More code with HttpOpenRequest and HttpSendRequest (maybe consider them single-node patterns)
 
 # WBC Composition
 The WBC comprises:
@@ -645,3 +640,10 @@ $ tree -L 5 -P "*.exe"
 │           ├── reports
 │           └── src
 ```
+
+## TODO
+- Code for:
+	- NtDeleteFile
+	- NtOpenFile
+	- getaddrinfo
+	- More code with HttpOpenRequest and HttpSendRequest (maybe consider them single-node patterns)
