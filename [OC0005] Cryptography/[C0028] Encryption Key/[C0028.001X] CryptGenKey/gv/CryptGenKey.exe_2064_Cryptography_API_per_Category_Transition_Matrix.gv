@@ -1,0 +1,13 @@
+digraph "./REPORTS/63257.json/API_PER_CATEGORY/CryptGenKey.exe_2064_Cryptography_API_per_Category_Transition_Matrix" {
+	CryptAcquireContext [label=CryptAcquireContext fillcolor="#004bf0" peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	CryptAcquireContext -> others [label=0.5 fontcolor=black]
+	CryptGenKey [label=CryptGenKey fillcolor="#004bf0" style=filled]
+	CryptAcquireContext -> CryptGenKey [label=0.5 fontcolor=black]
+	others -> CryptAcquireContext [label=0.0127 fontcolor=black]
+	others -> others [label=0.9747 fontcolor=black]
+	CryptDestroyKey [label=CryptDestroyKey fillcolor="#004bf0" style=filled]
+	others -> CryptDestroyKey [label=0.0127 fontcolor=black]
+	CryptGenKey -> others [label=1.0 fontcolor=black]
+	CryptDestroyKey -> others [label=1.0 fontcolor=black]
+}

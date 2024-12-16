@@ -1,0 +1,11 @@
+digraph "./REPORTS/63255.json/API_PER_CATEGORY/CryptCreateHash.exe_6956_Cryptography_API_per_Category_Transition_Matrix" {
+	CryptAcquireContext [label=CryptAcquireContext fillcolor="#004bf0" peripheries=2 style=filled]
+	CryptCreateHash [label=CryptCreateHash fillcolor="#004bf0" style=filled]
+	CryptAcquireContext -> CryptCreateHash [label=1.0 fontcolor=black]
+	others [label=others fillcolor=red style=filled]
+	CryptCreateHash -> others [label=1.0 fontcolor=black]
+	others -> others [label=0.9865 fontcolor=black]
+	CryptDestroyHash [label=CryptDestroyHash fillcolor="#004bf0" style=filled]
+	others -> CryptDestroyHash [label=0.0135 fontcolor=black]
+	CryptDestroyHash -> others [label=1.0 fontcolor=black]
+}

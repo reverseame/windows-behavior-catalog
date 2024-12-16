@@ -1,0 +1,15 @@
+digraph "./REPORTS/63276.json/API_PER_CATEGORY/CryptExportPublicKeyInfo.exe_5912_Cryptography_API_per_Category_Transition_Matrix" {
+	CryptAcquireContext [label=CryptAcquireContext fillcolor="#004bf0" peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	CryptAcquireContext -> others [label=1.0 fontcolor=black]
+	others -> others [label=0.967 fontcolor=black]
+	CryptGenKey [label=CryptGenKey fillcolor="#004bf0" style=filled]
+	others -> CryptGenKey [label=0.011 fontcolor=black]
+	CryptExportPublicKeyInfo [label=CryptExportPublicKeyInfo fillcolor="#004bf0" style=filled]
+	others -> CryptExportPublicKeyInfo [label=0.011 fontcolor=black]
+	CryptDestroyKey [label=CryptDestroyKey fillcolor="#004bf0" style=filled]
+	others -> CryptDestroyKey [label=0.011 fontcolor=black]
+	CryptGenKey -> others [label=1.0 fontcolor=black]
+	CryptExportPublicKeyInfo -> others [label=1.0 fontcolor=black]
+	CryptDestroyKey -> others [label=1.0 fontcolor=black]
+}

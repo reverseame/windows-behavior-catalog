@@ -1,0 +1,7 @@
+digraph "./REPORTS/63258.json/API_PER_CATEGORY/CryptExportPublicKeyInfoEx.exe_6548_CNG Cryptographic Primitive_API_per_Category_Transition_Matrix" {
+	BCryptImportKeyPair [label=BCryptImportKeyPair fillcolor=chocolate peripheries=2 style=filled]
+	others [label=others fillcolor=red style=filled]
+	BCryptImportKeyPair -> others [label=1.0 fontcolor=black]
+	others -> BCryptImportKeyPair [label=0.0057 fontcolor=black]
+	others -> others [label=0.9943 fontcolor=black]
+}
