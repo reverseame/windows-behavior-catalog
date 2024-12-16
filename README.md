@@ -81,7 +81,8 @@ The WBC comprises:
 - 6 Micro-objectives
 - 30 Micro-behaviors
 - 89 Methods
-- 99 Method implementations
+- 99 Method implementations  
+
 *Information subject to change. Updated on 2024.16.12*
 
 ```
@@ -643,5 +644,4 @@ $ tree -L 5 -P "*.exe"
 │           ├── gv
 │           ├── reports
 │           └── src
-...
 ```
