@@ -11,7 +11,7 @@ Feel free to contribute to the WBC's corpus by opening PRs and/or issues.
 - [`/utils`](./utils) contains several utilities.
 - [`catalog.json`](./catalog.json) and [`catalog.txt`](./catalog.txt) contain the WBC in JSON and plain text format, respectively.
 - [`discarded.json`](./discarded.json) and [`discarded.txt`](./discarded.txt) contain the WBC discarded patterns in JSON and plain text format, respectively. This is just some additional info.
-- **[OC000\*]** folder contain the sources, exes, reports and graphviz files the catalog is originated from.
+- Each **[OC000\*]** folder contain the sources, exes, reports and graphviz files the catalog is originated from.
 
 ## Naming
 In order to understand what a micro-objective, micro-behavior, or method is, please refer to the [MBC](https://github.com/MBCProject/mbc-markdown). The contents of this catalog uses the following naming convention:
@@ -19,21 +19,11 @@ In order to understand what a micro-objective, micro-behavior, or method is, ple
 - **OC####**: Micro-Objective 
 - **C####**: Micro-Behavior
 - **C####.###**: Method
-- **X** at the end: eXpanded by us (with respect to the MBC)
-	- Behaviors we consider relevant but are not included in the MBC as of the moment of this writing. We will eventually pull request the MBC to include them, if they deem it. 
+	- **X** at the end: eXpanded by us (with respect to the MBC)
+		- Behaviors we consider relevant but are not included in the MBC as of the moment of this writing. We will eventually pull request the MBC to include them, if they deem it. 
 - **P####**: Individual behavioral pattern
-- **H** at the end: Manually added pattern
-	- Behavioral patterns both single or multiple nodes long we manually added to a specific method. This situation occurs when there is a behavior unequivocally identified by any pattern that does not arise as a result of our behavioral pattern generation algorithm (from the Category Graphs).
-
-## Categories
-The code is divided into several categories:
-
-- [Filesystem](<./[OC0001] Filesystem>)
-- [Memory](<./[OC0002] Memory>)
-- [Process](<./[OC0003] Process>)
-- [Cryptography](<./[OC0005] Cryptography>)
-- [Communication](<./[OC0006] Communication>)
-- [Operating System](<./[OC0008] Operating System>)
+	- **H** at the end: Manually added pattern
+		- Behavioral patterns both single or multiple nodes long we manually added to a specific method. This situation occurs when there is a behavior unequivocally identified by any pattern that does not arise as a result of our behavioral pattern generation algorithm (from the Category Graphs).
 
 ## Structure
 Within each category (or micro-objective) you will find the all the associated behaviors and their corresponding source code files, as well as the executables and the reports generated from CAPEv2. For each behavior, the source code file has (or pretends to) a self-explanatory name. Each category has the following structure: 
@@ -71,8 +61,8 @@ The typical workflow for adding new content to the Windows Behavior Catalog is a
 6. Transform the analysis/es into their corresponding transition matrices and callgraphs (using our tool TBA). Place the resulting `.gv` files into their corresponding `\gv` folder.
 	1. In the [utils](./utils) folder there are some tools to help automatically move .gv and report files.
 7. Update [winapi_categories_json](https://github.com/reverseame/winapi-categories) if needed.
-8. Update the catalog creation [script](https://github.com/RazviOverflow/API_call_traces_to_Markov_chains/blob/main/testing_NetworkX/Backtraking_DFS_test/create_behavior_catalog.py) if needed.
-9. Use the [script](https://github.com/RazviOverflow/API_call_traces_to_Markov_chains/blob/main/testing_NetworkX/Backtraking_DFS_test/create_behavior_catalog.py) to regenerate the .json and .txt catalogs (the WBC itself).
+8. Update the catalog creation [script](./src/create_behavior_catalog.py) if needed.
+9. Use the [script](./src/create_behavior_catalog.py) to regenerate the .json and .txt catalogs (the WBC itself).
 
 # Authors
 
