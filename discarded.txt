@@ -1,304 +1,174 @@
-{
-    "[OC0001] Filesystem": {
-        "[C0049] Get File Attributes": {
-            "[C0049.005X] FindFirstFile": {},
-            "[C0049.001X] GetFileAttributes": {},
-            "[C0049.002X] GetFileAttributesEx": {},
-            "[C0049.004X] GetFileInformationByHandle": {},
-            "[C0049.007X] FindFirstFileTransacted": {},
-            "[C0049.003X] GetFileAttributesTransacted": {},
-            "[C0049.008X] FindNextFile": {},
-            "[C0049.006X] FindFirstFileEx": {}
-        },
-        "[C0051] Read File": {
-            "[C0051.001X] ReadFile": {}
-        },
-        "[C0016X] Create or Open file": {
-            "[C0016X.002X] CreateFile2": {},
-            "[C0016X.003X] OpenFile": {},
-            "[C0016X.001X] CreateFile": {}
-        },
-        "[C0015] Alter Filename Extension": {
-            "[C0015.006X] PathAddExtension": {},
-            "[C0015.002X] PathCombine": {},
-            "[C0015.007X] PathCchRenameExtension": {},
-            "[C0015.003X] PathCchCombine": {},
-            "[C0015.004X] PathCchCombineEx": {},
-            "[C0015.001X] PathRenameExtension": {},
-            "[C0015.005X] PathAllocCombine": {}
-        },
-        "[C0046] Create Directory": {
-            "[C0046.003X] SHCreateDirectory": {},
-            "[C0046.004X] SHCreateDirectoryEx": {},
-            "[C0046.005X] CreateFileTransacted": {},
-            "[C0046.002X] CreateDirectoryEx": {},
-            "[C0046.001X] CreateDirectory": {}
-        },
-        "[C0045] Copy File": {
-            "[C0045.003X] CopyFile2": {},
-            "[C0045.002X] CopyFileEx": {},
-            "[C0045.001X] CopyFile": {}
-        },
-        "[C0047] Delete File": {
-            "[C0047.001X] DeleteFile": {},
-            "[C0047.002X] DeleteFileTransacted": {}
-        },
-        "[C0063] Move File": {
-            "[C0063.002X] MoveFileEx": {},
-            "[C0063.001X] MoveFile": {}
-        },
-        "[C0052] Write File": {
-            "[C0052.001X] WriteFile": {},
-            "[C0052.002X] WriteFileEx": {}
-        }
-    },
-    "[OC0005] Cryptography": {
-        "[C0028] Encryption Key": {
-            "[C0028.001X] CryptGenKey": {
-                "[C0028.001X-P1]": [
-                    "CryptAcquireContext"
-                ]
-            }
-        },
-        "[C0027] Encrypt Data": {
-            "[C0027.001X] CryptEncrypt": {
-                "[C0027.001X-P1]": [
-                    "CryptAcquireContext"
-                ]
-            }
-        }
-    },
-    "[OC0006] Communication": {
-        "[C0001] Socket Communication": {
-            "[C0001.007] Send Data": {
-                "[C0001.007-P1]": [
-                    "WSAStartup"
-                ]
-            },
-            "[C0001.006] Receive Data": {
-                "[C0001.006-P1]": [
-                    "WSAStartup"
-                ]
-            }
-        },
-        "[C0005] WinINet Communication": {
-            "[C0005.003] InternetOpenURL": {
-                "[C0005.003-P1]": [
-                    "WinHttpSetOption"
-                ],
-                "[C0005.003-P2]": [
-                    "InternetOpen"
-                ],
-                "[C0005.003-P3]": [
-                    "WSAStartup"
-                ]
-            },
-            "[C0005.001] InternetConnect": {
-                "[C0005.001-P1]": [
-                    "WSAStartup"
-                ],
-                "[C0005.001-P2]": [
-                    "WinHttpOpen"
-                ],
-                "[C0005.001-P3]": [
-                    "InternetOpen"
-                ]
-            }
-        },
-        "[C0002] HTTP Communication": {
-            "[C0002.008] WinHTTP": {}
-        }
-    },
-    "[OC0002] Memory": {
-        "[C0007] Allocate Memory": {
-            "[C0007.004X] LocalAlloc": {
-                "[C0007.004X-P1]": [
-                    "GetProcessHeap"
-                ]
-            },
-            "[C0007.003X] GlobalAlloc": {
-                "[C0007.003X-P1]": [
-                    "GetProcessHeap"
-                ]
-            },
-            "[C0007.001X] VirtualAlloc": {
-                "[C0007.001X-P1]": [
-                    "GetProcessHeap"
-                ]
-            },
-            "[C0007.005X] malloc": {
-                "[C0007.005X-P1]": [
-                    "GetProcessHeap"
-                ]
-            }
-        },
-        "[C0008] Change Memory Protection": {
-            "[C0008.001X] VirtualProtect": {
-                "[C0008.001X-P1]": [
-                    "GetProcessHeap"
-                ]
-            },
-            "[C0008.002X] VirtualProtectEx": {}
-        }
-    },
-    "[OC0003] Process": {
-        "[C0038] Create Thread": {
-            "[C0038.001X] CreateThread": {
-                "[C0038.001X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            },
-            "[C0038.002X] CreateRemoteThread": {
-                "[C0038.002X-P1]": [
-                    "NtFreeVirtualMemory"
-                ],
-                "[C0038.002X-P2]": [
-                    "NtTerminateProcess"
-                ]
-            }
-        },
-        "[C0064] Enumerate Threads": {
-            "[C0064.001X] Thread32First_Thread32Next": {
-                "[C0064.001X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            }
-        },
-        "[C0054] Resume Thread": {
-            "[C0054.001X] ResumeThread": {
-                "[C0054.001X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            }
-        },
-        "[C0055] Suspend Thread": {
-            "[C0055.001X] SuspendThread": {
-                "[C0055.001X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            }
-        },
-        "[C0065] Open Process": {
-            "[C0065.001X] OpenProcess": {
-                "[C0065.001X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            }
-        },
-        "[C0066] Open Thread": {
-            "[C0066.001X] OpenThread": {
-                "[C0066.001X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            }
-        },
-        "[C0070X] Process Enumeration": {
-            "[C0070X.001X] CreateSnapshot_Process32Next": {
-                "[C0070X.001X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            }
-        },
-        "[C0042] Create Mutex": {
-            "[C0042.001X] CreateMutex": {},
-            "[C0042.002X] CreateMutexEx": {}
-        },
-        "[C0017] Create Process": {
-            "[C0017.002X] ShellExecuteEx": {
-                "[C0017.002X-P1]": [
-                    "NtOpenSection"
-                ],
-                "[C0017.002X-P2]": [
-                    "NtCreateSection"
-                ],
-                "[C0017.002X-P3]": [
-                    "NtMapViewOfSection"
-                ],
-                "[C0017.002X-P4]": [
-                    "NtQueryInformationToken"
-                ],
-                "[C0017.002X-P5]": [
-                    "NtOpenProcessToken"
-                ],
-                "[C0017.002X-P6]": [
-                    "NtSetInformationProcess"
-                ],
-                "[C0017.002X-P7]": [
-                    "NtUnmapViewOfSectionEx"
-                ],
-                "[C0017.002X-P8]": [
-                    "NtQueryInformationThread"
-                ],
-                "[C0017.002X-P9]": [
-                    "NtUnmapViewOfSection"
-                ],
-                "[C0017.002X-P10]": [
-                    "NtFreeVirtualMemory"
-                ],
-                "[C0017.002X-P11]": [
-                    "NtTerminateProcess"
-                ],
-                "[C0017.002X-P12]": [
-                    "NtTerminateThread"
-                ]
-            },
-            "[C0017.001X] ShellExecute": {
-                "[C0017.001X-P1]": [
-                    "NtQueryInformationThread"
-                ],
-                "[C0017.001X-P2]": [
-                    "NtSetInformationProcess"
-                ],
-                "[C0017.001X-P3]": [
-                    "NtQueryInformationToken"
-                ],
-                "[C0017.001X-P4]": [
-                    "NtOpenProcessToken"
-                ],
-                "[C0017.001X-P5]": [
-                    "NtTerminateProcess"
-                ],
-                "[C0017.001X-P6]": [
-                    "NtUnmapViewOfSectionEx"
-                ],
-                "[C0017.001X-P7]": [
-                    "NtDelayExecution"
-                ],
-                "[C0017.001X-P8]": [
-                    "NtUnmapViewOfSection"
-                ],
-                "[C0017.001X-P9]": [
-                    "NtTerminateThread"
-                ]
-            },
-            "[C0017.003X] CreateProcess": {
-                "[C0017.003X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            },
-            "[C0017.004X] WinExec": {
-                "[C0017.004X-P1]": [
-                    "NtTerminateProcess"
-                ]
-            }
-        },
-        "[C0043] Check Mutex": {
-            "[C0043.001X] OpenMutex": {}
-        }
-    },
-    "[OC0008] Operating System": {
-        "[C0036] Registry": {
-            "[C0036.006] Query Registry Value": {},
-            "[C0036.005] Query Registry Key": {},
-            "[C0036.003] Open Registry Key": {},
-            "[C0036.004] Create Registry Key": {},
-            "[C0036.001] Create or Set Registry Value": {},
-            "[C0036.007] Delete Registry Value": {},
-            "[C0036.002] Delete Registry Key": {}
-        },
-        "[C0034] Environment Variable": {
-            "[C0034.001] Set Environment Variable": {},
-            "[C0034.002] Check Environment Variable": {}
-        }
-    }
-}
+[OC0001] Filesystem
+	[C0049] Get File Attributes
+		[C0049.005X] FindFirstFile
+		[C0049.001X] GetFileAttributes
+		[C0049.002X] GetFileAttributesEx
+		[C0049.004X] GetFileInformationByHandle
+		[C0049.007X] FindFirstFileTransacted
+		[C0049.003X] GetFileAttributesTransacted
+		[C0049.008X] FindNextFile
+		[C0049.006X] FindFirstFileEx
+	[C0051] Read File
+		[C0051.001X] ReadFile
+	[C0016X] Create or Open file
+		[C0016X.002X] CreateFile2
+		[C0016X.003X] OpenFile
+		[C0016X.001X] CreateFile
+	[C0015] Alter Filename Extension
+		[C0015.006X] PathAddExtension
+		[C0015.002X] PathCombine
+		[C0015.007X] PathCchRenameExtension
+		[C0015.003X] PathCchCombine
+		[C0015.004X] PathCchCombineEx
+		[C0015.001X] PathRenameExtension
+		[C0015.005X] PathAllocCombine
+	[C0046] Create Directory
+		[C0046.003X] SHCreateDirectory
+		[C0046.004X] SHCreateDirectoryEx
+		[C0046.005X] CreateFileTransacted
+		[C0046.002X] CreateDirectoryEx
+		[C0046.001X] CreateDirectory
+	[C0045] Copy File
+		[C0045.003X] CopyFile2
+		[C0045.002X] CopyFileEx
+		[C0045.001X] CopyFile
+	[C0047] Delete File
+		[C0047.001X] DeleteFile
+		[C0047.002X] DeleteFileTransacted
+	[C0063] Move File
+		[C0063.002X] MoveFileEx
+		[C0063.001X] MoveFile
+	[C0052] Write File
+		[C0052.001X] WriteFile
+		[C0052.002X] WriteFileEx
+[OC0005] Cryptography
+	[C0028] Encryption Key
+		[C0028.010X] CryptExportPublicKeyInfo
+			[C0028.010X-P1]:['CryptAcquireContext']
+		[C0028.008X] CryptExportKey
+		[C0028.011X] CryptExportPublicKeyInfoEx
+		[C0028.005X] BCryptImportKeyPair
+		[C0028.003X] CryptImportPublicKeyInfo
+		[C0028.012X] BCryptGenerateKeyPair
+		[C0028.001X] CryptGenKey
+			[C0028.001X-P1]:['CryptAcquireContext']
+		[C0028.004X] CryptImportPublicKeyInfoEx
+			[C0028.004X-P1]:['CryptAcquireContext']
+		[C0028.009X] BCryptExportKey
+		[C0028.002X] CryptImportKey
+		[C0028.006X] BCryptImportKey
+	[C0027] Encrypt Data
+		[C0027.002X] BCryptEncrypt
+		[C0027.001X] CryptEncrypt
+			[C0027.001X-P1]:['CryptAcquireContext']
+	[C0029] Cryptographic Hash
+		[C0029.001X] CryptCreateHash
+		[C0029.002X] CryptHashData
+		[C0029.003X] CryptDestroyHash
+	[C0031] Decrypt Data
+		[C0031.002X] BCryptDecrypt
+		[C0031.001X] CryptDecrypt
+[OC0006] Communication
+	[C0001] Socket Communication
+		[C0001.007] Send Data
+			[C0001.007-P1]:['WSAStartup']
+		[C0001.006] Receive Data
+			[C0001.006-P1]:['WSAStartup']
+	[C0005] WinINet Communication
+		[C0005.003] InternetOpenURL
+			[C0005.003-P1]:['WinHttpSetOption']
+			[C0005.003-P2]:['InternetOpen']
+			[C0005.003-P3]:['WSAStartup']
+		[C0005.001] InternetConnect
+			[C0005.001-P1]:['WSAStartup']
+			[C0005.001-P2]:['WinHttpOpen']
+			[C0005.001-P3]:['InternetOpen']
+	[C0002] HTTP Communication
+		[C0002.008] WinHTTP
+[OC0002] Memory
+	[C0007] Allocate Memory
+		[C0007.004X] LocalAlloc
+			[C0007.004X-P1]:['GetProcessHeap']
+		[C0007.003X] GlobalAlloc
+			[C0007.003X-P1]:['GetProcessHeap']
+		[C0007.001X] VirtualAlloc
+			[C0007.001X-P1]:['GetProcessHeap']
+		[C0007.005X] malloc
+			[C0007.005X-P1]:['GetProcessHeap']
+	[C0008] Change Memory Protection
+		[C0008.001X] VirtualProtect
+			[C0008.001X-P1]:['GetProcessHeap']
+		[C0008.002X] VirtualProtectEx
+[OC0003] Process
+	[C0038] Create Thread
+		[C0038.001X] CreateThread
+			[C0038.001X-P1]:['NtTerminateProcess']
+		[C0038.002X] CreateRemoteThread
+			[C0038.002X-P1]:['NtFreeVirtualMemory']
+			[C0038.002X-P2]:['NtTerminateProcess']
+	[C0064] Enumerate Threads
+		[C0064.001X] Thread32First_Thread32Next
+			[C0064.001X-P1]:['NtTerminateProcess']
+	[C0054] Resume Thread
+		[C0054.001X] ResumeThread
+			[C0054.001X-P1]:['NtTerminateProcess']
+	[C0055] Suspend Thread
+		[C0055.001X] SuspendThread
+			[C0055.001X-P1]:['NtTerminateProcess']
+	[C0065] Open Process
+		[C0065.001X] OpenProcess
+			[C0065.001X-P1]:['NtTerminateProcess']
+	[C0066] Open Thread
+		[C0066.001X] OpenThread
+			[C0066.001X-P1]:['NtTerminateProcess']
+	[C0070X] Process Enumeration
+		[C0070X.001X] CreateSnapshot_Process32Next
+			[C0070X.001X-P1]:['NtTerminateProcess']
+		[C0070X.002X] EnumProcesses
+			[C0070X.002X-P1]:['K32EnumProcesses']
+			[C0070X.002X-P2]:['NtTerminateProcess']
+	[C0042] Create Mutex
+		[C0042.001X] CreateMutex
+		[C0042.002X] CreateMutexEx
+	[C0017] Create Process
+		[C0017.002X] ShellExecuteEx
+			[C0017.002X-P1]:['NtOpenSection']
+			[C0017.002X-P2]:['NtCreateSection']
+			[C0017.002X-P3]:['NtMapViewOfSection']
+			[C0017.002X-P4]:['NtQueryInformationToken']
+			[C0017.002X-P5]:['NtOpenProcessToken']
+			[C0017.002X-P6]:['NtSetInformationProcess']
+			[C0017.002X-P7]:['NtUnmapViewOfSectionEx']
+			[C0017.002X-P8]:['NtQueryInformationThread']
+			[C0017.002X-P9]:['NtUnmapViewOfSection']
+			[C0017.002X-P10]:['NtFreeVirtualMemory']
+			[C0017.002X-P11]:['NtTerminateProcess']
+			[C0017.002X-P12]:['NtTerminateThread']
+		[C0017.001X] ShellExecute
+			[C0017.001X-P1]:['NtQueryInformationThread']
+			[C0017.001X-P2]:['NtSetInformationProcess']
+			[C0017.001X-P3]:['NtQueryInformationToken']
+			[C0017.001X-P4]:['NtOpenProcessToken']
+			[C0017.001X-P5]:['NtTerminateProcess']
+			[C0017.001X-P6]:['NtUnmapViewOfSectionEx']
+			[C0017.001X-P7]:['NtDelayExecution']
+			[C0017.001X-P8]:['NtUnmapViewOfSection']
+			[C0017.001X-P9]:['NtTerminateThread']
+		[C0017.003X] CreateProcess
+			[C0017.003X-P1]:['NtTerminateProcess']
+		[C0017.004X] WinExec
+			[C0017.004X-P1]:['NtTerminateProcess']
+	[C0043] Check Mutex
+		[C0043.001X] OpenMutex
+[OC0008] Operating System
+	[C0036] Registry
+		[C0036.006] Query Registry Value
+		[C0036.005] Query Registry Key
+		[C0036.003] Open Registry Key
+		[C0036.004] Create Registry Key
+		[C0036.001] Create or Set Registry Value
+		[C0036.007] Delete Registry Value
+		[C0036.002] Delete Registry Key
+	[C0034] Environment Variable
+		[C0034.001] Set Environment Variable
+		[C0034.002] Check Environment Variable
