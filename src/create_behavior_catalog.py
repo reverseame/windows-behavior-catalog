@@ -315,14 +315,6 @@ def create_catalog(path):
                                         discarded_patterns[micro_objective_name][micro_behavior_name] \
                                         [method_name] [f"[{method_id}-P{discarded_pattern_number}]"] = simple_path
                                         discarded_pattern_number += 1
-                            # Check if the method id has manually included patterns and insert them
-                            if method_id in manually_included_patterns:
-                                for pattern in manually_included_patterns[method_id]:
-                                    # Insert the pattern only if it isn't already present in the catalog
-                                    if pattern not in catalog[micro_objective_name][micro_behavior_name][method_name].values():
-                                        catalog[micro_objective_name][micro_behavior_name] \
-                                        [method_name] [f"[{method_id}-P{pattern_number}H]"] = pattern
-                                        pattern_number += 1
                             # Check if the pattern is one of those that must be later deleted because is included
                             # in any other one
                             if method_name in compound_behaviors_values:
@@ -346,6 +338,18 @@ def create_catalog(path):
                                         for i in range(start_index, end_index):
                                             # Always delete start_index position because del modifies the whole list
                                             del pattern[start_index] 
+
+                # Check if the method id has manually included patterns and insert them
+                method_id = method[1:method.index(']')]
+                if method_id in manually_included_patterns:
+                    for pattern in manually_included_patterns[method_id]:
+                        # Insert the pattern only if it isn't already present in the catalog
+                        patterns_so_far = catalog[micro_objective][micro_behavior][method].values()
+                        if pattern not in patterns_so_far:
+                            # The pattern_number to be inserted is the number of patterns so far +1
+                            pattern_number = len(patterns_so_far) + 1 
+                            catalog[micro_objective][micro_behavior][method][f"[{method_id}-P{pattern_number}H]"] = pattern
+                            pattern_number += 1                                            
 
     # One last traversal to delete empty patterns. deepcopy is employed
     catalog_copy = copy.deepcopy(catalog)
