@@ -81,13 +81,15 @@ The typical workflow for adding new content to the Windows Behavior Catalog is a
 [Pedro Álvarez](https://i3a.unizar.es/es/investigadores/pedro-javier-alvarez-perez-aradros)
 
 # WBC Composition
-The WBC comprises:
-- 6 Micro-objectives
-- 30 Micro-behaviors
-- 89 Methods
-- 99 Method implementations  
+The WBC comprises: *(Information generated with [statistics.py](./utils/statistics.py))*
+- Total Micro-objectives: 6
+- Total Micro-behaviors: 30
+- Total Methods: 87
+- Total Patterns: 328
+- Minimum Pattern Length: 1
+- Maximum Pattern Length: 7
 
-*Information subject to change. Updated on 2024.16.12*
+*Information subject to change. Updated on 2024.17.12*
 
 ```
 $ tree -L 5 -P "*.exe"
