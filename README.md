@@ -7,6 +7,9 @@ Feel free to contribute to the WBC's corpus by opening PRs and/or issues.
 
 # Contents
 
+- [`/src`](./src) contains the tool to generate the catalog itself based on the contents of this repository.
+- [`/utils`](./utils) contains several utilities.
+
 ## Naming
 In order to understand what a micro-objective, micro-behavior, or method is, please refer to the [MBC](https://github.com/MBCProject/mbc-markdown). The contents of this catalog uses the following naming convention:
  
