@@ -314,9 +314,6 @@
                 ],
                 "[C0028.002X-P3]": [
                     "CryptDestroyKey"
-                ],
-                "[C0028.002X-P4H]": [
-                    "CryptImportKey"
                 ]
             },
             "[C0028.006X] BCryptImportKey": {
@@ -1466,6 +1463,11 @@
                 ],
                 "[C0036.006-P10]": [
                     "RegQueryValueEx"
+                ],
+                "[C0036.006-P11H]": [
+                    "RegOpenKeyEx",
+                    "RegQueryValueEx",
+                    "RegCloseKey"
                 ]
             },
             "[C0036.005] Query Registry Key": {
@@ -1585,6 +1587,11 @@
                 ],
                 "[C0036.001-P9]": [
                     "RegSetValueEx"
+                ],
+                "[C0036.001-P10H]": [
+                    "RegOpenKeyEx",
+                    "RegSetValueEx",
+                    "RegCloseKey"
                 ]
             },
             "[C0036.007] Delete Registry Value": {

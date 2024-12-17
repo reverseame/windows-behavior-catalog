@@ -115,7 +115,6 @@
 		[C0028.002X] CryptImportKey
 			[C0028.002X-P2]:['CryptImportKey']
 			[C0028.002X-P3]:['CryptDestroyKey']
-			[C0028.002X-P4H]:['CryptImportKey']
 		[C0028.006X] BCryptImportKey
 			[C0028.006X-P1]:['BCryptImportKey']
 	[C0027] Encrypt Data
@@ -397,6 +396,7 @@
 			[C0036.006-P8]:['RegQueryValueEx']
 			[C0036.006-P9]:['RegQueryValueEx', 'RegCloseKey']
 			[C0036.006-P10]:['RegQueryValueEx']
+			[C0036.006-P11H]:['RegOpenKeyEx', 'RegQueryValueEx', 'RegCloseKey']
 		[C0036.005] Query Registry Key
 			[C0036.005-P1]:['RegQueryInfoKey']
 			[C0036.005-P2]:['RegQueryInfoKey', 'RegCloseKey']
@@ -429,6 +429,7 @@
 			[C0036.001-P7]:['RegSetValueEx']
 			[C0036.001-P8]:['RegSetValueEx', 'RegCloseKey']
 			[C0036.001-P9]:['RegSetValueEx']
+			[C0036.001-P10H]:['RegOpenKeyEx', 'RegSetValueEx', 'RegCloseKey']
 		[C0036.007] Delete Registry Value
 			[C0036.007-P1]:['RegDeleteValue']
 			[C0036.007-P2]:['RegDeleteValue', 'RegCloseKey']
