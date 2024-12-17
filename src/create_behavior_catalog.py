@@ -7,62 +7,87 @@ import logging
 
 from patterns_paths_and_nodes import *
 
-def parse_arguments():
-    parser = argparse.ArgumentParser(description="Script used to create the Windows Behavior Catalog (WBC). Usage example: python3 create_behavior_catalog.py ../ > ../catalog.json")
-    parser.add_argument("behavior_catalog_directory", help="The directory containing the gv files corresponding to each behavior. The structure of the directory must follow the MBC (Malware Behavior Catalog) structure. See: https://github.com/RazviOverflow/behaviors (clone and use this repo).")
-    parser.add_argument("-t", "--text", action='count', help="Output in text form (tab-indented). By default the output is in JSON.")
-    parser.add_argument("--print_discarded", action='count', help="Prints only the discarded simple_paths (in JSON format). That is, those made up of a single node. ")
-    arguments = parser.parse_args()
-    return arguments
+# Constants
+OTHERS_NODE = "others"
+START_NODE = "Start"
+COMMANDLINE_PREFIX = "GetCommandLine"
 
-def get_start_node(g: nx.classes.digraph.DiGraph):
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Script used to create the Windows Behavior Catalog (WBC). " 
+            "Usage example: python3 create_behavior_catalog.py ../ > ../catalog.json"
+        )
+    )
+    parser.add_argument("behavior_catalog_directory", 
+        help=(
+            "The directory containing the gv files corresponding to each behavior. "
+            "The structure of the directory must follow the MBC (Malware Behavior Catalog) structure. "
+            "See: https://github.com/RazviOverflow/behaviors (clone and use this repo)."
+        )
+    )
+    parser.add_argument("-t", "--text", 
+        action='count', 
+        help="Output in text form (tab-indented). By default the output is in JSON.")
+    parser.add_argument("--print_discarded", 
+        action='count', 
+        help="Prints only the discarded simple_paths (in JSON format). That is, those made up of a single node.")
+
+    return parser.parse_args()
+
+def get_start_node(g: nx.classes.digraph.DiGraph) -> str:
+    """
+    Returns the first node of the given graph _g_.
+    """
     nodes_iterator = iter(g._node)
     first_node = next(nodes_iterator)
     # Start node should also be the first one and the only one with peripheries
     assert(g._node[first_node]["peripheries"] == "2") 
     return first_node
 
-def already_in_paths(simple_paths, path):
-    '''
-    Returns whether a node from the path _path_ is in at least one of the paths in _paths_
-    '''
+def node_already_in_paths(paths: list, node: str) -> bool:
+    """
+    Check if node _node_ exists in any path from _paths_.
 
-    for aux_path in simple_paths:
-        for node in path:
-            if node in aux_path:
-                return True
-    return False
+    Parameters:
+        simple_paths (list): 
+            List of existing paths.
+        path (list): 
+            Path to check.
 
-def node_already_in_paths(paths, node):
-    '''
-    Returns whether the node _node_ is in at least one of the paths in _paths_
-    '''
+    Returns:
+        bool: True if _node_ is in any path from _paths_, False otherwise.
+    """
     for path in paths:
         if node in path:
             return True
     return False
 
-def filter_simple_paths(paths : list):
-    '''
+def filter_simple_paths(paths: list) -> list:
+    """
     Filters the list paths by deleting all its elements (representing simple paths)
-    present in the dict `paths_to_filter`, defined in this file. 
+    present in the dict `paths_to_filter`, defined in the file patterns_paths_and_nodes.py. 
 
     Additionally, this function also deletes the sequence GetCommandLineA, GetCommandLineW
     from the beginning of the path.
 
     Parameters:
-        paths:
+        paths (list):
             The list to filter, where each element is a simple path.
 
     Returns:
-        The filtered path list.
-    '''
+        list: The filtered path list.
+    """
 
    
     for i, simple_path in enumerate(paths):
         #if len(simple_path) >= 2 and simple_path[0] == 'GetCommandLine' and simple_path[1] == 'GetCommandLine':
         #    paths[i] = simple_path[2:]
-        if len(simple_path) >= 1 and simple_path[0] == 'GetCommandLine':
+        if len(simple_path) >= 1 and simple_path[0] == COMMANDLINE_PREFIX:
             paths[i] = simple_path[1:]
 
 
@@ -74,24 +99,27 @@ def filter_simple_paths(paths : list):
 
     return new_paths
     
-def get_simple_paths(g: nx.classes.digraph.DiGraph, start_node, min_length: int = 1):
-    '''
+def get_simple_paths(g: nx.classes.digraph.DiGraph, start_node: str, min_length: int = 1) -> list:
+    """
     Returns all the simple paths from start_node to 'others' node in graph g.
 
     If there are other nodes after the 'others' node (that is, 'others'
     node has successors), consider them as other individual paths
     from 'others' to 'others'. Then combine them to get every possible path.
 
-    This function filters the irrelevant paths by invoking filter_simple_paths()
+    This function filters the irrelevant paths by invoking filter_simple_paths().
 
     Parameters:
         g:
             The category graph to get the categorical walk from.
-        start_node:
-            The 'Start' node, according to its id/label (they're the same)
-        min_length:
+        start_node (str):
+            The 'Start' node, according to its id/label (they're the same).
+        min_length (int):
             Minimum numbers of nodes the simple paths must have. Defaults to 1.
-    '''
+
+    Returns:
+        list: All the simple paths from start_node to 'others' node in graph g.
+    """
     simple_paths = []
     # get direct paths from 'Start' to 'others'
     for path in nx.all_simple_paths(g, source=start_node, target='others'):
@@ -128,7 +156,7 @@ def get_simple_paths(g: nx.classes.digraph.DiGraph, start_node, min_length: int 
 
     return all_paths
 
-def get_unique_start_nodes(paths):
+def get_unique_start_nodes(paths: list) -> list:
     '''
     Returns a list with the final node of each path in paths (without repetition)
     '''
@@ -136,98 +164,6 @@ def get_unique_start_nodes(paths):
     for path in paths:
         start_nodes.append(path[0])
     return list(set(start_nodes))
-
-def get_end_nodes(paths):
-    '''
-    Returns a list with the final node of each path in paths
-    '''
-    end_nodes = []
-    for path in paths:
-        end_nodes.append(path[-1])
-    
-    # this could be a set instead of a list to avoid repeated end nodes (they are unneeded)
-    return end_nodes
-
-def is_path_feasible(g_behavior, path):
-    '''
-    Returns whether the path _path_ is feasible in graph _g_behavior_. That is,
-    if all the nodes in _path_ are present in graph _g_behavior_.
-    '''
-    behavior_nodes = g_behavior.nodes()
-    for node in path:
-        if node not in behavior_nodes:
-            #print(f"Node {node} not in behavior graph!")
-            return False
-    return True
-
-def get_path_probability(g: nx.classes.multidigraph.MultiDiGraph , path: list, initial_probability = 1.0):
-    '''
-    Returns the probability of the path (sequence of connected nodes) _path_ given
-    the graph _g_
-
-    Parameters:
-        g: nx.classes.multidigraph.MultiDiGraph
-        path: list
-        initial_probability = 1.0 (Optional)
-    '''
-    probability = initial_probability
-    graph_nodes_adjacency = g._adj
-    for src_node, dst_node in zip(path, path[1:]):
-        probability *= float(graph_nodes_adjacency[src_node][dst_node][0]['label'])
-
-    return probability
-
-def get_all_paths_from_node_to_node_and_probabilities(graph, starting_node, destiny_node, probability_threshold):
-    '''
-    Returns a list of tuples containing each path from starting_node to destiny_node 
-    in graph and the probability of each one of them. The returned list is in the
-    form of: [[path, prob],[path, prob]] where each path is, in turn, a list of 
-    nodes.
-    
-    Parameters:
-        graph:
-            The graph in to perform the operations with.
-        starting_node:
-            The node from which the path to seek will start.
-        destiny_node:
-            The node in which the path to seek will end.
-        probability_threshold:
-            The probability threshold to discard found paths.
-    '''
-    #paths = nx.single_source_dijkstra(graph, starting_node, destiny_node, weight=get_label_weight)
-    #for i, simple_path in enumerate(nx.all_simple_paths(graph, starting_node, destiny_node, 8)):
-    #    print(i, simple_path)
-
-    ## CONFIGURATION PARAMETER: 'cutoff' -> This has a huge impact on the results.
-    ## Based on our experiments, 5 is enough for the vast majority of the cases.
-    paths = list(nx.all_simple_paths(graph, starting_node, destiny_node, 5)) # NEED TO LIMIT SOMEHOW THE LENGTH OF SIMPLE PATHS
-    graph_nodes_adjacency = graph._adj
-    all_paths = list()
-    for path in paths:
-        skip = False
-        probability = 1.0
-        for src_node, dst_node in zip(path, path[1:]):
-            weight = graph_nodes_adjacency[src_node][dst_node][0]
-            if 'label' in weight:
-                probability *= float(weight['label'])
-            # If the probability of the path so far is under the threshold, we omit
-            # this path and skip to the next one
-            if probability < probability_threshold:
-                skip = True
-                break
-        #print(f"Probability is: {probability} and threshold: {PROBABILITY_THRESHOLD}")
-        if not skip:
-            all_paths.append((probability, path))
-    #pprint(sorted(all_paths))
-    #sys.exit()
-    #for path in paths:
-    #    pprint(path)
-    return all_paths
-
-def read_matrix_from_csv(file):
-    # It is very important to specify which column is the index.
-    transition_matrix = pd.read_csv(file, index_col=0) 
-    return transition_matrix
 
 def print_catalog_json(catalog):
     print(json.dumps(catalog, indent=4))
