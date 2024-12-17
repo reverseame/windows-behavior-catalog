@@ -41,7 +41,13 @@ def parse_arguments():
 
 def get_start_node(g: nx.classes.digraph.DiGraph) -> str:
     """
-    Returns the first node of the given graph _g_.
+    Get the first node of the graph, which must have peripheries == "2".
+
+    Args:
+        g (nx.classes.digraph.DiGraph): The graph to process.
+
+    Returns:
+        str: The start node ID, first node of graph _g_.
     """
     nodes_iterator = iter(g._node)
     first_node = next(nodes_iterator)
@@ -54,10 +60,8 @@ def node_already_in_paths(paths: list, node: str) -> bool:
     Check if node _node_ exists in any path from _paths_.
 
     Parameters:
-        simple_paths (list): 
-            List of existing paths.
-        path (list): 
-            Path to check.
+        paths (list): List of paths.
+        node (list): Node to check.
 
     Returns:
         bool: True if _node_ is in any path from _paths_, False otherwise.
@@ -76,8 +80,7 @@ def filter_simple_paths(paths: list) -> list:
     from the beginning of the path.
 
     Parameters:
-        paths (list):
-            The list to filter, where each element is a simple path.
+        paths (list): The list to filter, where each element is a simple path.
 
     Returns:
         list: The filtered path list.
@@ -110,12 +113,9 @@ def get_simple_paths(g: nx.classes.digraph.DiGraph, start_node: str, min_length:
     This function filters the irrelevant paths by invoking filter_simple_paths().
 
     Parameters:
-        g:
-            The category graph to get the categorical walk from.
-        start_node (str):
-            The 'Start' node, according to its id/label (they're the same).
-        min_length (int):
-            Minimum numbers of nodes the simple paths must have. Defaults to 1.
+        g (nx.classes.digraph.DiGraph): The category graph to get the categorical walk from.
+        start_node (str): The 'Start' node, according to its id/label (they're the same).
+        min_length (int): Minimum numbers of nodes the simple paths must have. Defaults to 1.
 
     Returns:
         list: All the simple paths from start_node to 'others' node in graph g.
@@ -157,18 +157,36 @@ def get_simple_paths(g: nx.classes.digraph.DiGraph, start_node: str, min_length:
     return all_paths
 
 def get_unique_start_nodes(paths: list) -> list:
-    '''
-    Returns a list with the final node of each path in paths (without repetition)
-    '''
+    """
+    Extract unique start nodes from a list of paths.
+
+    Args:
+        paths (list): List of paths.
+
+    Returns:
+        list: List of unique start nodes.
+    """
     start_nodes = []
     for path in paths:
         start_nodes.append(path[0])
     return list(set(start_nodes))
 
-def print_catalog_json(catalog):
+def print_catalog_json(catalog: dict) -> None:
+    """
+    Print catalog in JSON format.
+
+    Args:
+        catalog (dict): Catalog data.
+    """
     print(json.dumps(catalog, indent=4))
 
-def print_catalog_text(catalog):
+def print_catalog_text(catalog: dict) -> None:
+    """
+    Print catalog in text format with indentation.
+
+    Args:
+        catalog (dict): Catalog data.
+    """
     for micro_objective_name in catalog:
         print(micro_objective_name)
         for micro_behavior_name in catalog[micro_objective_name]:
@@ -178,10 +196,29 @@ def print_catalog_text(catalog):
                 for pattern in catalog[micro_objective_name][micro_behavior_name][method]:
                     print(f"\t\t\t{pattern}:{catalog[micro_objective_name][micro_behavior_name][method][pattern]}")
 
-def flatten(l):
+def flatten(l: list[list]) -> list:
+    """
+    Flatten a list of lists.
+
+    Args:
+        l (list[list]): A list of lists.
+
+    Returns:
+        list: A flattened list.
+    """
     return [item for sublist in l for item in sublist]
 
-def contains(container, contained):
+def contains(container: list, contained: list) -> tuple[int, int] | bool:
+    """
+    Check if a sequence is contained within another sequence.
+
+    Args:
+        container (list): The main sequence.
+        contained (list): The sequence to search for.
+
+    Returns:
+        tuple[int, int] | bool: Range of indices if found, otherwise False.
+    """
     small_length = len(contained)
     for i in range(len(container)-small_length+1):
         for j in range(small_length):
@@ -192,6 +229,16 @@ def contains(container, contained):
     return False
 
 def create_catalog(path):
+    """
+    Create the Windows Behavior Catalog (WBC) by processing the main contents of the repository 
+    and their corresponding graph patterns.
+
+    Args:
+        path (str): Path to the WBC directory.
+
+    Returns:
+        tuple[dict, dict]: Catalog dictionary and discarded patterns dictionary.
+    """
     catalog = {}
     discarded_patterns = {}
     # Get all patterns to delete
