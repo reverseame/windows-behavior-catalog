@@ -9,6 +9,9 @@ Feel free to contribute to the WBC's corpus by opening PRs and/or issues.
 
 - [`/src`](./src) contains the tool to generate the catalog itself based on the contents of this repository.
 - [`/utils`](./utils) contains several utilities.
+- [`catalog.json`](./catalog.json) and [`catalog.txt`](./catalog.txt) contain the WBC in JSON and plain text format, respectively.
+- [`discarded.json`](./discarded.json) and [`discarded.txt`](./discarded.txt) contain the WBC discarded patterns in JSON and plain text format, respectively. This is just some additional info.
+- **[OC000\*]** folder contain the sources, exes, reports and graphviz files the catalog is originated from.
 
 ## Naming
 In order to understand what a micro-objective, micro-behavior, or method is, please refer to the [MBC](https://github.com/MBCProject/mbc-markdown). The contents of this catalog uses the following naming convention:
