@@ -75,7 +75,7 @@ The WBC comprises: *(Information generated with [statistics.py](./utils/statisti
 - Total Micro-objectives: 6
 - Total Micro-behaviors: 30
 - Total Methods: 87
-- Total Patterns: 328
+- Total Patterns: 329
 - Minimum Pattern Length: 1
 - Maximum Pattern Length: 7
 
