@@ -90,9 +90,10 @@
 			[C0028.008X-P1]:['CryptExportKey']
 			[C0028.008X-P2]:['CryptExportKey', 'CryptDestroyKey']
 		[C0028.011X] CryptExportPublicKeyInfoEx
-			[C0028.011X-P3]:['CryptExportKey']
-			[C0028.011X-P4]:['CryptDestroyKey']
-			[C0028.011X-P5H]:['CryptExportPublicKeyInfoEx']
+			[C0028.011X-P2]:['CryptAcquireContext', 'CryptExportPublicKeyInfoEx']
+			[C0028.011X-P4]:['CryptExportKey']
+			[C0028.011X-P5]:['CryptDestroyKey']
+			[C0028.011X-P6H]:['CryptExportPublicKeyInfoEx']
 		[C0028.005X] BCryptImportKeyPair
 			[C0028.005X-P1]:['BCryptImportKeyPair']
 		[C0028.003X] CryptImportPublicKeyInfo

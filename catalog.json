@@ -242,13 +242,17 @@
                 ]
             },
             "[C0028.011X] CryptExportPublicKeyInfoEx": {
-                "[C0028.011X-P3]": [
-                    "CryptExportKey"
+                "[C0028.011X-P2]": [
+                    "CryptAcquireContext",
+                    "CryptExportPublicKeyInfoEx"
                 ],
                 "[C0028.011X-P4]": [
+                    "CryptExportKey"
+                ],
+                "[C0028.011X-P5]": [
                     "CryptDestroyKey"
                 ],
-                "[C0028.011X-P5H]": [
+                "[C0028.011X-P6H]": [
                     "CryptExportPublicKeyInfoEx"
                 ]
             },
